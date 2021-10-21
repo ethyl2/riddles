@@ -20,7 +20,7 @@
                 max-width: 750px;
                 height: auto;
                 cursor:  crosshair;
-                cursor: url('/images/flashlight3.png') 53 53, crosshair;
+                cursor: url('images/flashlight3.png') 53 53, crosshair;
             }
         </style>
     </head>
@@ -28,7 +28,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="relative flex items-end justify-center mx-auto mt-4" style="width: 640px; height: 425px; background-image: url('/images/room.png');
+        <div class="relative flex items-end justify-center mx-auto mt-4" style="width: 640px; height: 425px; background-image: url('images/room.png');
         background-size: cover;">
             <p class="pb-1 text-xs text-center text-white">What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it? </p>
             <canvas id="room" class="absolute top-0 left-0" width="640" height="425"></canvas>
@@ -45,7 +45,7 @@
                 roomCanvas.fillStyle = 'yellow'
                 roomCanvas.fillText('look around for the clue', 10, 50)
             }
-            img.src = '/images/cover.gif';
+            img.src = 'images/cover.gif';
             room.addEventListener("mousemove", function(e) {
                 var brushPos = getBrushPos(e.clientX, e.clientY);
                 var leftBut = detectLeftButton(e);
