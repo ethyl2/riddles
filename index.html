@@ -7,17 +7,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Riddles</title>
+        <title>Riddles in the Dark</title>
         <meta name="description" content="Can you find and solve the riddles?">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="">
+        <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+        <link rel="icon" type="image/x-icon" href="favicon.ico?">
         <style>
             #room {
                 display: block;
                 margin: 0 auto;
                 width: 100%;
-                max-width: 750px;
+                max-width: 640px;
                 height: auto;
                 cursor:  crosshair;
                 cursor: url('images/flashlight3.png') 53 53, crosshair;
@@ -28,24 +29,93 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="relative flex items-end justify-center mx-auto mt-4" style="width: 640px; height: 425px; background-image: url('images/room.png');
-        background-size: cover;">
-            <p class="pb-1 text-xs text-center text-white">What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it? </p>
+        <div 
+            class="relative mx-auto mt-4" 
+            style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover;"
+        >
+            <p 
+                id="current-question"
+                class="absolute w-full pb-1 pl-2 text-xs text-white"
+            >
+                What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it? 
+            </p>
             <canvas id="room" class="absolute top-0 left-0" width="640" height="425"></canvas>
         </div>
+        <div class="flex items-center justify-center">
+            <form id="answer-form" class="p-8">
+                <label for="riddle-answer" class="pr-4 italic font-medium">what's the answer?</label>
+                <input type="text" class="p-1 border" name="riddle-answer" id="riddle-answer" />
+                <button type="submit" class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600">Submit</button>
+            </form>
+        </div>
+        <p id="response" class="font-bold text-center"></p>
         <script type='text/javascript'>
+
+            // Add more riddles here
+            const riddles = [
+                {
+                    question: "What word starts with 'e' and ends with 'e', but usually has only one letter in it?",
+                    answer: 'envelope'
+                },
+                {
+                    question: "What's tall when it's young and short when it's old?",
+                    answer: 'candle'
+                },
+                {
+                    question: "What gets wet when drying?",
+                    answer: 'towel'
+                },
+                {
+                    question: "What's black when it's clean but white when it's dirty?",
+                    answer: 'chalkboard'
+                },
+            ]
+            const verticalPositions = [
+                'top-1', 'bottom-4', 'bottom-1', 'bottom-60', 'bottom-44', 'top-16', 'top-24', 'bottom-16', 'bottom-48'
+            ]
+            const horizontalPositions = [ 'text-center', 'text-left', 'text-right']
+
+            const questionEl = document.getElementById('current-question')
+            const riddleAnswerForm = document.getElementById('answer-form')
+            const answerInput = document.getElementById('riddle-answer')
+            const responseEl = document.getElementById('response')
+
             var room = document.getElementById("room"),
             roomCanvas = room.getContext('2d'),
             brushRadius = (room.width / 100) * 5,
             img = new Image();
+            img.src = 'images/cover.gif';
             if (brushRadius < 50) { brushRadius = 50 }
             img.onload = function(){  
-                roomCanvas.drawImage(img, 0, 0, room.width, room.height);
-                roomCanvas.font = '16px Arial'
-                roomCanvas.fillStyle = 'yellow'
-                roomCanvas.fillText('look around for the clue', 10, 50)
-            }
-            img.src = 'images/cover.gif';
+                    roomCanvas.drawImage(img, 0, 0, room.width, room.height);
+                    roomCanvas.font = '16px Arial'
+                    roomCanvas.fillStyle = 'yellow'
+                    roomCanvas.fillText('look around for the riddle', 10, 50)
+                }
+
+            window.addEventListener('load', () => {
+                const theRandomRiddleIndex = Math.floor(Math.random() * riddles.length)
+                const theRandomVerticalIndex = Math.floor(Math.random() * verticalPositions.length)
+                const theRandomHorizontalIndex = Math.floor(Math.random() * horizontalPositions.length)
+                const currentRiddle = riddles[theRandomRiddleIndex]
+                questionEl.textContent = currentRiddle.question
+                questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex])
+                
+                riddleAnswerForm.addEventListener('submit', (e) => {
+                    e.preventDefault()
+                    console.log('submitted')
+                    if (answerInput.value.trim().toLowerCase() === currentRiddle.answer) {
+                        responseEl.classList.remove('text-red-500')
+                        responseEl.classList.add('text-black')
+                        responseEl.textContent = 'Congratulations, smarty pants! That\'s correct.'
+                    } else {
+                        responseEl.classList.remove('text-black')
+                        responseEl.classList.add('text-red-500')
+                        responseEl.textContent = 'Sorry, not what I was looking for. Try again.'
+                    }
+                })
+            })
+            
             room.addEventListener("mousemove", function(e) {
                 var brushPos = getBrushPos(e.clientX, e.clientY);
                 var leftBut = detectLeftButton(e);
