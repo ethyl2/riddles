@@ -11,44 +11,63 @@
         <meta name="description" content="Can you find and solve the riddles?">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
         <link rel="icon" type="image/x-icon" href="favicon.ico?">
-        <style>
-            #room {
-                display: block;
-                margin: 0 auto;
-                width: 100%;
-                max-width: 640px;
-                height: auto;
-                cursor:  crosshair;
-                cursor: url('images/flashlight3.png') 53 53, crosshair;
-            }
-        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <h1 
+            class="pt-4 pb-2 text-2xl text-center md:text-3xl" 
+            style="font-family: 'Knewave', cursive;"
+        >
+            riddles in the dark
+        </h1>
         <div 
             class="relative mx-auto mt-4" 
             style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover;"
         >
             <p 
                 id="current-question"
-                class="absolute w-full pb-1 pl-2 text-xs text-white"
+                class="absolute w-full pb-1 pl-2 text-xs text-white select-none"
             >
                 What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it? 
             </p>
-            <canvas id="room" class="absolute top-0 left-0" width="640" height="425"></canvas>
+            <canvas 
+                id="room" 
+                class="absolute top-0 left-0 mx-auto" 
+                width="640" 
+                height="425"
+                style="max-width: 640px; cursor:  crosshair; cursor: url('images/flashlight3.png') 53 53, crosshair;"
+            ></canvas>
         </div>
         <div class="flex items-center justify-center">
             <form id="answer-form" class="p-8">
-                <label for="riddle-answer" class="pr-4 italic font-medium">what's the answer?</label>
+                <label for="riddle-answer" class="pr-4 font-medium" style="font-family: 'Knewave', cursive;">what's the answer?</label>
                 <input type="text" class="p-1 border" name="riddle-answer" id="riddle-answer" />
-                <button type="submit" class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600">Submit</button>
+                <button 
+                    type="submit" 
+                    class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+                >
+                    submit
+                </button>
             </form>
         </div>
-        <p id="response" class="font-bold text-center"></p>
+        <p id="response" class="font-medium text-center" style="font-family: 'Knewave', cursive;"></p>
+        <div class="flex items-center justify-center mt-4">
+            <button 
+                type="button" 
+                onClick="window.location.reload();"
+                class="px-2 py-1 mx-auto font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+            >
+                get another riddle
+            </button>
+        </div>
+
         <script type='text/javascript'>
 
             // Add more riddles here
@@ -68,6 +87,26 @@
                 {
                     question: "What's black when it's clean but white when it's dirty?",
                     answer: 'chalkboard'
+                },
+                {
+                    question: "Where does today come before yesterday?",
+                    answer: 'dictionary'
+                },
+                {
+                    question: "What lets you look right through a wall?",
+                    answer: 'window'
+                },
+                {
+                    question: "What goes up and down but doesn't move?",
+                    answer: 'staircase'
+                },
+                {
+                    question: "What has one eye but can't see?",
+                    answer: 'needle'
+                },
+                {
+                    question: "What has many teeth but can't bite?",
+                    answer: 'comb'
                 },
             ]
             const verticalPositions = [
@@ -107,11 +146,11 @@
                     if (answerInput.value.trim().toLowerCase() === currentRiddle.answer) {
                         responseEl.classList.remove('text-red-500')
                         responseEl.classList.add('text-black')
-                        responseEl.textContent = 'Congratulations, smarty pants! That\'s correct.'
+                        responseEl.textContent = 'congratulations, smarty pants! that\'s correct.'
                     } else {
                         responseEl.classList.remove('text-black')
                         responseEl.classList.add('text-red-500')
-                        responseEl.textContent = 'Sorry, not what I was looking for. Try again.'
+                        responseEl.textContent = 'sorry, not what i was looking for. try again.'
                     }
                 })
             })
