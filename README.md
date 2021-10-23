@@ -14,7 +14,7 @@ Then submit a pull request.
 
 1. A timer, to see how fast a user can find the riddle and solve it.
 2. Additional choices of images for the rooms and the masks.
-3. A button to load another room and/or riddle.
+3. Social sharing links.
 4. A score display -- how many riddles did the user solve, out of the ones attempted.
 5. A way to display the answer if the user gives up.
 6. What else sounds interesting?
