@@ -16,5 +16,5 @@ Then submit a pull request.
 2. Additional choices of images for the rooms and the masks.
 3. Social sharing links.
 4. A score display -- how many riddles did the user solve, out of the ones attempted.
-5. A way to display the answer if the user gives up.
+5. Use something such as local or session storage to keep track of which riddles have been answered already, so they won't be repeated.
 6. What else sounds interesting?
