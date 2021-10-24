@@ -171,69 +171,80 @@
             var room = document.getElementById("room"),
             roomCanvas = room.getContext('2d'),
             brushRadius = (room.width / 100) * 5,
-            img = new Image();
-            img.src = 'images/cover.gif';
+            img = new Image()
+            img.src = 'images/cover.gif'
             if (brushRadius < 50) { brushRadius = 50 }
-            img.onload = function(){  
-                    roomCanvas.drawImage(img, 0, 0, room.width, room.height);
-                    roomCanvas.font = '16px Arial'
-                    roomCanvas.fillStyle = 'yellow'
-                    roomCanvas.fillText('look around for the riddle', 10, 50)
-                }
+            img.onload = function() {  
+                roomCanvas.drawImage(img, 0, 0, room.width, room.height)
+                roomCanvas.font = '16px Arial'
+                roomCanvas.fillStyle = 'yellow'
+                roomCanvas.fillText('look around for the riddle', 10, 50)
+            }
 
-            window.addEventListener('load', () => {
-                const theRandomRiddleIndex = Math.floor(Math.random() * riddles.length)
-                const theRandomVerticalIndex = Math.floor(Math.random() * verticalPositions.length)
-                const theRandomHorizontalIndex = Math.floor(Math.random() * horizontalPositions.length)
-                const currentRiddle = riddles[theRandomRiddleIndex]
-                const submitButton = document.getElementById('submit')
-                const newRiddleButton = document.getElementById('new-riddle')
-                const giveUpButton = document.getElementById('give-up')
+            // Read the randomized riddle index array from localStorage.
+            let randomizedRiddles = JSON.parse(window.localStorage.getItem("riddles_in_the_dark")) || []
+            if (randomizedRiddles.length === 0) {
+                // This is either the first time we visit this page or we are out of riddles, so we must create a new randomized storage
+                randomizedRiddles = getRandomIndexList()
+            }
+            // Set the current riddle from the first index in the randomized array
+            const currentRiddle = riddles[randomizedRiddles[0]]
+            // Remove the current riddle index 
+            randomizedRiddles.splice(0, 1)
+            // Save new array to localStorage for next time
+            window.localStorage.setItem("riddles_in_the_dark", JSON.stringify(randomizedRiddles))
 
-                questionEl.textContent = currentRiddle.question
-                questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex])
-                
-                riddleAnswerForm.addEventListener('submit', (e) => {
-                    e.preventDefault()
-                    if (answerInput.value.trim().toLowerCase() === currentRiddle.answer) {
-                        responseEl.classList.remove('text-red-500')
-                        responseEl.classList.add('text-black', 'pt-4')
-                        responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer} is correct.`
-                        giveUpButton.classList.add('hidden')
-                        riddleAnswerForm.classList.add('hidden')
-                    } else {
-                        responseEl.classList.remove('text-black', 'pt-4')
-                        responseEl.classList.add('text-red-500')
-                        responseEl.textContent = 'sorry, not what i was looking for. try again.'
-                    }
-                })
+            const theRandomVerticalIndex = Math.floor(Math.random() * verticalPositions.length)
+            const theRandomHorizontalIndex = Math.floor(Math.random() * horizontalPositions.length)
+            
+            const submitButton = document.getElementById('submit')
+            const newRiddleButton = document.getElementById('new-riddle')
+            const giveUpButton = document.getElementById('give-up')
 
-                answerInput.addEventListener('input', () => {
-                    if (answerInput.value.length > 0) {
-                        submitButton.disabled = false
-                        submitButton.classList.remove('bg-gray-500', 'cursor-not-allowed')
-                        submitButton.classList.add('bg-black', 'hover:bg-gray-800', 'focus:bg-gray-600')
-                    } else {
-                        submitButton.classList.remove('bg-black', 'hover:bg-gray-800', 'focus:bg-gray-600')
-                        submitButton.classList.add('bg-gray-500', 'cursor-not-allowed')
-                        submitButton.disabled = true
-                    }
-                })
+            questionEl.textContent = currentRiddle.question
+            questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex]);
 
-                newRiddleButton.addEventListener('click', () => {
-                    window.location.reload()
-                })
-
-                const vowels = ['a', 'e', 'i', 'o', 'u']
-                giveUpButton.addEventListener('click', () => {
+            
+            riddleAnswerForm.addEventListener('submit', (e) => {
+                e.preventDefault()
+                if (answerInput.value.trim().toLowerCase() === currentRiddle.answer) {
+                    responseEl.classList.remove('text-red-500')
+                    responseEl.classList.add('text-black', 'pt-4')
+                    responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer} is correct.`
                     giveUpButton.classList.add('hidden')
                     riddleAnswerForm.classList.add('hidden')
-                    responseEl.classList.add('pt-4')
-                    responseEl.textContent = `ok, better luck next time...`
-                    setTimeout( () => {
-                        responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0].toLowerCase()) ? 'n': ''} ${currentRiddle.answer}.`
-                    }, 1000)
-                })
+                } else {
+                    responseEl.classList.remove('text-black', 'pt-4')
+                    responseEl.classList.add('text-red-500')
+                    responseEl.textContent = 'sorry, not what i was looking for. try again.'
+                }
+            })
+
+            answerInput.addEventListener('input', () => {
+                if (answerInput.value.length > 0) {
+                    submitButton.disabled = false
+                    submitButton.classList.remove('bg-gray-500', 'cursor-not-allowed')
+                    submitButton.classList.add('bg-black', 'hover:bg-gray-800', 'focus:bg-gray-600')
+                } else {
+                    submitButton.classList.remove('bg-black', 'hover:bg-gray-800', 'focus:bg-gray-600')
+                    submitButton.classList.add('bg-gray-500', 'cursor-not-allowed')
+                    submitButton.disabled = true
+                }
+            })
+
+            newRiddleButton.addEventListener('click', () => {
+                window.location.reload()
+            })
+
+            const vowels = ['a', 'e', 'i', 'o', 'u']
+            giveUpButton.addEventListener('click', () => {
+                giveUpButton.classList.add('hidden')
+                riddleAnswerForm.classList.add('hidden')
+                responseEl.classList.add('pt-4')
+                responseEl.textContent = `ok, better luck next time...`
+                setTimeout( () => {
+                    responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0].toLowerCase()) ? 'n': ''} ${currentRiddle.answer}.`
+                }, 1000)
             })
             
             room.addEventListener("mousemove", function(e) {
@@ -273,6 +284,18 @@
                 roomCanvas.fillStyle = '#000';
                 roomCanvas.globalCompositeOperation = "destination-out";
                 roomCanvas.fill();
+            }
+            // Function for creating a list of randomized indexes of riddles
+            function getRandomIndexList() {
+                let allRiddles = riddles.map((_, idx) => idx);
+                let n = allRiddles.length
+                let result = []
+                for (var i = 0; i < n; i++) {
+                    let randomValue = Math.floor(Math.random() * allRiddles.length) // Pick out a random index from all riddles array
+                    result.push(allRiddles[randomValue])
+                    allRiddles.splice(randomValue, 1) // Remove the picked index from list to not be used again
+                }
+                return result
             }
         </script>
     </body>
