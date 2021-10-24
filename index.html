@@ -49,9 +49,11 @@
             <form id="answer-form" class="p-8">
                 <label for="riddle-answer" class="pr-4 font-medium" style="font-family: 'Knewave', cursive;">what's the answer?</label>
                 <input type="text" class="p-1 border" name="riddle-answer" id="riddle-answer" />
-                <button 
+                <button
+                    id="submit" 
                     type="submit" 
-                    class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+                    class="px-2 py-1 font-medium text-yellow-300 bg-gray-500 rounded cursor-not-allowed"
+                    disabled
                 >
                     submit
                 </button>
@@ -59,12 +61,19 @@
         </div>
         <p id="response" class="font-medium text-center" style="font-family: 'Knewave', cursive;"></p>
         <div class="flex items-center justify-center mt-4">
-            <button 
+            <button
+                id="new-riddle" 
                 type="button" 
-                onClick="window.location.reload();"
-                class="px-2 py-1 mx-auto font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+                class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
             >
                 get another riddle
+            </button>
+            <button
+                id="give-up" 
+                type="button" 
+                class="px-2 py-1 ml-2 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+            >
+                give up?
             </button>
         </div>
 
@@ -108,6 +117,26 @@
                     question: "What has many teeth but can't bite?",
                     answer: 'comb'
                 },
+                {
+                    question: "What has words but never speaks?",
+                    answer: 'book'
+                },
+                {
+                    question: "What has a head and a tail but no body?",
+                    answer: 'coin'
+                },
+                {
+                    question: "What is the end of everything?",
+                    answer: 'g'
+                },
+                {
+                    question: "What word in the dictionary is spelled wrong?",
+                    answer: 'wrong'
+                },
+                {
+                    question: "What can go up a chimney down, but can't go down a chimney up?",
+                    answer: 'umbrella'
+                },
             ]
             const verticalPositions = [
                 'top-1', 'bottom-4', 'bottom-1', 'bottom-60', 'bottom-44', 'top-16', 'top-24', 'bottom-16', 'bottom-48'
@@ -137,21 +166,53 @@
                 const theRandomVerticalIndex = Math.floor(Math.random() * verticalPositions.length)
                 const theRandomHorizontalIndex = Math.floor(Math.random() * horizontalPositions.length)
                 const currentRiddle = riddles[theRandomRiddleIndex]
+                const submitButton = document.getElementById('submit')
+                const newRiddleButton = document.getElementById('new-riddle')
+                const giveUpButton = document.getElementById('give-up')
+
                 questionEl.textContent = currentRiddle.question
                 questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex])
                 
                 riddleAnswerForm.addEventListener('submit', (e) => {
                     e.preventDefault()
-                    console.log('submitted')
                     if (answerInput.value.trim().toLowerCase() === currentRiddle.answer) {
                         responseEl.classList.remove('text-red-500')
-                        responseEl.classList.add('text-black')
-                        responseEl.textContent = 'congratulations, smarty pants! that\'s correct.'
+                        responseEl.classList.add('text-black', 'pt-4')
+                        responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer} is correct.`
+                        giveUpButton.classList.add('hidden')
+                        riddleAnswerForm.classList.add('hidden')
                     } else {
-                        responseEl.classList.remove('text-black')
+                        responseEl.classList.remove('text-black', 'pt-4')
                         responseEl.classList.add('text-red-500')
                         responseEl.textContent = 'sorry, not what i was looking for. try again.'
                     }
+                })
+
+                answerInput.addEventListener('input', () => {
+                    if (answerInput.value.length > 0) {
+                        submitButton.disabled = false
+                        submitButton.classList.remove('bg-gray-500', 'cursor-not-allowed')
+                        submitButton.classList.add('bg-black', 'hover:bg-gray-800', 'focus:bg-gray-600')
+                    } else {
+                        submitButton.classList.remove('bg-black', 'hover:bg-gray-800', 'focus:bg-gray-600')
+                        submitButton.classList.add('bg-gray-500', 'cursor-not-allowed')
+                        submitButton.disabled = true
+                    }
+                })
+
+                newRiddleButton.addEventListener('click', () => {
+                    window.location.reload()
+                })
+
+                const vowels = ['a', 'e', 'i', 'o', 'u']
+                giveUpButton.addEventListener('click', () => {
+                    giveUpButton.classList.add('hidden')
+                    riddleAnswerForm.classList.add('hidden')
+                    responseEl.classList.add('pt-4')
+                    responseEl.textContent = `ok, better luck next time...`
+                    setTimeout( () => {
+                        responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0].toLowerCase()) ? 'n': ''} ${currentRiddle.answer}.`
+                    }, 1000)
                 })
             })
             
