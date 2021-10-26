@@ -219,7 +219,7 @@
                 };
             }
             function drawDot(mouseX,mouseY) {
-                // Skip - if you want to reveal image
+                // Skip - if you want to reveal image gradually
                 roomCanvas.globalCompositeOperation = "source-over";
                 roomCanvas.drawImage(img, 0, 0, room.width, room.height)
                 roomCanvas.font = '16px Arial'
@@ -240,9 +240,6 @@
                     allRiddles.splice(randomValue, 1) // Remove the picked index from list to not be used again
                 }
                 return result
-            }
-            function preventSelect(e) {
-                e.preventDefault()
             }
         </script>
     </body>
