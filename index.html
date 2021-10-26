@@ -47,7 +47,7 @@
         </div>
         <div class="flex items-center justify-center">
             <form id="answer-form" class="p-8">
-                <label for="riddle-answer" class="pr-4 font-medium" style="font-family: 'Knewave', cursive;">what's the answer?</label>
+                <label for="riddle-answer" class="pr-4 font-medium select-none" style="font-family: 'Knewave', cursive;">what's the answer?</label>
                 <input type="text" class="p-1 border" name="riddle-answer" id="riddle-answer" />
                 <button
                     id="submit" 
@@ -59,7 +59,7 @@
                 </button>
             </form>
         </div>
-        <p id="response" class="font-medium text-center" style="font-family: 'Knewave', cursive;"></p>
+        <p id="response" class="font-medium text-center select-none" style="font-family: 'Knewave', cursive;"></p>
         <div class="flex items-center justify-center mt-4">
             <button
                 id="new-riddle" 
@@ -82,88 +82,8 @@
             <span class="font-medium" style="font-family: 'Knewave', cursive;">/</span>
             <span id="potential-points" class="font-bold">1</span>
         </p>
-
+        <script src="riddles.js" async defer></script>
         <script type='text/javascript'>
-
-            // Add more riddles here
-            const riddles = [
-                {
-                    question: "What word starts with 'e' and ends with 'e', but usually has only one letter in it?",
-                    answer: 'envelope'
-                },
-                {
-                    question: "What's tall when it's young and short when it's old?",
-                    answer: 'candle'
-                },
-                {
-                    question: "What gets wet when drying?",
-                    answer: 'towel'
-                },
-                {
-                    question: "What's black when it's clean but white when it's dirty?",
-                    answer: 'chalkboard'
-                },
-                {
-                    question: "Where does today come before yesterday?",
-                    answer: 'dictionary'
-                },
-                {
-                    question: "What lets you look right through a wall?",
-                    answer: 'window'
-                },
-                {
-                    question: "What goes up and down but doesn't move?",
-                    answer: 'staircase'
-                },
-                {
-                    question: "What has one eye but can't see?",
-                    answer: 'needle'
-                },
-                {
-                    question: "What has many teeth but can't bite?",
-                    answer: 'comb'
-                },
-                {
-                    question: "What has words but never speaks?",
-                    answer: 'book'
-                },
-                {
-                    question: "What has a head and a tail but no body?",
-                    answer: 'coin'
-                },
-                {
-                    question: "What is the end of everything?",
-                    answer: 'g'
-                },
-                {
-                    question: "What word in the dictionary is spelled wrong?",
-                    answer: 'wrong'
-                },
-                {
-                    question: "What can go up a chimney down, but can't go down a chimney up?",
-                    answer: 'umbrella'
-                },
-                {
-                    question: "What is seen in the middle of March and April that can’t be seen at the beginning or end of either month?",
-                    answer: 'r'
-                },
-                {
-                    question: "What English word has three consecutive double letters? ",
-                    answer: 'bookkeeper'
-                },
-                {
-                    question: "What disappears as soon as you say its name? ",
-                    answer: 'silence'
-                },
-                {
-                    question: "What has a neck but no head?",
-                    answer: 'bottle'
-                },
-                {
-                    question: "What has to be broken before you can use it?",
-                    answer: 'egg'
-                },
-            ]
             const verticalPositions = [
                 'top-1', 'bottom-4', 'bottom-1', 'bottom-60', 'bottom-44', 'top-16', 'top-24', 'bottom-16', 'bottom-48'
             ]
