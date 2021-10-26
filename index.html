@@ -76,6 +76,12 @@
                 give up?
             </button>
         </div>
+        <p class="mt-4 font-medium text-center">
+            <span class="font-medium" style="font-family: 'Knewave', cursive;">score:</span>
+            <span id="points" class="font-bold">0</span>
+            <span class="font-medium" style="font-family: 'Knewave', cursive;">/</span>
+            <span id="potential-points" class="font-bold">1</span>
+        </p>
 
         <script type='text/javascript'>
 
@@ -194,6 +200,13 @@
             // Save new array to localStorage for next time
             window.localStorage.setItem("riddles_in_the_dark", JSON.stringify(randomizedRiddles))
 
+            // Get current score and display it
+            const pointsEl = document.getElementById('points')
+            const potentialPointsEl = document.getElementById('potential-points')
+            pointsEl.textContent = window.localStorage.getItem('points') ?? 0
+            potentialPointsEl.textContent = window.localStorage.getItem('potential_points') ?? 1
+
+            // Grab elements needed for displaying riddle and add the riddle's question
             const theRandomVerticalIndex = Math.floor(Math.random() * verticalPositions.length)
             const theRandomHorizontalIndex = Math.floor(Math.random() * horizontalPositions.length)
             
@@ -203,7 +216,6 @@
 
             questionEl.textContent = currentRiddle.question
             questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex]);
-
             
             riddleAnswerForm.addEventListener('submit', (e) => {
                 e.preventDefault()
@@ -213,6 +225,10 @@
                     responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer} is correct.`
                     giveUpButton.classList.add('hidden')
                     riddleAnswerForm.classList.add('hidden')
+                    const newPoints = parseInt(pointsEl.textContent) + 1
+                    pointsEl.textContent = newPoints
+                    window.localStorage.setItem('points', newPoints)
+
                 } else {
                     responseEl.classList.remove('text-black', 'pt-4')
                     responseEl.classList.add('text-red-500')
@@ -233,6 +249,7 @@
             })
 
             newRiddleButton.addEventListener('click', () => {
+                window.localStorage.setItem('potential_points', parseInt(potentialPointsEl.textContent) + 1)
                 window.location.reload()
             })
 
