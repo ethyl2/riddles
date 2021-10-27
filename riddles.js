@@ -100,4 +100,20 @@ const riddles = [
         question: "What can go through towns and over mountains, but never moves?",
         answer: 'road'
     },
+    {
+        question: "What has lots of holes but still can hold water?",
+        answer: 'sponge'
+    },
+    {
+        question: "What's filled with keys but can't open a lock?",
+        answer: 'piano'
+    },
+    {
+        question: "What contains 26 letters but only has 3 syllables?",
+        answer: 'alphabet'
+    },
+    {
+        question: "What can have lots of eyes but can't see?",
+        answer: 'potato'
+    },
 ]
