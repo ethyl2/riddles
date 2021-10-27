@@ -17,7 +17,7 @@
         <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
         <link rel="icon" type="image/x-icon" href="favicon.ico?">
     </head>
-    <body>
+    <body style="user-select:none">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -82,7 +82,7 @@
             <span class="font-medium" style="font-family: 'Knewave', cursive;">/</span>
             <span id="potential-points" class="font-bold">1</span>
         </p>
-        <script src="riddles.js" async defer></script>
+        <script src="riddles.js"></script>
         <script type='text/javascript'>
             const verticalPositions = [
                 'top-1', 'bottom-4', 'bottom-1', 'bottom-60', 'bottom-44', 'top-16', 'top-24', 'bottom-16', 'bottom-48'
@@ -96,16 +96,19 @@
 
             var room = document.getElementById("room"),
             roomCanvas = room.getContext('2d'),
-            brushRadius = (room.width / 100) * 5,
+            brushRadius = 300,
             img = new Image()
             img.src = 'images/cover.gif'
-            if (brushRadius < 50) { brushRadius = 50 }
             img.onload = function() {  
                 roomCanvas.drawImage(img, 0, 0, room.width, room.height)
                 roomCanvas.font = '16px Arial'
                 roomCanvas.fillStyle = 'yellow'
                 roomCanvas.fillText('look around for the riddle', 10, 50)
             }
+
+            // Image for drawing flash-light area
+            const flashArea = new Image()
+            flashArea.src = 'images/flash-area.png'
 
             // Read the randomized riddle index array from localStorage.
             let randomizedRiddles = JSON.parse(window.localStorage.getItem("riddles_in_the_dark")) || []
@@ -215,16 +218,20 @@
                 y: Math.floor((yRef - roomRect.top) / (roomRect.bottom - roomRect.top) * room.height)
                 };
             }
-            function drawDot(mouseX,mouseY){
-                roomCanvas.beginPath();
-                roomCanvas.arc(mouseX, mouseY, brushRadius, 0, 2*Math.PI, true);
-                roomCanvas.fillStyle = '#000';
-                roomCanvas.globalCompositeOperation = "destination-out";
-                roomCanvas.fill();
+            function drawDot(mouseX,mouseY) {
+                // Skip - if you want to reveal image gradually
+                roomCanvas.globalCompositeOperation = "source-over";
+                roomCanvas.drawImage(img, 0, 0, room.width, room.height)
+                roomCanvas.font = '16px Arial'
+                roomCanvas.fillStyle = 'yellow'
+                roomCanvas.fillText('look around for the riddle', 10, 50)
+                // End skip
+                roomCanvas.globalCompositeOperation = "destination-out"
+                roomCanvas.drawImage(flashArea, mouseX - 220, mouseY - 220, brushRadius, brushRadius)
             }
             // Function for creating a list of randomized indexes of riddles
             function getRandomIndexList() {
-                let allRiddles = riddles.map((_, idx) => idx);
+                let allRiddles = riddles.map((_, idx) => idx)
                 let n = allRiddles.length
                 let result = []
                 for (var i = 0; i < n; i++) {
