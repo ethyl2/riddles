@@ -28,9 +28,10 @@
         >
             riddles in the dark
         </h1>
-        <div 
+        <div
+            id="scene"
             class="relative mx-auto mt-4 overflow-x-auto" 
-            style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover;"
+            style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover; display: none"
         >
             <p 
                 id="current-question"
@@ -114,13 +115,38 @@
             </a>
         </footer>
        
-        <script src="riddles.js"></script>
+        <script src="riddles.js" async defer></script>
         <script type='text/javascript'>
+            window.addEventListener('load', () => {
+                // Read the randomized riddle index array from localStorage.
+                let randomizedRiddles = JSON.parse(window.localStorage.getItem("riddles_in_the_dark")) || []
+                if (randomizedRiddles.length === 0) {
+                    // This is either the first time we visit this page or we are out of riddles, so we must create a new randomized storage
+                    randomizedRiddles = getRandomIndexList()
+                }
+                // Set the current riddle from the first index in the randomized array
+                currentRiddle = riddles[randomizedRiddles[0]]
+                // Remove the current riddle index 
+                randomizedRiddles.splice(0, 1)
+                // Save new array to localStorage for next time
+                window.localStorage.setItem("riddles_in_the_dark", JSON.stringify(randomizedRiddles))
+
+                pointsEl.textContent = window.localStorage.getItem('points') ?? 0
+                potentialPointsEl.textContent = window.localStorage.getItem('potential_points') ? parseInt(window.localStorage.getItem('potential_points')) + 1 : 1
+                window.localStorage.setItem('potential_points', potentialPointsEl.textContent)
+
+                questionEl.textContent = currentRiddle.question
+                questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex]);
+                scene.style.display = "block"
+            })
+
+            let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
+
             const verticalPositions = [
                 'top-1', 'bottom-4', 'bottom-1', 'bottom-60', 'bottom-44', 'top-16', 'top-24', 'bottom-16', 'bottom-48'
             ]
             const horizontalPositions = [ 'text-center', 'text-left', 'text-right']
-
+            const scene = document.getElementById('scene')
             const questionEl = document.getElementById('current-question')
             const riddleAnswerForm = document.getElementById('answer-form')
             const answerInput = document.getElementById('riddle-answer')
@@ -141,26 +167,10 @@
             // Image for drawing flash-light area
             const flashArea = new Image()
             flashArea.src = 'images/flash-area.png'
-
-            // Read the randomized riddle index array from localStorage.
-            let randomizedRiddles = JSON.parse(window.localStorage.getItem("riddles_in_the_dark")) || []
-            if (randomizedRiddles.length === 0) {
-                // This is either the first time we visit this page or we are out of riddles, so we must create a new randomized storage
-                randomizedRiddles = getRandomIndexList()
-            }
-            // Set the current riddle from the first index in the randomized array
-            const currentRiddle = riddles[randomizedRiddles[0]]
-            // Remove the current riddle index 
-            randomizedRiddles.splice(0, 1)
-            // Save new array to localStorage for next time
-            window.localStorage.setItem("riddles_in_the_dark", JSON.stringify(randomizedRiddles))
-
+            
             // Get current score and display it
             const pointsEl = document.getElementById('points')
             const potentialPointsEl = document.getElementById('potential-points')
-            pointsEl.textContent = window.localStorage.getItem('points') ?? 0
-            potentialPointsEl.textContent = window.localStorage.getItem('potential_points') ? parseInt(window.localStorage.getItem('potential_points')) + 1 : 1
-            window.localStorage.setItem('potential_points', potentialPointsEl.textContent)
 
             // Grab elements needed for displaying riddle and add the riddle's question
             const theRandomVerticalIndex = Math.floor(Math.random() * verticalPositions.length)
@@ -169,13 +179,10 @@
             const submitButton = document.getElementById('submit')
             const newRiddleButton = document.getElementById('new-riddle')
             const giveUpButton = document.getElementById('give-up')
-
-            questionEl.textContent = currentRiddle.question
-            questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex]);
             
             riddleAnswerForm.addEventListener('submit', (e) => {
                 e.preventDefault()
-                if (answerInput.value.trim().toLowerCase() === currentRiddle.answer) {
+                if (currentRiddle && answerInput.value.trim().toLowerCase() === currentRiddle.answer) {
                     responseEl.classList.remove('text-red-500')
                     responseEl.classList.add('text-black', 'pt-4')
                     responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer} is correct.`
