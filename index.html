@@ -28,10 +28,11 @@
         >
             riddles in the dark
         </h1>
+        <div id="placeholder" class="mx-auto mt-4 bg-black" style="width: 640px; height: 425px;"></div>
         <div
             id="scene"
-            class="relative mx-auto mt-4 overflow-x-auto" 
-            style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover; display: none"
+            class="relative hidden mx-auto mt-4 overflow-x-auto" 
+            style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover"
         >
             <p 
                 id="current-question"
@@ -136,8 +137,11 @@
                 window.localStorage.setItem('potential_points', potentialPointsEl.textContent)
 
                 questionEl.textContent = currentRiddle.question
-                questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex]);
-                scene.style.display = "block"
+                questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex])
+
+                placeholderEl.classList.add('hidden')  
+                scene.classList.remove('hidden')
+                scene.classList.add('block')
             })
 
             let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
@@ -147,6 +151,7 @@
             ]
             const horizontalPositions = [ 'text-center', 'text-left', 'text-right']
             const scene = document.getElementById('scene')
+            const placeholderEl = document.getElementById('placeholder')
             const questionEl = document.getElementById('current-question')
             const riddleAnswerForm = document.getElementById('answer-form')
             const answerInput = document.getElementById('riddle-answer')
