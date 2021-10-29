@@ -119,6 +119,10 @@ const riddles = [
     {
         question: "What has branches, but no fruit, trunk or leaves?",
         answer: 'bank'
+    },
+       {
+        question: "What has to be broken before you can use it?",
+        answer: 'egg'
     }
     
 ]
