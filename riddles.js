@@ -90,7 +90,7 @@ const riddles = [
     },
     {
         question: "What word becomes shorter if you add 2 letters to it?",
-        answer: 'shorter'
+        answer: 'short'
     },
     {
         question: "Where can you find cities, streets, parks and shops but no people?",
@@ -117,7 +117,7 @@ const riddles = [
         answer: 'potato'
     },
     {
-        question: "I have branches, but no fruit, trunk or leaves. What am I?",
+        question: "What has branches, but no fruit, trunk or leaves?",
         answer: 'bank'
     }
     
