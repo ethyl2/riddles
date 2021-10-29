@@ -118,7 +118,7 @@ const riddles = [
     },
     {
         question: "I have branches, but no fruit, trunk or leaves. What am I?",
-        answer: 'A bank'
+        answer: 'bank'
     }
     
 ]
