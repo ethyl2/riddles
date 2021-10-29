@@ -116,4 +116,9 @@ const riddles = [
         question: "What can have lots of eyes but can't see?",
         answer: 'potato'
     },
+    {
+        question: "I have branches, but no fruit, trunk or leaves. What am I?",
+        answer: 'bank'
+    }
+    
 ]
