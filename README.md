@@ -19,7 +19,7 @@ Then submit a pull request.
 3. Social sharing links.
 4. Add a form to submit riddle suggestions.
 5. Sound effects, with a toggle for audio permission.
-6. A footer with links to this repo, Hacktoberfest, and other relevant links.
+6. More info in the footer.
 7. Possibly other pages with different Halloween-related games or other content.
 8. What else sounds interesting?
 
@@ -27,10 +27,6 @@ Then submit a pull request.
 
 ## Contributors
 
-|                                            [Heather Nuffer](https://github.com/ethyl2)                                            |                                            [Ankeeta Ahire](https://github.com/ankeeta-ahire)                                             |                                            [Jan Holmberg](https://github.com/FarbrorGarbo)                                             |     |     |
-| :-------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: | --- | --- |
-| [<img src="https://avatars.githubusercontent.com/u/6438167?v=4" width = "200" alt="Heather Nuffer" />](https://github.com/ethyl2) | [<img src="https://avatars.githubusercontent.com/u/89206910?v=4" width = "200" alt="Ankeeta Ahire" />](https://github.com/ankeeta-ahire) | [<img src="https://avatars.githubusercontent.com/u/19526572?v=4" width = "200" alt="Jan Holmberg" />](https://github.com/FarbrorGarbo) |     |
-|                        [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ethyl2)                        |                        [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ankeeta-ahire)                        |                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/FarbrorGarbo)                        |     |
-|  [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/heather-nuffer/)  |
-
-<br>
+| [Heather Nuffer](https://github.com/ethyl2)                                                                                       |                                            [Ankeeta Ahire](https://github.com/ankeeta-ahire)                                             |                                            [Jan Holmberg](https://github.com/FarbrorGarbo)                                             |                                                                                          [Prachie Goje](https:/github.com/prachie6157) |
+| :-------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars.githubusercontent.com/u/6438167?v=4" width = "100" alt="Heather Nuffer" />](https://github.com/ethyl2) | [<img src="https://avatars.githubusercontent.com/u/89206910?v=4" width = "100" alt="Ankeeta Ahire" />](https://github.com/ankeeta-ahire) | [<img src="https://avatars.githubusercontent.com/u/19526572?v=4" width = "100" alt="Jan Holmberg" />](https://github.com/FarbrorGarbo) | [<img src="https://avatars.githubusercontent.com/u/71593659?v=4" width = "100" alt="JPrachie Goje" />](https://github.com/prachie6157) |
