@@ -404,6 +404,13 @@ const riddles = [
         question: "What is it that no one wants, but no one wants to lose?",
         answer: ['lawsuit']
     },
-
+    {
+        question: "I have many faces, expressions, and emotions, and I am usually right at your fingertips. What am I?",
+        answer: ['Emojis']
+    },
+    {
+        question: "I’m full of holes but strong as steel. What am I?",
+        answer: ['Chain']
+    },
 
 ]
