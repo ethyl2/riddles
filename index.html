@@ -16,106 +16,111 @@
         <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
         <link rel="icon" type="image/x-icon" href="favicon.ico?">
+        <style>
+            .neonText {
+                color: black;
+                
+                animation: flicker 1.5s infinite alternate;
+            }
+            @keyframes flicker {
+
+                0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ffbc37, 0 0 80px #ffaa38, 0 0 90px #ffe423, 0 0 100px #ff1313, 0 0 150px #ff5700;
+                }
+
+                20%, 24%, 55% {
+                    text-shadow: none;
+                }
+            }
+
+        </style>
     </head>
-    <body class="min-h-screen mb-0 overflow-x-auto select-none">
+    <body class="min-h-screen mb-0 overflow-x-auto select-none" style="background:#2e2a20;">
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-       
-        <h1 
-            class="pt-4 pb-2 text-2xl text-center md:text-3xl" 
-            style="font-family: 'Knewave', cursive;"
-        >
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+        <h1 class="neonText pt-4 pb-2 text-2xl text-center md:text-3xl"
+            style="font-family: 'Knewave', cursive;">
             riddles in the dark
         </h1>
-        <div id="placeholder" class="mx-auto mt-4 bg-black" style="width: 640px; height: 425px;"></div>
-        <div
-            id="scene"
-            class="relative hidden mx-auto mt-4 overflow-x-auto" 
-            style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover"
-        >
-            <p 
-                id="current-question"
-                class="absolute w-full pb-1 pl-2 text-xs text-white select-none"
-            >
-                What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it? 
-            </p>
-            <canvas 
-                id="room" 
-                class="absolute top-0 left-0 mx-auto overflow-x-auto" 
-                width="640" 
-                height="425"
-                style="max-width: 640px; cursor:  crosshair; cursor: url('images/flashlight3.png') 53 53, crosshair;"
-            ></canvas>
+        <div id="placeholder" style="width: 650px; height: 435px;" class="bg-yellow-200 mx-auto mt-4 flex items-center justify-center">
+            <div  class="mx-auto bg-black" style="width: 640px; height: 425px;"></div>
+        </div>
+        <div id="scene-frame" style="width: 650px; height: 435px;" class="hidden bg-yellow-200 mx-auto mt-4 flex items-center justify-center">
+            <div id="scene"
+                 class="relative mx-auto overflow-x-auto"
+                 style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover">
+                <p id="current-question"
+                   class="absolute w-full pb-1 pl-2 text-xs text-white select-none">
+                    What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it?
+                </p>
+
+
+                <canvas id="room"
+                        class="absolute top-0 left-0 mx-auto overflow-x-auto"
+                        width="640"
+                        height="425"
+                        style="max-width: 640px; cursor:  crosshair; cursor: url('images/flashlight3.png') 53 53, crosshair;"></canvas>
+
+            </div>
         </div>
         <div class="flex items-center justify-center">
             <form id="answer-form" class="p-8">
-                <label for="riddle-answer" class="pr-4 font-medium select-none" style="font-family: 'Knewave', cursive;">what's the answer?</label>
-                <input type="text" class="p-1 border" name="riddle-answer" id="riddle-answer" />
-                <button
-                    id="submit" 
-                    type="submit" 
-                    class="px-2 py-1 font-medium text-yellow-300 bg-gray-500 rounded cursor-not-allowed"
-                    disabled
-                >
+                <label for="riddle-answer" class="text-black select-none pr-2" style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;">what's the answer?</label>
+                <input type="text" class="mr-2 p-1 border" name="riddle-answer" id="riddle-answer" />
+                <button id="submit"
+                        type="submit"
+                        class="px-2 py-1 font-medium text-yellow-300 bg-gray-500 rounded cursor-not-allowed"
+                        disabled>
                     submit
                 </button>
             </form>
         </div>
         <p id="response" class="font-medium text-center select-none" style="font-family: 'Knewave', cursive;"></p>
         <div class="flex items-center justify-center mt-4">
-            <button
-                id="new-riddle" 
-                type="button" 
-                class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
-            >
+            <button id="new-riddle"
+                    type="button"
+                    class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600">
                 get another riddle
             </button>
-            <button
-                id="give-up" 
-                type="button" 
-                class="px-2 py-1 ml-2 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
-            >
+            <button id="give-up"
+                    type="button"
+                    class="px-2 py-1 ml-2 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600">
                 give up?
             </button>
         </div>
-        <p class="mt-4 font-medium text-center">
+        <p class="mt-4 font-medium text-center" style="text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff">
             <span class="font-medium" style="font-family: 'Knewave', cursive;">score:</span>
             <span id="points" class="font-bold">0</span>
             <span class="font-medium" style="font-family: 'Knewave', cursive;">/</span>
             <span id="potential-points" class="font-bold">1</span>
         </p>
         <footer class="flex items-center justify-center py-16 mt-32 mb-0 text-center bg-yellow-200">
-            <a
-                href="https://github.com/ethyl2/riddles"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="p-1 rounded hover:bg-white"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true"
-                    focusable="false"
-                    width="1.73em"
-                    height="1.5em"
-                    style="
+            <a href="https://github.com/ethyl2/riddles"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="p-1 rounded hover:bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     aria-hidden="true"
+                     focusable="false"
+                     width="1.73em"
+                     height="1.5em"
+                     style="
                         -ms-transform: rotate(360deg);
                         -webkit-transform: rotate(360deg);
                         transform: rotate(360deg);
                     "
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 1227.825 1000"
-                >
-                    <path
-                        d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
-                        fill="black"
-                    />
+                     preserveAspectRatio="xMidYMid meet"
+                     viewBox="0 0 1227.825 1000">
+                    <path d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+                          fill="black" />
                 </svg>
                 <span class="sr-only">GitHub Repo</span>
             </a>
         </footer>
-       
+
         <script src="riddles.js" async defer></script>
         <script type='text/javascript'>
             window.addEventListener('load', () => {
@@ -127,7 +132,7 @@
                 }
                 // Set the current riddle from the first index in the randomized array
                 currentRiddle = riddles[randomizedRiddles[0]]
-                // Remove the current riddle index 
+                // Remove the current riddle index
                 randomizedRiddles.splice(0, 1)
                 // Save new array to localStorage for next time
                 window.localStorage.setItem("riddles_in_the_dark", JSON.stringify(randomizedRiddles))
@@ -139,9 +144,10 @@
                 questionEl.textContent = currentRiddle.question
                 questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex])
 
-                placeholderEl.classList.add('hidden')  
-                scene.classList.remove('hidden')
-                scene.classList.add('block')
+                placeholderEl.classList.add('hidden')
+                sceneFrame.classList.remove('hidden')
+                sceneFrame.classList.add('block')
+
             })
 
             let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
@@ -149,8 +155,9 @@
             const verticalPositions = [
                 'top-1', 'bottom-4', 'bottom-1', 'bottom-60', 'bottom-44', 'top-16', 'top-24', 'bottom-16', 'bottom-48'
             ]
-            const horizontalPositions = [ 'text-center', 'text-left', 'text-right']
+            const horizontalPositions = ['text-center', 'text-left', 'text-right']
             const scene = document.getElementById('scene')
+            const sceneFrame = document.getElementById('scene-frame')
             const placeholderEl = document.getElementById('placeholder')
             const questionEl = document.getElementById('current-question')
             const riddleAnswerForm = document.getElementById('answer-form')
@@ -158,11 +165,11 @@
             const responseEl = document.getElementById('response')
 
             var room = document.getElementById("room"),
-            roomCanvas = room.getContext('2d'),
-            brushRadius = 300,
-            img = new Image()
+                roomCanvas = room.getContext('2d'),
+                brushRadius = 300,
+                img = new Image()
             img.src = 'images/cover.gif'
-            img.onload = function() {  
+            img.onload = function () {
                 roomCanvas.drawImage(img, 0, 0, room.width, room.height)
                 roomCanvas.font = '16px Arial'
                 roomCanvas.fillStyle = 'yellow'
@@ -172,7 +179,7 @@
             // Image for drawing flash-light area
             const flashArea = new Image()
             flashArea.src = 'images/flash-area.png'
-            
+
             // Get current score and display it
             const pointsEl = document.getElementById('points')
             const potentialPointsEl = document.getElementById('potential-points')
@@ -180,11 +187,11 @@
             // Grab elements needed for displaying riddle and add the riddle's question
             const theRandomVerticalIndex = Math.floor(Math.random() * verticalPositions.length)
             const theRandomHorizontalIndex = Math.floor(Math.random() * horizontalPositions.length)
-            
+
             const submitButton = document.getElementById('submit')
             const newRiddleButton = document.getElementById('new-riddle')
             const giveUpButton = document.getElementById('give-up')
-            
+
             riddleAnswerForm.addEventListener('submit', (e) => {
                 e.preventDefault()
                 if (currentRiddle && answerInput.value.trim().toLowerCase() === currentRiddle.answer) {
@@ -227,19 +234,19 @@
                 riddleAnswerForm.classList.add('hidden')
                 responseEl.classList.add('pt-4')
                 responseEl.textContent = `ok, better luck next time...`
-                setTimeout( () => {
-                    responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0].toLowerCase()) ? 'n': ''} ${currentRiddle.answer}.`
+                setTimeout(() => {
+                    responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer}.`
                 }, 1000)
             })
-            
-            room.addEventListener("mousemove", function(e) {
+
+            room.addEventListener("mousemove", function (e) {
                 var brushPos = getBrushPos(e.clientX, e.clientY)
                 var leftBut = detectLeftButton(e)
                 if (leftBut == 1) {
                     drawDot(brushPos.x, brushPos.y)
                 }
             }, false);
-            room.addEventListener("touchmove", function(e) {
+            room.addEventListener("touchmove", function (e) {
                 e.preventDefault();
                 var touch = e.targetTouches[0]
                 if (touch) {
@@ -259,11 +266,11 @@
             function getBrushPos(xRef, yRef) {
                 var roomRect = room.getBoundingClientRect()
                 return {
-                x: Math.floor((xRef - roomRect.left) / (roomRect.right - roomRect.left) * room.width),
-                y: Math.floor((yRef - roomRect.top) / (roomRect.bottom - roomRect.top) * room.height)
+                    x: Math.floor((xRef - roomRect.left) / (roomRect.right - roomRect.left) * room.width),
+                    y: Math.floor((yRef - roomRect.top) / (roomRect.bottom - roomRect.top) * room.height)
                 };
             }
-            function drawDot(mouseX,mouseY) {
+            function drawDot(mouseX, mouseY) {
                 // Skip - if you want to reveal image gradually
                 roomCanvas.globalCompositeOperation = "source-over";
                 roomCanvas.drawImage(img, 0, 0, room.width, room.height)
