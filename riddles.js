@@ -372,5 +372,21 @@ const riddles = [
         question: "What type of building has the most stories?",
         answer: ['library']
     },
-    
+    {
+        question: "What word has kst in the middle, in the beginning, and at the end?",
+        answer: ['Inkstand']
+    },
+    {
+        question: "Is always in front of you but cannot be seen?",
+        answer: ['Future']
+    },
+    {
+        question: "What is as light as a feather but the strongest man cannot hold for long?",
+        answer: ['Breath']
+    },
+    {
+        question: "Take one out and scratch my head I am now black but once was red. What am I ?",
+        answer: ['Match']
+    },
+
 ]
