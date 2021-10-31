@@ -198,7 +198,7 @@
             if (answerIndex !== -1) {
                 responseEl.classList.remove('text-red-500')
                 responseEl.classList.add('text-black', 'pt-4')
-                responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[choice]} is correct.`
+                responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[answerIndex]} is correct.`
                 giveUpButton.classList.add('hidden')
                 riddleAnswerForm.classList.add('hidden')
                 const newPoints = parseInt(pointsEl.textContent) + 1
