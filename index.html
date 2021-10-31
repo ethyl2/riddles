@@ -190,18 +190,12 @@
         const submitButton = document.getElementById('submit')
         const newRiddleButton = document.getElementById('new-riddle')
         const giveUpButton = document.getElementById('give-up')
-        let choice = 0
+        let answerIndex = -1
 
         riddleAnswerForm.addEventListener('submit', (e) => {
             e.preventDefault()
-            var correct = false
-            for (var i = 0; i < currentRiddle.answer.length; i++) {
-                if (currentRiddle && answerInput.value.trim().toLowerCase() === currentRiddle.answer[i]) {
-                    correct = true
-                    choice = i
-                }
-            }
-            if (correct) {
+            var answerIndex = currentRiddle.answer.indexOf(answerInput.value.trim().toLowerCase())
+            if (answerIndex !== -1) {
                 responseEl.classList.remove('text-red-500')
                 responseEl.classList.add('text-black', 'pt-4')
                 responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[choice]} is correct.`
@@ -210,7 +204,7 @@
                 const newPoints = parseInt(pointsEl.textContent) + 1
                 pointsEl.textContent = newPoints
                 window.localStorage.setItem('points', newPoints)
-
+            
             } else {
                 responseEl.classList.remove('text-black', 'pt-4')
                 responseEl.classList.add('text-red-500')
@@ -242,7 +236,7 @@
             responseEl.classList.add('pt-4')
             responseEl.textContent = `ok, better luck next time...`
             setTimeout(() => {
-                responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[choice][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
+                responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[answerIndex][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
             }, 1000)
         })
 
