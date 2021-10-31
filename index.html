@@ -76,7 +76,7 @@
             </button>
         </form>
     </div>
-    <p id="response" class="font-medium text-center select-none" style="font-family: 'Knewave', cursive;"></p>
+    <p id="response" class="font-medium text-center select-none" style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"></p>
     <div class="flex items-center justify-center mt-4">
         <button id="new-riddle"
                 type="button"
@@ -236,7 +236,7 @@
             responseEl.classList.add('pt-4')
             responseEl.textContent = `ok, better luck next time...`
             setTimeout(() => {
-                responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[answerIndex][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
+                responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
             }, 1000)
         })
 
