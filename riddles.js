@@ -388,5 +388,22 @@ const riddles = [
         question: "Take one out and scratch my head I am now black but once was red. What am I ?",
         answer: ['Match']
     },
+     {
+        question: "It’s shorter than the rest, but when you’re happy, you raise it like it’s the best. What is it?",
+        answer: ['Thumb']
+    },
+    {
+        question: "The more there is, the less you see. What am I?",
+        answer: ['Darkness']
+    },
+    {
+        question: "A word I know, six letters it contains, removes one letter, and twelve remains. What am I?",
+        answer: ['Dozens']
+    },
+    {
+        question: "What is it that no one wants, but no one wants to lose?",
+        answer: ['lawsuit']
+    },
+
 
 ]
