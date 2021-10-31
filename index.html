@@ -207,6 +207,7 @@
                 responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[choice]} is correct.`
                 giveUpButton.classList.add('hidden')
                 riddleAnswerForm.classList.add('hidden')
+                playSound("correct");
                 const newPoints = parseInt(pointsEl.textContent) + 1
                 pointsEl.textContent = newPoints
                 window.localStorage.setItem('points', newPoints)
