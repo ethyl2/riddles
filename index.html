@@ -194,7 +194,23 @@
 
         riddleAnswerForm.addEventListener('submit', (e) => {
             e.preventDefault()
-            var answerIndex = currentRiddle.answer.indexOf(answerInput.value.trim().toLowerCase())
+
+            // removes "a " or "an " if present at the start of a user's answer
+            var userAnswer = answerInput.value.trim().toLowerCase();
+            if (userAnswer.length > 1) {
+                var aCheck = userAnswer.slice(0, 2)
+                if (aCheck === "a ") {
+                    userAnswer = userAnswer.slice(2)
+                }
+            }
+            if (userAnswer.length > 2) {
+                var aCheck = userAnswer.slice(0, 3)
+                if (aCheck === "an ") {
+                    userAnswer = userAnswer.slice(3)
+                }
+            }
+            
+            var answerIndex = currentRiddle.answer.indexOf(userAnswer)
             if (answerIndex !== -1) {
                 responseEl.classList.remove('text-red-500')
                 responseEl.classList.add('text-black', 'pt-4')
@@ -237,7 +253,7 @@
             responseEl.textContent = `ok, better luck next time...`
             setTimeout(() => {
                 responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
-            }, 1000)
+            }, 1500)
         })
 
         room.addEventListener("mousemove", function (e) {
