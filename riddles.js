@@ -50,7 +50,7 @@ const riddles = [
     },
     {
         question: "What has a head and a tail but no body?",
-        answer: ['coin']
+        answer: ['coin', 'nickel', 'dime', 'quarter', 'penny']
     },
     {
         question: "What is the end of everything?",
@@ -114,7 +114,7 @@ const riddles = [
     },
     {
         question: "What's filled with keys but can't open a lock?",
-        answer: ['piano']
+        answer: ['piano', 'keyboard']
     },
     {
         question: "What contains 26 letters but only has 3 syllables?",
@@ -126,7 +126,7 @@ const riddles = [
     },
     {
         question: "What has branches, but no fruit, trunk or leaves?",
-        answer: ['bank']
+        answer: ['bank', 'git']
     },
     {
         question: "What has hands but can't clap?",
@@ -150,7 +150,7 @@ const riddles = [
     },
     {
         question: "What kind of band doesn't play music?",
-        answer: ['headband']
+        answer: ['headband', 'rubber band', 'hair band']
     },
     {
         question: "What can fill up a room but takes up no space?",
@@ -194,7 +194,7 @@ const riddles = [
     },
     {
         question: "What is bought for eating but never eaten?",
-        answer: ['plate']
+        answer: ['plate', 'silverware', 'cutlery', 'utensils']
     },
     {
         question: "What has a tail but no wings and can fly?",
@@ -214,7 +214,7 @@ const riddles = [
     },
     {
         question: "What flies when it's born, lies when it's alive, and runs when it's dead?",
-        answer: ['snowflake']
+        answer: ['snowflake', 'snow']
     },
     {
         question: "What is heavy forwards but not backwards?",
@@ -281,8 +281,8 @@ const riddles = [
         answer: ['m']
     },
     {
-        question: "What’s starts out black, turns red when used and white when you’re all through with it?",
-        answer: ['charcoal']
+        question: "What’s starts out black, turns red when used, and white when you’re all through with it?",
+        answer: ['charcoal', 'coal']
     },
     {
         question: "What’s the most curious letter?",
