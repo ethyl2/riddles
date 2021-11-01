@@ -204,6 +204,7 @@
             if (correct) {
                 responseEl.classList.remove('text-red-500')
                 responseEl.classList.add('text-black', 'pt-4')
+                playSound("correct");
                 responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[choice]} is correct.`
                 giveUpButton.classList.add('hidden')
                 riddleAnswerForm.classList.add('hidden')
@@ -215,6 +216,7 @@
                 responseEl.classList.remove('text-black', 'pt-4')
                 responseEl.classList.add('text-red-500')
                 responseEl.textContent = 'sorry, not what I was looking for. try again.'
+                 playSound("wrong");
             }
         })
 
@@ -300,6 +302,13 @@
             }
             return result
         }
+        // Function to play sound
+        function playSound(name) {
+
+                var audio = new Audio("sounds/" + name + ".mp3");
+                audio.play();
+
+            }
     </script>
 </body>
 </html>
