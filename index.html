@@ -244,6 +244,7 @@
         })
 
         newRiddleButton.addEventListener('click', () => {
+            //playSound('getanother')
             window.localStorage.setItem('potential_points', potentialPointsEl.textContent)
             window.location.reload()
         })
@@ -251,6 +252,7 @@
         const vowels = ['a', 'e', 'i', 'o', 'u']
         giveUpButton.addEventListener('click', () => {
             giveUpButton.classList.add('hidden')
+            playSound('giveup')
             riddleAnswerForm.classList.add('hidden')
             responseEl.classList.add('pt-4')
             responseEl.textContent = `ok, better luck next time...`
