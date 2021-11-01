@@ -34,7 +34,7 @@ const riddles = [
     },
     {
         question: "What goes up and down but doesn't move?",
-        answer: ['staircase']
+        answer: ['staircase', 'stair', 'stairs']
     },
     {
         question: "What has one eye but can't see?",
@@ -154,7 +154,7 @@ const riddles = [
     },
     {
         question: "What can fill up a room but takes up no space?",
-        answer: ['light']
+        answer: ['light', 'sound', 'noise']
     },
     {
         question: "What runs but doesn't walk, has a mouth but doesn't talk, has a head but never weeps, and has a bed but never sleeps?",
@@ -162,7 +162,7 @@ const riddles = [
     },
     {
         question: "What five-letter word has one left when two are removed?",
-        answer: ['stone']
+        answer: ['stone', 'toner', 'loner']
     },
     {
         question: "What kind of coat is always wet when you put it on?",
@@ -194,7 +194,7 @@ const riddles = [
     },
     {
         question: "What is bought for eating but never eaten?",
-        answer: ['plate', 'silverware', 'cutlery', 'utensils']
+        answer: ['plate', 'silverware', 'cutlery', 'utensils', 'spoon', 'fork', 'knife', 'bowl']
     },
     {
         question: "What has a tail but no wings and can fly?",
@@ -202,11 +202,11 @@ const riddles = [
     },
     {
         question: "What has many needles but can't stitch?",
-        answer: ['pine']
+        answer: ['pine', 'conifer', 'pine tree']
     },
     {
         question: "What cut in half is nothing, but turned on its side is everything?",
-        answer: ['eight']
+        answer: ['eight', '8']
     },
     {
         question: "What animal is named after the animal it eats?",
@@ -234,7 +234,7 @@ const riddles = [
     },
     {
         question: "How many months in a year have twenty-eight days?",
-        answer: ['twelve']
+        answer: ['twelve', '12']
     },
     {
         question: "What part of a chicken has the most feathers?",
@@ -246,7 +246,7 @@ const riddles = [
     },
     {
         question: "If two is company and three a crowd, what is four and five?",
-        answer: ['nine']
+        answer: ['nine', '9']
     },
     {
         question: "What can you give a bald man that he will never part with?",
@@ -306,7 +306,7 @@ const riddles = [
     },
     {
         question: "How many cats can you put in an empty box?",
-        answer: ['one']
+        answer: ['one', 'zero', '1', '0']
     },
     {
         question: "What can have one head, one foot, and four legs?",
@@ -362,7 +362,7 @@ const riddles = [
     },
     {
         question: "What kind of nail is a pain to hammer into wood?",
-        answer: ['fingernail']
+        answer: ['fingernail', 'toenail']
     },
     {
         question: "What is at the center of Earth?",
@@ -406,11 +406,11 @@ const riddles = [
     },
     {
         question: "I have many faces, expressions, and emotions, and I am usually right at your fingertips. What am I?",
-        answer: ['Emojis']
+        answer: ['emojis']
     },
     {
-        question: "I’m full of holes but strong as steel. What am I?",
-        answer: ['Chain']
+        question: "I’m full of holes but can be as strong as steel. What am I?",
+        answer: ['chain']
     },
 
 ]
