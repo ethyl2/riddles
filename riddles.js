@@ -22,7 +22,7 @@ const riddles = [
     },
     {
         question: "What's black when it's clean but white when it's dirty?",
-        answer: ['chalkboard']
+        answer: ['chalkboard', 'blackboard']
     },
     {
         question: "Where does today come before yesterday?",
@@ -374,31 +374,31 @@ const riddles = [
     },
     {
         question: "What word has kst in the middle, in the beginning, and at the end?",
-        answer: ['Inkstand']
+        answer: ['inkstand']
     },
     {
         question: "Is always in front of you but cannot be seen?",
-        answer: ['Future']
+        answer: ['future']
     },
     {
         question: "What is as light as a feather but the strongest man cannot hold for long?",
-        answer: ['Breath']
+        answer: ['breath']
     },
     {
         question: "Take one out and scratch my head I am now black but once was red. What am I ?",
-        answer: ['Match']
+        answer: ['match']
     },
      {
         question: "It’s shorter than the rest, but when you’re happy, you raise it like it’s the best. What is it?",
-        answer: ['Thumb']
+        answer: ['thumb']
     },
     {
         question: "The more there is, the less you see. What am I?",
-        answer: ['Darkness']
+        answer: ['darkness']
     },
     {
         question: "A word I know, six letters it contains, removes one letter, and twelve remains. What am I?",
-        answer: ['Dozens']
+        answer: ['dozens']
     },
     {
         question: "What is it that no one wants, but no one wants to lose?",

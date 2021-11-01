@@ -76,7 +76,7 @@
             </button>
         </form>
     </div>
-    <p id="response" class="font-medium text-center select-none" style="font-family: 'Knewave', cursive;"></p>
+    <p id="response" class="font-medium text-center select-none" style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"></p>
     <div class="flex items-center justify-center mt-4">
         <button id="new-riddle"
                 type="button"
@@ -190,28 +190,38 @@
         const submitButton = document.getElementById('submit')
         const newRiddleButton = document.getElementById('new-riddle')
         const giveUpButton = document.getElementById('give-up')
-        let choice = 0
+        let answerIndex = -1
 
         riddleAnswerForm.addEventListener('submit', (e) => {
             e.preventDefault()
-            var correct = false
-            for (var i = 0; i < currentRiddle.answer.length; i++) {
-                if (currentRiddle && answerInput.value.trim().toLowerCase() === currentRiddle.answer[i]) {
-                    correct = true
-                    choice = i
+
+            // removes "a " or "an " if present at the start of a user's answer
+            var userAnswer = answerInput.value.trim().toLowerCase();
+            if (userAnswer.length > 1) {
+                var aCheck = userAnswer.slice(0, 2)
+                if (aCheck === "a ") {
+                    userAnswer = userAnswer.slice(2)
                 }
             }
-            if (correct) {
+            if (userAnswer.length > 2) {
+                var aCheck = userAnswer.slice(0, 3)
+                if (aCheck === "an ") {
+                    userAnswer = userAnswer.slice(3)
+                }
+            }
+            
+            var answerIndex = currentRiddle.answer.indexOf(userAnswer)
+            if (answerIndex !== -1) {
                 responseEl.classList.remove('text-red-500')
                 responseEl.classList.add('text-black', 'pt-4')
-                playSound("correct");
-                responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[choice]} is correct.`
+                responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[answerIndex]} is correct.`
+
                 giveUpButton.classList.add('hidden')
                 riddleAnswerForm.classList.add('hidden')
                 const newPoints = parseInt(pointsEl.textContent) + 1
                 pointsEl.textContent = newPoints
                 window.localStorage.setItem('points', newPoints)
-
+            
             } else {
                 responseEl.classList.remove('text-black', 'pt-4')
                 responseEl.classList.add('text-red-500')
@@ -244,8 +254,8 @@
             responseEl.classList.add('pt-4')
             responseEl.textContent = `ok, better luck next time...`
             setTimeout(() => {
-                responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[choice][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
-            }, 1000)
+                responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
+            }, 1500)
         })
 
         room.addEventListener("mousemove", function (e) {
