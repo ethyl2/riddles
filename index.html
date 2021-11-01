@@ -39,14 +39,14 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <h1 class="neonText pt-4 pb-2 text-2xl text-center md:text-3xl"
+    <h1 class="pt-4 pb-2 text-2xl text-center neonText md:text-3xl"
         style="font-family: 'Knewave', cursive;">
         riddles in the dark
     </h1>
-    <div id="placeholder" style="width: 650px; height: 435px;" class="bg-yellow-200 mx-auto mt-4 flex items-center justify-center">
+    <div id="placeholder" style="width: 650px; height: 435px;" class="flex items-center justify-center mx-auto mt-4 bg-yellow-200">
         <div class="mx-auto bg-black" style="width: 640px; height: 425px;"></div>
     </div>
-    <div id="scene-frame" style="width: 650px; height: 435px;" class="hidden bg-yellow-200 mx-auto mt-4 flex items-center justify-center">
+    <div id="scene-frame" style="width: 650px; height: 435px;" class="flex items-center justify-center hidden mx-auto mt-4 bg-yellow-200">
         <div id="scene"
              class="relative mx-auto overflow-x-auto"
              style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover">
@@ -66,8 +66,8 @@
     </div>
     <div class="flex items-center justify-center">
         <form id="answer-form" class="p-8">
-            <label for="riddle-answer" class="text-black select-none pr-2" style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;">what's the answer?</label>
-            <input type="text" class="mr-2 p-1 border" name="riddle-answer" id="riddle-answer" />
+            <label for="riddle-answer" class="pr-2 text-black select-none" style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;">what's the answer?</label>
+            <input type="text" class="p-1 mr-2 border" name="riddle-answer" id="riddle-answer" />
             <button id="submit"
                     type="submit"
                     class="px-2 py-1 font-medium text-yellow-300 bg-gray-500 rounded cursor-not-allowed"
@@ -221,12 +221,13 @@
                 const newPoints = parseInt(pointsEl.textContent) + 1
                 pointsEl.textContent = newPoints
                 window.localStorage.setItem('points', newPoints)
+                playSound('correct')
             
             } else {
                 responseEl.classList.remove('text-black', 'pt-4')
                 responseEl.classList.add('text-red-500')
                 responseEl.textContent = 'sorry, not what I was looking for. try again.'
-                 playSound("wrong");
+                playSound('wrong')
             }
         })
 
@@ -314,11 +315,9 @@
         }
         // Function to play sound
         function playSound(name) {
-
-                var audio = new Audio("sounds/" + name + ".mp3");
-                audio.play();
-
-            }
+            var audio = new Audio("sounds/" + name + ".mp3")
+            audio.play()
+        }
     </script>
 </body>
 </html>
