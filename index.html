@@ -16,30 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
     <link rel="icon" type="image/x-icon" href="favicon.ico?">
-    <style>
-        .neonText {
-            color: black;
-            animation: flicker 1.5s infinite alternate;
-        }
-
-        @keyframes flicker {
-
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ffbc37, 0 0 80px #ffaa38, 0 0 90px #ffe423, 0 0 100px #ff1313, 0 0 150px #ff5700;
-            }
-
-            20%, 24%, 55% {
-                text-shadow: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="min-h-screen mb-0 overflow-x-auto select-none" style="background:#2e2a20;">
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <h1 class="pt-4 pb-2 text-2xl text-center neonText md:text-3xl"
+    <h1 class="pt-4 pb-2 text-2xl text-center text-black neon-text md:text-3xl"
         style="font-family: 'Knewave', cursive;">
         riddles in the dark
     </h1>
@@ -95,7 +79,7 @@
         <span class="font-medium" style="font-family: 'Knewave', cursive;">/</span>
         <span id="potential-points" class="font-bold">1</span>
     </p>
-    <footer class="flex items-center justify-center py-16 mt-32 mb-0 text-center bg-yellow-200">
+    <footer class="flex items-center justify-between px-4 py-16 mt-32 mb-0 text-center bg-yellow-200">
         <a href="https://github.com/ethyl2/riddles"
            target="_blank"
            rel="noopener noreferrer"
@@ -118,6 +102,15 @@
             </svg>
             <span class="sr-only">GitHub Repo</span>
         </a>
+        <label class="relative block text-base cursor-pointer select-none pl-9 checkbox-container" style="font-family: 'Knewave', cursive;">Noise, please!
+            <input 
+                type="checkbox" 
+                name="allow-audio" 
+                id="allow-audio"
+                class="absolute w-0 h-0 opacity-0 cursor-pointer"
+                />
+            <span class="absolute top-0 left-0 w-6 h-6 bg-white rounded checkmark"></span>
+        </label>
     </footer>
 
     <script src="riddles.js" async defer></script>
@@ -147,7 +140,20 @@
             sceneFrame.classList.remove('hidden')
             sceneFrame.classList.add('block')
 
+            // Play beginning sound (if audio permission is on)
+            const beginningSounds = [
+                { name: 'whispers', type: 'wav' },
+                { name: 'laugh', type: 'wav' },
+                { name: 'organ', type: 'wav' },
+                { name: 'timer', type: 'wav' },
+                { name: 'creep', type: 'wav' }
+            ]
+            const beginningSoundIndex = Math.floor(Math.random() * beginningSounds.length)
+            setTimeout(()=> {
+                playSound(beginningSounds[beginningSoundIndex].name, beginningSounds[beginningSoundIndex].type)
+            }, 500)
         })
+        
 
         let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
 
@@ -163,6 +169,27 @@
         const answerInput = document.getElementById('riddle-answer')
         const responseEl = document.getElementById('response')
 
+        // Get user's latest audio preferences
+        let audio
+        const audioCheckboxEl = document.getElementById('allow-audio')
+        const allowAudio =JSON.parse(window.localStorage.getItem('audio_permission'))
+        if (allowAudio) {
+            audioCheckboxEl.checked = true
+        } else {
+            audioCheckboxEl.checked = false
+        }
+        
+        audioCheckboxEl.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                window.localStorage.setItem('audio_permission', true)
+                audio.play()
+            } else {
+                window.localStorage.setItem('audio_permission', false)
+                audio.pause()
+            }
+        })
+
+        
         var room = document.getElementById("room"),
             roomCanvas = room.getContext('2d'),
             brushRadius = 300,
@@ -244,9 +271,11 @@
         })
 
         newRiddleButton.addEventListener('click', () => {
-            //playSound('getanother')
+            playSound('getanother')
             window.localStorage.setItem('potential_points', potentialPointsEl.textContent)
-            window.location.reload()
+            setTimeout(()=> {
+                window.location.reload()
+            }, 500)
         })
 
         const vowels = ['a', 'e', 'i', 'o', 'u']
@@ -316,9 +345,14 @@
             return result
         }
         // Function to play sound
-        function playSound(name) {
-            var audio = new Audio("sounds/" + name + ".mp3")
-            audio.play()
+        function playSound(name, type='mp3') {
+            if (audioCheckboxEl.checked) {
+                if (audio) {
+                    audio.pause()
+                }
+                audio = new Audio("sounds/" + name + "." + type)
+                audio.play()
+            }
         }
     </script>
 </body>

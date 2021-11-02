@@ -1,0 +1,68 @@
+.neon-text {
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ffbc37,
+      0 0 80px #ffaa38, 0 0 90px #ffe423, 0 0 100px #ff1313, 0 0 150px #ff5700;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+/* The audio permission checkbox container */
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #2e2a20;
+}
+
+/* When the checkbox is checked, add a dark purple background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: rebeccapurple;
+}
+
+/* When the checkbox is checked and during mouse-over, add a grey background */
+.checkbox-container:hover input:checked ~ .checkmark {
+  background-color: #2e2a20;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container input:focus ~ .checkmark {
+  outline: 2px solid black;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 0px;
+  width: 8px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
