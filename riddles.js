@@ -302,7 +302,7 @@ const riddles = [
     },
     {
         question: "What do you add to make one disappear?",
-        answer: ['g']
+        answer: ['g', 'n']
     },
     {
         question: "How many cats can you put in an empty box?",
@@ -314,7 +314,7 @@ const riddles = [
     },
     {
         question: "What do you call a bear without an ear?",
-        answer: ['b']
+        answer: ['b', 'bee']
     },
     {
         question: "What do you throw out to use it, but take in when you don't want to use it?",

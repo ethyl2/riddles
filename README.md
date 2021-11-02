@@ -16,9 +16,9 @@ Then submit a pull request.
 
 1. A timer, to see how fast a user can find the riddle and solve it.
 2. Additional choices of images for the rooms and the masks.
-3. Social sharing links.
+3. Social sharing links and more meta info in head.
 4. Add a form to submit riddle suggestions.
-5. Sound effects, with a toggle for audio permission.
+5. More sound effect options.
 6. More info in the footer.
 7. Possibly other pages with different Halloween-related games or other content.
 8. What else sounds interesting?
