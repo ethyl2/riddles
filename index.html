@@ -9,6 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Riddles in the Dark</title>
     <meta name="description" content="Can you find and solve the riddles?">
+    <meta property="og:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png">
+    <meta property="og:url" content="https://ethyl2.github.io/riddles/">
+    <meta property="og:title" content="Riddles in the Dark">
+    <meta property="og:description" content="Can you find and solve the riddles?">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@ethyl22">
+    <meta name="twitter:title" content="Riddles in the Dark">
+    <meta name="twitter:description" content="Can you find and solve the riddles?">
+    <meta name="twitter:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -192,15 +201,15 @@
         }
 
         audioCheckboxEl.addEventListener('change', (e) => {
-          if (e.target.checked) {
-              window.localStorage.setItem('audio_permission', true)
-              if (audio) {
-                  audio.play()
-              }
-          } else {
-              window.localStorage.setItem('audio_permission', false)
-              audio.pause()
-          }
+            if (e.target.checked) {
+                window.localStorage.setItem('audio_permission', true)
+                if (audio) {
+                    audio.play()
+                }
+            } else {
+                window.localStorage.setItem('audio_permission', false)
+                audio.pause()
+            }
         })
 
         var room = document.getElementById('room'),
