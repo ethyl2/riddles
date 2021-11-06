@@ -38,7 +38,11 @@ const riddles = [
   },
   {
       question: "What has one eye but can't see?",
-      answer: ['needle']
+      answer: ['needle', 'storm']
+  },
+  {
+    question: "What two things are moving left to right, right now?",
+    answer: ['eyes', 'my eyes']
   },
   {
       question: "What has many teeth but can't bite?",
@@ -57,8 +61,12 @@ const riddles = [
       answer: ['g']
   },
   {
-      question: "What word in the dictionary is spelled wrong?",
-      answer: ['wrong']
+    question: "What word in the dictionary is spelled wrong?",
+    answer: ['wrong']
+  },
+  {
+    question: "What word in the dictionary is always pronounced wrong?",
+    answer: ['wrong']
   },
   {
       question: "What can go up a chimney down, but can't go down a chimney up?",
@@ -101,12 +109,24 @@ const riddles = [
       answer: ['short']
   },
   {
+    question: "What would a janitor say if he jumped out of a closet?",
+    answer: ['supplies', 'supplies!']
+  },
+  {
+    question: "What kind of sweets do geologists like best?",
+    answer: ['rock candy']
+  },
+  {
       question: "Where can you find cities, streets, parks and shops but no people?",
       answer: ['map']
   },
   {
       question: "What can go through towns and over mountains, but never moves?",
-      answer: ['road']
+      answer: ['road', 'street']
+  },
+  {
+    question: "What can go through a mountain, but never moves?",
+    answer: ['tunnel']
   },
   {
       question: "What has lots of holes but still can hold water?",
@@ -393,6 +413,10 @@ const riddles = [
       answer: ['b', 'bee']
   },
   {
+    question: "What do you call a bear without teeth?",
+    answer: ['gummy bear', 'gummybear', 'gummi bear', 'gummibear']
+  },
+  {
       question: "What do you throw out to use it, but take in when you don't want to use it?",
       answer: ['anchor']
   },
@@ -441,8 +465,20 @@ const riddles = [
       answer: ['pillow']
   },
   {
+    question: "What has toes but no feet or legs?",
+    answer: ['tomatoes']
+  },
+  {
       question: "What kind of nail is a pain to hammer into wood?",
       answer: ['fingernail', 'toenail']
+  },
+  {
+    question: "What can point in every direction but can't reach a destination by itself?",
+    answer: ['finger']
+  },
+  {
+    question: "What doesn't have flesh, feathers, scales, or bone, but have fingers & thumbs of their own?",
+    answer: ['glove', 'gloves']
   },
   {
       question: "What is at the center of Earth?",
@@ -463,6 +499,10 @@ const riddles = [
   {
       question: "What is as light as a feather but the strongest man cannot hold for long?",
       answer: ['breath']
+  },
+  {
+    question: "What is harder to catch the faster you run?",
+    answer: ['breath', 'your breath']
   },
   {
       question: "Take one out and scratch my head I am now black but once was red. What am I?",
@@ -573,6 +613,10 @@ const riddles = [
       answer: ['soap', 'bar of soap']
   },
   {
+    question: "What can be given, or taken, but usually not moved?",
+    answer: ['bath', 'shower']
+  },
+  {
       question: "What is round on both sides and high in the middle?",
       answer: ['ohio', 'onto', 'oleo', 'outgo', 'ovolo', 'ortho', 'outdo', 'outro', 'overdo', 'ossobuco', 'ocotillo', 'obbligato']
   },
@@ -589,8 +633,20 @@ const riddles = [
       answer: ['water']
   },
   {
+    question: "What washes up on tiny beaches?",
+    answer: ['microwaves']
+  },
+  {
       question: "What can turn everything around but can't move?",
       answer: ['mirror']
+  },
+  {
+    question: "What makes two people out of one?",
+    answer: ['mirror']
+  },
+  {
+    question: "What is somebody if you look in its face, but is nobody if you look at its back?",
+    answer: ['mirror']
   },
   {
       question: "What causes damage yet is used by small children?",
@@ -613,6 +669,10 @@ const riddles = [
       answer: ['dead end']
   },
   {
+    question: "What can you use to fix a jack-o-lantern?",
+    answer: ['pumpkin patch']
+  },
+  {
       question: "What is round and violent?",
       answer: ['vicious circle']
   },
@@ -633,8 +693,20 @@ const riddles = [
       answer: ['meatball']
   },
   {
+    question: "How do you spell 'cow' with 13 letters?",
+    answer: ['see o double you', 'seeodoubleyou']
+  },
+  {
+    question: "What type of person scares Snap, Crackle, & Pop?",
+    answer: ['cereal killer']
+  },
+  {
       question: "With what does the sky pay its bills?",
       answer: ['raincheck']
+  },
+  {
+    question: "What has no feet, hands, or wings, yet climbs to the sky?",
+    answer: ['smoke']
   },
   {
       question: "What do you call a broken can opener?",
@@ -689,6 +761,18 @@ const riddles = [
       answer: ['snowflakes']
   },
   {
+    question: "What do you call a snowman in the summer?",
+    answer: ['puddle', 'water']
+  },
+  {
+    question: "What do you get when you cross a snowman & a vampire?",
+    answer: ['frostbite']
+  },
+  {
+    question: "What is a mummy's favorite type of music?",
+    answer: ['wrap']
+  },
+  {
       question: "What do nuts say when they sneeze?",
       answer: ['cashew']
   },
@@ -700,4 +784,68 @@ const riddles = [
       question: "What do you call a fairy who needs a bath?",
       answer: ['stinkerbell']
   },
+  {
+    question: "What kind of ship has 2 mates but no captain?",
+    answer: ['relationship', 'friendship']
+  },
+  {
+    question: "What kind of river can you cross without a boat or bridge, & without getting wet?",
+    answer: ['frozen', 'frozen river', 'river that is frozen', 'river that\'s frozen']
+  },
+  {
+    question: "You go at red and stop at green. What am I?",
+    answer: ['watermelon']
+  },
+  {
+    question: "What is higher without a head?",
+    answer: ['pillow']
+  },
+  {
+    question: "What is easy to life but hard to throw?",
+    answer: ['feather', 'paper', 'leaf']
+  },
+  {
+    question: "What is the one thing that everyone can agree is between heaven and earth?",
+    answer: ['and']
+  },
+  {
+    question: "If you drop a yellow hat in the Red Sea, what does it become?",
+    answer: ['wet']
+  },
+  {
+    question: "What color is the wind?",
+    answer: ['blew']
+  },
+  {
+    question: "What do you answer, though it doesn't ask you questions?",
+    answer: ['telephone', 'phone']
+  },
+  {
+    question: "If fish lived on land, in which country would they reside?",
+    answer: ['finland']
+  },
+  {
+    question: "What is full during the day but empty at night?",
+    answer: ['shoes']
+  },
+  {
+    question: "What might Sir Lancelot wear to bed?",
+    answer: ['knight gown', 'knightgown']
+  },
+  {
+    question: "What is the oldest tree named?",
+    answer: ['elder'] 
+  },
+  {
+    question: "What does a stone become when you put it in water?",
+    answer: ['whetstone'] 
+  },
+  {
+    question: "What type of drum can't be played?",
+    answer: ['eardrum', 'conundrum'] 
+  },
+  {
+    question: "What name has six letters, but if you take a letter away, it becomes seven?",
+    answer: ['steven'] 
+  }
 ]

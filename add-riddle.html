@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Submit Riddle | Riddles in the Dark</title>
+    <meta name="description" content="Do you have a riddle we should tell in the dark?">
+    <meta property="og:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png">
+    <meta property="og:url" content="https://ethyl2.github.io/riddles/">
+    <meta property="og:title" content="Submit Riddle | Riddles in the Dark">
+    <meta property="og:description" content="Do you have a riddle we should tell in the dark?">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@ethyl22">
+    <meta name="twitter:title" content="Submit Riddle | Riddles in the Dark">
+    <meta name="twitter:description" content="Do you have a riddle we should tell in the dark?">
+    <meta name="twitter:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen mb-0 overflow-x-auto select-none" style="background:#2e2a20;">
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <h1 class="pt-4 pb-2 text-2xl text-center text-black neon-text md:text-3xl"
+        style="font-family: 'Knewave', cursive;">
+        riddles in the dark
+    </h1>
+    <h2
+        class="py-4 text-lg text-center text-black md:text-xl" 
+        style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
+        >
+        do you have a riddle that would be perfect to tell in the dark?
+    </h2>
+    <p 
+        class="pb-2 text-base text-center text-black md:text-lg"
+        style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
+    >
+        send it to us, please
+    </p>
+    <form
+        action="https://formspree.io/f/xjvjqpjz"
+        method="POST"
+        class="relative flex flex-col w-5/6 p-4 mx-auto mt-4 space-y-4 text-yellow-300 bg-black rounded md:w-1/2 md:p-16 md:mt-8"
+    >
+        <label class="flex flex-col items-center justify-start w-full md:flex-row" style="font-family: 'Knewave', cursive;">
+            your name
+            <input 
+                type="text" 
+                name="name"
+                id="name"
+                class="flex-1 p-1 my-1 ml-2 text-white rounded md:ml-2" 
+                style="font-family: sans-serif; background: #59523e;"
+                required
+            />
+        </label>
+        <label class="flex flex-col items-center justify-start w-full md:flex-row" style="font-family: 'Knewave', cursive;">
+            your email
+            <input 
+                type="email" 
+                name="_replyto"
+                id="_replyto"
+                class="flex-1 p-1 my-1 ml-2 text-white rounded md:ml-2" 
+                style="font-family: sans-serif; background:  #362f20;"
+                required
+            />
+        </label>
+        <label 
+            class="flex flex-col items-center justify-start w-full" style="font-family: 'Knewave', cursive;"
+        >
+            your riddle's question
+            <textarea 
+                name="question"
+                id="question"
+                class="flex-1 w-full p-1 my-1 text-white rounded" 
+                style="font-family: sans-serif; background: #29251c;"
+                required
+            ></textarea>
+        </label>
+        <label class="flex flex-col items-center justify-start w-full" style="font-family: 'Knewave', cursive;">
+            your riddle's possible answers
+            <textarea 
+                name="answers"
+                id="answers"
+                class="flex-1 w-full p-1 my-1 text-white rounded" 
+                style="font-family: sans-serif; background: #1c1a13;"
+                required
+            ></textarea>
+        </label>
+        <button 
+            type="submit" 
+            class="w-24 px-2 py-1 mx-auto text-lg text-black border border-yellow-300 rounded neon-text hover:bg-gray-900 " 
+            style="font-family: 'Knewave', cursive;"
+        >
+            send
+        </button>
+        <img class="absolute bottom-0 right-0 w-12 h-12 pr-1 md:w-24 md:h-24 md:pr-4" src="images/cat-eyes.gif" alt="cat eyes in the dark" />
+    </form>
+
+    <footer class="flex items-center justify-center px-4 py-16 mt-32 mb-0 text-center bg-yellow-200">
+        <a href="https://github.com/ethyl2/riddles" target="_blank" rel="noopener noreferrer"
+          class="p-1 rounded hover:bg-white">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+            focusable="false" width="1.73em" height="1.5em" style="
+                                -ms-transform: rotate(360deg);
+                                -webkit-transform: rotate(360deg);
+                                transform: rotate(360deg);
+                            " preserveAspectRatio="xMidYMid meet" viewBox="0 0 1227.825 1000">
+            <path
+              d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+              fill="black" />
+          </svg>
+          <span class="sr-only">GitHub Repo</span>
+        </a>
+      </footer>
+</body>
+</html>
