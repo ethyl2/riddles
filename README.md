@@ -14,7 +14,7 @@ Then submit a pull request.
 
 ## Future Feature Possibilities
 
-1. A timer, to see how fast a user can find the riddle and solve it.
+1. Add animation to the timer hourglass.
 2. Additional choices of images for the rooms and the masks.
 3. Social sharing links.
 4. A property of the riddle object that can be used to store a riddle's explanation, and a way to display that explanation.
