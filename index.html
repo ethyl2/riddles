@@ -31,11 +31,14 @@
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <header>
+        <h1 class="pt-4 pb-2 text-2xl text-center text-black neon-text md:text-3xl"
+            style="font-family: 'Knewave', cursive;">
+            riddles in the dark
+        </h1>
+    </header>
 
-    <h1 class="pt-4 pb-2 text-2xl text-center text-black neon-text md:text-3xl"
-        style="font-family: 'Knewave', cursive;">
-        riddles in the dark
-    </h1>
+    <!-- SCENE SECTION -->
     <div id="placeholder" style="width: 650px; height: 435px;" class="flex items-center justify-center mx-auto mt-4 bg-yellow-200">
         <div class="mx-auto bg-black" style="width: 640px; height: 425px;"></div>
     </div>
@@ -53,9 +56,10 @@
                     width="640"
                     height="425"
                     style="max-width: 640px; cursor:  crosshair; cursor: url('images/flashlight3.png') 53 53, crosshair;"></canvas>
-
         </div>
     </div>
+
+    <!-- FORM SECTION -->
     <div class="flex items-center justify-center">
         <form id="answer-form" class="p-8">
             <label for="riddle-answer" class="pr-2 text-black select-none" style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;">what's the answer?</label>
@@ -68,7 +72,15 @@
             </button>
         </form>
     </div>
-    <p id="response" class="font-medium text-center select-none" style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"></p>
+
+    <!-- RESPONSE SECTION -->
+    <p 
+        id="response" 
+        class="font-medium text-center select-none" 
+        style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;">
+    </p>
+    
+    <!-- BUTTONS SECTION -->
     <div class="flex items-center justify-center mt-4">
         <button id="new-riddle"
                 type="button"
@@ -81,12 +93,26 @@
             give up?
         </button>
     </div>
+
+    <!-- SCORE -->
     <p class="mt-4 font-medium text-center" style="text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff">
         <span class="font-medium" style="font-family: 'Knewave', cursive;">score:</span>
         <span id="points" class="font-bold">0</span>
         <span class="font-medium" style="font-family: 'Knewave', cursive;">/</span>
         <span id="potential-points" class="font-bold">1</span>
     </p>
+
+    <!-- TIMER -->
+    <div class="flex items-center justify-center w-full pt-4">
+        <div 
+            class="flex items-center justify-center w-16 h-16 text-center bg-center bg-no-repeat bg-contain rounded" 
+            style="background: url('images/hourglass.png'); background-size: contain;"
+        >
+            <p id="time" class="pt-8 text-xs font-bold text-center"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer class="px-4 py-16 mt-32 mb-0 text-center bg-yellow-200">
         <div class="flex items-center justify-between">
             <label class="relative block text-base cursor-pointer select-none pl-9 checkbox-container"
@@ -152,6 +178,7 @@
     </footer>
 
     <script src="riddles.js" async defer></script>
+    <script src="timer.js" async defer></script>
     <script type='text/javascript'>
         window.addEventListener('load', () => {
             // Read the randomized riddle index array from localStorage.
@@ -190,9 +217,19 @@
             setTimeout(()=> {
                 playSound(beginningSounds[beginningSoundIndex].name, beginningSounds[beginningSoundIndex].type)
             }, 500)
+
+
+            // initiate timer
+            timer = new Timer();
+            timer.start();
+            setInterval(() => {
+                const timeInSeconds = Math.round(timer.getTime() / 1000)
+                timerEl.textContent = timeInSeconds
+            }, 100)
         })
 
-
+        let timer = null
+        const timerEl = document.getElementById('time')
         let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
 
         const verticalPositions = [
@@ -295,10 +332,10 @@
 
             var answerIndex = currentRiddle.answer.indexOf(userAnswer)
             if (answerIndex !== -1) {
+                timer.stop()
                 responseEl.classList.remove('text-red-500')
                 responseEl.classList.add('text-black', 'pt-4')
-                responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[answerIndex]} is correct.`
-
+                responseEl.textContent = `congratulations, smarty pants! ${currentRiddle.answer[answerIndex]} is correct & you solved it in ${Math.round(timer.getTime() / 1000)} seconds!`
                 giveUpButton.classList.add('hidden')
                 riddleAnswerForm.classList.add('hidden')
                 const newPoints = parseInt(pointsEl.textContent) + 1

@@ -52,6 +52,10 @@ const riddles = [
       question: "What has words but never speaks?",
       answer: ['book']
   },
+    {
+        question: "What hurts without moving, poisons without touching, bears the truth and sometimes lies?",
+        answer: ['words']
+    },
   {
       question: "What has a head and a tail but no body?",
       answer: ['coin', 'nickel', 'dime', 'quarter', 'penny']
@@ -124,6 +128,11 @@ const riddles = [
       question: "What can go through towns and over mountains, but never moves?",
       answer: ['road', 'street']
   },
+    {
+        question: "What rock group has four men who don't sing?",
+        answer: ['mount rushmore', 'mt rushmore']
+    },
+
   {
     question: "What can go through a mountain, but never moves?",
     answer: ['tunnel']
@@ -313,6 +322,10 @@ const riddles = [
       answer: ['leek']
   },
   {
+    question: "What's the worst vegetable to have on a ship?",
+    answer: ['leek']
+  },
+  {
       question: "What weightless thing makes a bucket lighter?",
       answer: ['hole']
   },
@@ -327,6 +340,10 @@ const riddles = [
   {
       question: "What can you see in water that never gets wet?",
       answer: ['reflection']
+  },
+  {
+    question: "What is a lifeguard's favorite game?",
+    answer: ['pool']
   },
   {
       question: "Where can you finish a book without finishing a sentence?",
@@ -412,38 +429,42 @@ const riddles = [
       question: "What do you call a bear without an ear?",
       answer: ['b', 'bee']
   },
-  {
-    question: "What do you call a bear without teeth?",
-    answer: ['gummy bear', 'gummybear', 'gummi bear', 'gummibear']
-  },
-  {
-      question: "What do you throw out to use it, but take in when you don't want to use it?",
-      answer: ['anchor']
-  },
-  {
-      question: "Who shaves several times a day but still has a beard?",
-      answer: ['barber']
-  },
-  {
+    {
+        question: "What do you call a bear without teeth?",
+        answer: ['gummy bear', 'gummybear', 'gummi bear', 'gummibear']
+    },
+    {
+        question: "What do you throw out to use it, but take in when you don't want to use it?",
+        answer: ['anchor']
+    },
+    {
+        question: "Who shaves several times a day but still has a beard?",
+        answer: ['barber']
+    },
+    {
       question: "What’s the first thing a gardener puts in their garden at the beginning of the year?",
       answer: ['foot']
-  },
-  {
-      question: "What can you hold without ever touching it?",
-      answer: ['conversation']
-  },
-  {
-      question: "What can answer in any language?",
-      answer: ['echo']
-  },
-  {
-      question: "What speaks without a mouth?",
-      answer: ['echo']
-  },
-  {
+    },
+    {
+        question: "What can you hold without ever touching it?",
+        answer: ['conversation']
+    },
+    {
+        question: "What can answer in any language?",
+        answer: ['echo']
+    },
+    {
+        question: "What speaks without a mouth?",
+        answer: ['echo']
+    },
+    {
+        question: "Many have heard me; no one has seen me. I won't speak back until spoken to. What am I?",
+        answer: ['echo']
+    },
+    {
       question: "What falls down from great heights but is never hurt?",
       answer: ['rain']
-  },
+    },
   {
       question: "What can you see twice in a week or once in a year – but not once in a million months?",
       answer: ['e']
@@ -614,7 +635,7 @@ const riddles = [
   },
   {
     question: "What can be given, or taken, but usually not moved?",
-    answer: ['bath', 'shower']
+    answer: ['bath', 'shower', 'advice']
   },
   {
       question: "What is round on both sides and high in the middle?",
@@ -652,6 +673,10 @@ const riddles = [
       question: "What causes damage yet is used by small children?",
       answer: ['scissors']
   },
+    {
+        question: "Poke your fingers in my eyes and I will open wide my jaws. What am I?",
+        answer: ['scissors']
+    },
   {
       question: "If there are four apples and you take away three, how many do you have?",
       answer: ['three', '3']
@@ -773,6 +798,10 @@ const riddles = [
     answer: ['wrap']
   },
   {
+    question: "What is a rabbit's favorite type of music?",
+    answer: ['hip hop']
+  },
+  {
       question: "What do nuts say when they sneeze?",
       answer: ['cashew']
   },
@@ -827,6 +856,10 @@ const riddles = [
   {
     question: "What is full during the day but empty at night?",
     answer: ['shoes']
+  },
+  {
+    question: "What has a tongue, and though it cannot walk, it's known to get around?",
+    answer: ['shoe']
   },
   {
     question: "What might Sir Lancelot wear to bed?",
