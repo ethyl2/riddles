@@ -847,7 +847,7 @@ const riddles = [
   },
   {
       question: "What do snowmen eat for breakfast?",
-      answer: ['snowflakes']
+      answer: ['snowflakes', 'frosted flakes']
   },
   {
     question: "What do you call a snowman in the summer?",
