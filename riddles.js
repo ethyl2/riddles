@@ -227,7 +227,7 @@ const riddles = [
   },
   {
     question: "What has rings made or rock and ice that can't be worn?",
-    answer: [ 'Saturn']
+    answer: [ 'saturn']
   },
   {
       question: 'What is at the end of a rainbow?',
