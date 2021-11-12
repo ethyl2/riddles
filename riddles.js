@@ -161,6 +161,10 @@ const riddles = [
       question: "What has hands but can't clap?",
       answer: ['clock']
   },
+    {
+      question: "If you take away one hand, some will remain. What am I?",
+      answer: ['handsome']
+    },
   {
       question: "What shows up once in June, twice in November, but never in May?",
       answer: ['e']
@@ -170,9 +174,13 @@ const riddles = [
       answer: ['promise']
   },
   {
-      question: "What run all around a backyard yet never move?",
+      question: "What can run all around a backyard yet never moves?",
       answer: ['fence']
   },
+    {
+      question: "What is always running yet never gets tired or hot?",
+      answer: ['fridge, refrigerator']
+    },
   {
       question: "What kind of cup can't hold water?",
       answer: ['hiccup']
@@ -216,6 +224,10 @@ const riddles = [
   {
       question: 'What gets more rings as it gets older?',
       answer: ['tree', 'tree trunk']
+  },
+  {
+    question: "What has rings made or rock and ice that can't be worn?",
+    answer: [ 'saturn']
   },
   {
       question: 'What is at the end of a rainbow?',
@@ -293,6 +305,10 @@ const riddles = [
       question: "What grows when it eats but dies when it drinks?",
       answer: ['fire']
   },
+    {
+      question: "What has a stem but not a flower, and has a foot but cannot hop?",
+      answer: ['wine glass', 'goblet', 'flute']
+    },
   {
       question: "What spends a lot of time on the ground but never gets dirty?",
       answer: ['shadow']
@@ -425,10 +441,14 @@ const riddles = [
       question: "What can have one head, one foot, and four legs?",
       answer: ['bed']
   },
-  {
+    {
       question: "What do you call a bear without an ear?",
       answer: ['b', 'bee']
-  },
+    },
+    {
+      question: "What has hundreds of ears but can't hear a thing?",
+      answer: ['cornfield']
+    },
     {
         question: "What do you call a bear without teeth?",
         answer: ['gummy bear', 'gummybear', 'gummi bear', 'gummibear']
@@ -561,6 +581,10 @@ const riddles = [
       question: "What has 88 teeth but never brushes them?",
       answer: ['piano']
   },
+    {
+      question: "What gets picked at, has a small head and a long neck?",
+      answer: ['guitar', 'banjo']
+    },
   {
       question: "What grows up at the same time it grows down?",
       answer: ['goose', 'gosling', 'duck', 'duckling', 'bird', 'dinosaur']
@@ -694,6 +718,22 @@ const riddles = [
       answer: ['dead end']
   },
   {
+      question: "What is a body with a leg, an arm, and a head, but looks naked and bare?",
+      answer: ['skeleton']
+  },
+    {
+      question: "What is a skeleton's favorite musical instrument?",
+      answer: ['trombone']
+    },
+    {
+      question: "What do skeletons buy at grocery stores?",
+      answer: ['spare ribs']
+    },
+  {
+    question: "What kind of monster loves to disco?",
+    answer: ['boogieman']
+  },
+  {
     question: "What can you use to fix a jack-o-lantern?",
     answer: ['pumpkin patch']
   },
@@ -709,10 +749,30 @@ const riddles = [
       question: "How long is the answer to this question?",
       answer: ['how long']
   },
-  {
-      question: "What do you call 2 witches who live together?",
-      answer: ['broommates']
-  },
+    {
+        question: "What do you call 2 witches who live together?",
+        answer: ['broommates']
+    },
+    {
+      question: "What does a witch use to tell the time?",
+      answer: ['witch watch', 'witchwatch']
+    },
+    {
+      question: "What do take away to make a witch itch?",
+      answer: ['w']
+    },
+    {
+      question: "What do you call a nervous witch?",
+      answer: ['twitch']
+    },
+    {
+      question: "What do witches call for in hotel rooms?",
+      answer: ['broom service']
+    },
+    {
+      question: "What do birds give out on Halloween?",
+      answer: ['tweets', 'tweet']
+    },
   {
       question: "What type of dance event do cows attend?",
       answer: ['meatball']
@@ -769,6 +829,10 @@ const riddles = [
       question: "What do ghosts put on their bagels?",
       answer: ['scream cheese']
   },
+    {
+      question: "Where do young ghosts go during the day?",
+      answer: ['dayscare']
+    },
   {
       question: "What room do ghosts avoid?",
       answer: ['living room']
@@ -797,6 +861,14 @@ const riddles = [
     question: "What is a mummy's favorite type of music?",
     answer: ['wrap']
   },
+  {
+    question: "What is a wrapped but is not a gift?",
+    answer: ['mummy']
+  },
+  {
+      question: "Where do ghosts, mummies, & zombies like to swim?",
+      answer: ['dead sea', 'the dead sea', 'erie', 'lake erie']
+    },
   {
     question: "What is a rabbit's favorite type of music?",
     answer: ['hip hop']
@@ -838,6 +910,10 @@ const riddles = [
     answer: ['and']
   },
   {
+      question: "What never stays full for long, has a dark side, and is rarely visited?",
+      answer: ['moon']
+  },
+  {
     question: "If you drop a yellow hat in the Red Sea, what does it become?",
     answer: ['wet']
   },
@@ -867,18 +943,18 @@ const riddles = [
   },
   {
     question: "What is the oldest tree named?",
-    answer: ['elder'] 
+    answer: ['elder']
   },
   {
     question: "What does a stone become when you put it in water?",
-    answer: ['whetstone'] 
+    answer: ['whetstone']
   },
   {
     question: "What type of drum can't be played?",
-    answer: ['eardrum', 'conundrum'] 
+    answer: ['eardrum', 'conundrum']
   },
   {
     question: "What name has six letters, but if you take a letter away, it becomes seven?",
-    answer: ['steven'] 
+    answer: ['steven']
   }
 ]
