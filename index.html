@@ -46,7 +46,7 @@
     <div id="scene-frame" style="width: 650px; height: 435px;" class="flex items-center justify-center hidden mx-auto mt-4 bg-yellow-200">
         <div id="scene"
              class="relative mx-auto overflow-x-auto"
-             style="width: 640px; height: 425px; background-image: url('images/room.png'); background-size: cover">
+             style="width: 640px; height: 425px; background-size: cover">
             <p id="current-question"
                class="absolute w-full pb-1 pl-2 text-xs text-white select-none">
                 What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it?
@@ -218,13 +218,6 @@
             sceneFrame.classList.add('block')
 
             // Play beginning sound (if audio permission is on)
-            const beginningSounds = [
-                { name: 'whispers', type: 'wav' },
-                { name: 'laugh', type: 'wav' },
-                { name: 'organ', type: 'wav' },
-                { name: 'timer', type: 'wav' },
-                { name: 'creep', type: 'wav' }
-            ]
             const beginningSoundIndex = Math.floor(Math.random() * beginningSounds.length)
             setTimeout(()=> {
                 playSound(beginningSounds[beginningSoundIndex].name, beginningSounds[beginningSoundIndex].type)
@@ -242,6 +235,14 @@
 
         let timer = null
         const timerEl = document.getElementById('time')
+        const beginningSounds = [
+            { name: 'whispers', type: 'wav' },
+            { name: 'laugh', type: 'wav' },
+            { name: 'organ', type: 'wav' },
+            { name: 'timer', type: 'wav' },
+            { name: 'creep', type: 'wav' }
+        ]
+        
         let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
 
         const verticalPositions = [
@@ -255,6 +256,19 @@
         const riddleAnswerForm = document.getElementById('answer-form')
         const answerInput = document.getElementById('riddle-answer')
         const responseEl = document.getElementById('response')
+
+        // Get a random room image
+        const roomImages = [ 
+            'images/room.png', 
+            'images/room2.png', 
+            'images/bedroom.png', 
+            'images/bathroom.png', 
+            'images/kitchen.png', 
+            'images/music-room.png',
+            'images/art-room.png',
+        ]
+        const currentRoomIndex = Math.floor(Math.random() * roomImages.length)
+        scene.style.backgroundImage = `url('${roomImages[currentRoomIndex]}')`
 
         // Get user's mode preferences
         const modeCheckboxEl = document.getElementById('wipe-mode')
