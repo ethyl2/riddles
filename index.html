@@ -9,10 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Riddles in the Dark</title>
     <meta name="description" content="Can you find and solve the riddles?">
-    <meta property="og:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png">
-    <meta property="og:url" content="https://ethyl2.github.io/riddles/">
-    <meta property="og:title" content="Riddles in the Dark">
-    <meta property="og:description" content="Can you find and solve the riddles?">
+    <meta property="og:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png" />
+    <meta property="og:url" content="https://ethyl2.github.io/riddles/" />
+    <meta property="og:title" content="Riddles in the Dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Can you find and solve the riddles?" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@ethyl22">
     <meta name="twitter:title" content="Riddles in the Dark">
@@ -122,10 +123,11 @@
             </label>
 
             <a 
-                href="https://github.com/ethyl2/riddles" '
+                href="https://github.com/ethyl2/riddles"
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="hidden p-1 rounded hover:bg-white md:inline"
+                title="GitHub Repo"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                 focusable="false" width="1.73em" height="1.5em" style="
@@ -139,13 +141,22 @@
                 </svg>
                 <span class="sr-only">GitHub Repo</span>
             </a>
-
+            
             <a 
                 class="hidden p-1 mr-4 font-semibold text-black rounded hover:bg-white md:inline" 
                 href="/riddles/add-riddle.html"
+                title="Send Us a Riddle"
             >
                 <img src="images/letter.png" alt="send riddle" />
             </a>
+
+            <div 
+                class="fb-share-button" 
+                data-href="https://ethyl2.github.io/riddles/" 
+                data-layout="button"
+                data-lazy="true"
+            >
+            </div>
 
             <label class="relative block text-base cursor-pointer select-none pl-9 checkbox-container"
                 style="font-family: 'Knewave', cursive;">Noise, please!
@@ -175,6 +186,7 @@
                 <img src="images/letter.png" alt="send riddle" />
             </a>
         </div>
+        <div id="fb-root"></div>
     </footer>
 
     <script src="riddles.js" async defer></script>
@@ -453,5 +465,12 @@
             }
         }
     </script>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
