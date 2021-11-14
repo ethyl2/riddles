@@ -75,12 +75,12 @@
     </div>
 
     <!-- RESPONSE SECTION -->
-    <p 
-        id="response" 
-        class="font-medium text-center select-none" 
+    <p
+        id="response"
+        class="font-medium text-center select-none"
         style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;">
     </p>
-    
+
     <!-- BUTTONS SECTION -->
     <div class="flex items-center justify-center mt-4">
         <button id="new-riddle"
@@ -105,8 +105,8 @@
 
     <!-- TIMER -->
     <div class="flex items-center justify-center w-full pt-4">
-        <div 
-            class="flex items-center justify-center w-16 h-16 text-center bg-center bg-no-repeat bg-contain rounded" 
+        <div
+            class="flex items-center justify-center w-16 h-16 text-center bg-center bg-no-repeat bg-contain rounded"
             style="background: url('images/hourglass.png'); background-size: contain;"
         >
             <p id="time" class="pt-8 text-xs font-bold text-center"></p>
@@ -122,9 +122,9 @@
                 <span class="absolute top-0 left-0 w-6 h-6 bg-white rounded checkmark"></span>
             </label>
 
-            <a 
+            <a
                 href="https://github.com/ethyl2/riddles"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 class="hidden p-1 rounded hover:bg-white md:inline"
                 title="GitHub Repo"
@@ -141,18 +141,18 @@
                 </svg>
                 <span class="sr-only">GitHub Repo</span>
             </a>
-            
-            <a 
-                class="hidden p-1 mr-4 font-semibold text-black rounded hover:bg-white md:inline" 
+
+            <a
+                class="hidden p-1 mr-4 font-semibold text-black rounded hover:bg-white md:inline"
                 href="/riddles/add-riddle.html"
                 title="Send Us a Riddle"
             >
                 <img src="images/letter.png" alt="send riddle" />
             </a>
 
-            <div 
-                class="fb-share-button" 
-                data-href="https://ethyl2.github.io/riddles/" 
+            <div
+                class="fb-share-button"
+                data-href="https://ethyl2.github.io/riddles/"
                 data-layout="button"
                 data-lazy="true"
             >
@@ -179,8 +179,8 @@
                 </svg>
                 <span class="sr-only">GitHub Repo</span>
             </a>
-            <a 
-                class="p-1 font-semibold text-black rounded hover:bg-white" 
+            <a
+                class="p-1 font-semibold text-black rounded hover:bg-white"
                 href="/riddles/add-riddle.html"
             >
                 <img src="images/letter.png" alt="send riddle" />
@@ -242,7 +242,7 @@
             { name: 'timer', type: 'wav' },
             { name: 'creep', type: 'wav' }
         ]
-        
+
         let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
 
         const verticalPositions = [
@@ -258,14 +258,15 @@
         const responseEl = document.getElementById('response')
 
         // Get a random room image
-        const roomImages = [ 
-            'images/room.png', 
-            'images/room2.png', 
-            'images/bedroom.png', 
-            'images/bathroom.png', 
-            'images/kitchen.png', 
+        const roomImages = [
+            'images/room.png',
+            'images/room2.png',
+            'images/bedroom.png',
+            'images/bathroom.png',
+            'images/kitchen.png',
             'images/music-room.png',
             'images/art-room.png',
+            'images/playroom.png',
         ]
         const currentRoomIndex = Math.floor(Math.random() * roomImages.length)
         scene.style.backgroundImage = `url('${roomImages[currentRoomIndex]}')`
