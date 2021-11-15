@@ -250,6 +250,10 @@ const riddles = [
       answer: ['tree']
   },
   {
+      question: "What musical instrument doesn't tell the truth?",
+      answer: ['lyre']
+  },
+  {
       question: "What has some remain, when you take away the whole?",
       answer: ['wholesome']
   },
@@ -582,6 +586,10 @@ const riddles = [
       answer: ['piano']
   },
     {
+      question: "What has lots of hammers but no nails?",
+      answer: ['piano']
+    },
+    {
       question: "What gets picked at, has a small head and a long neck?",
       answer: ['guitar', 'banjo']
     },
@@ -858,6 +866,14 @@ const riddles = [
     answer: ['frostbite']
   },
   {
+    question: "When a band plays in a thunderstorm, who's most likely to get hit by lightning?",
+    answer: ['conductor']
+  },
+  {
+    question: "What is a balloon's least favorite type of music?",
+    answer: ['pop']
+  },
+  {
     question: "What is a mummy's favorite type of music?",
     answer: ['wrap']
   },
@@ -866,8 +882,24 @@ const riddles = [
     answer: ['mummy']
   },
   {
+    question: "What do you call a piano-playing goat?",
+    answer: ['billy joel']
+  },
+  {
+    question: "What's the most musical part of a fish'?",
+    answer: ['scales', 'scale']
+  },
+  {
+    question: "What do you call a musical pickle?",
+    answer: ['piccolo']
+  },
+  {
       question: "Where do ghosts, mummies, & zombies like to swim?",
       answer: ['dead sea', 'the dead sea', 'erie', 'lake erie']
+    },
+  {
+      question: "Who works when they play, and play when they work?",
+      answer: ['musician', 'musicians', 'athletes', 'athlete', 'baseball player', 'baseball players', 'soccer player', 'soccer players', 'player', 'players']
     },
   {
     question: "What is a rabbit's favorite type of music?",
