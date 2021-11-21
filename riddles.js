@@ -49,9 +49,21 @@ const riddles = [
       answer: ['comb']
   },
   {
-      question: "What has words but never speaks?",
-      answer: ['book']
+      question: "What has many teeth but no mouth?",
+      answer: ['comb', 'saw']
   },
+  {
+      question: "What doesn't get very sticky even though it's always used with paste?",
+      answer: ['toothbrush']
+  },
+    {
+        question: "What has words but never speaks?",
+        answer: ['book']
+    },
+    {
+      question: "What has a spine but not a face?",
+      answer: ['book']
+    },
     {
         question: "What hurts without moving, poisons without touching, bears the truth and sometimes lies?",
         answer: ['words']
@@ -142,8 +154,20 @@ const riddles = [
       answer: ['sponge']
   },
   {
+      question: "What gets filled with water but is not a bathtub or a shower?",
+      answer: ['vase', 'bucket']
+  },
+  {
+      question: "What is something with a plug that doesn't use electricity?",
+      answer: ['sink']
+  },
+  {
       question: "What's filled with keys but can't open a lock?",
       answer: ['piano', 'keyboard']
+  },
+  {
+      question: "What doesn't bark or bite but still won't let you in a house?",
+      answer: ['lock']
   },
   {
       question: "What contains 26 letters but only has 3 syllables?",
@@ -156,6 +180,10 @@ const riddles = [
   {
       question: "What has branches, but no fruit, trunk or leaves?",
       answer: ['bank', 'git']
+  },
+  {
+      question: "What has a body with many heads, tails that don't wag, and can be saved for a special occasion?",
+      answer: ['piggy bank', 'piggybank', 'piggy banks', 'piggybanks']
   },
   {
       question: "What has hands but can't clap?",
@@ -226,8 +254,16 @@ const riddles = [
       answer: ['tree', 'tree trunk']
   },
   {
+      question: 'What has a bark but no bite, and is rarely still but never wanders?',
+      answer: ['tree']
+  },
+  {
     question: "What has rings made or rock and ice that can't be worn?",
     answer: [ 'saturn']
+  },
+  {
+    question: "What lives in winter, dies in summer, and grows with its roots upward?",
+    answer: [ 'icicle']
   },
   {
       question: 'What is at the end of a rainbow?',
@@ -506,6 +542,10 @@ const riddles = [
       answer: ['vegetable']
   },
   {
+      question: "What is put on a table, cut, but never eaten?",
+      answer: ['deck of cards', 'deck', 'pack of cards', 'cards']
+  },
+  {
       question: "What might have feathers but never any wings?",
       answer: ['pillow']
   },
@@ -518,11 +558,23 @@ const riddles = [
       answer: ['fingernail', 'toenail']
   },
   {
+      question: "What piece of wood is like a king?",
+      answer: ['ruler']
+  },
+  {
+      question: "What has a foot on each side and one in the middle?",
+      answer: ['yardstick']
+  },
+  {
     question: "What can point in every direction but can't reach a destination by itself?",
     answer: ['finger']
   },
   {
     question: "What doesn't have flesh, feathers, scales, or bone, but have fingers & thumbs of their own?",
+    answer: ['glove', 'gloves']
+  },
+  {
+    question: "What do you fill with empty hands?",
     answer: ['glove', 'gloves']
   },
   {
@@ -602,12 +654,20 @@ const riddles = [
       answer: ['yardstick']
   },
   {
+      question: "What has a ring but no finger?",
+      answer: ['telephone', 'phone', 'doorbell']
+  },
+  {
       question: "What is the center of gravity?",
       answer: ['v']
   },
   {
       question: "What letter has the most water?",
       answer: ['c']
+  },
+  {
+      question: "What can you see even though it's usually clear?",
+      answer: ['water']
   },
   {
       question: "What loses its head in the morning but gets it back at night?",
@@ -690,7 +750,15 @@ const riddles = [
     answer: ['microwaves']
   },
   {
+    question: "What appliance sounds like a small hand movement?",
+    answer: ['microwave']
+  },
+  {
       question: "What can turn everything around but can't move?",
+      answer: ['mirror']
+  },
+  {
+      question: "What is used to see what's right there?",
       answer: ['mirror']
   },
   {
@@ -703,6 +771,10 @@ const riddles = [
   },
   {
       question: "What causes damage yet is used by small children?",
+      answer: ['scissors']
+  },
+  {
+      question: "What item is called a pair when you only have one?",
       answer: ['scissors']
   },
     {
@@ -790,6 +862,10 @@ const riddles = [
     answer: ['see o double you', 'seeodoubleyou']
   },
   {
+      question: "What do you serve but you can't eat?",
+      answer: ['tennis ball', 'ball', 'volleyball', 'birdie']
+  },
+  {
     question: "What type of person scares Snap, Crackle, & Pop?",
     answer: ['cereal killer']
   },
@@ -832,6 +908,10 @@ const riddles = [
   {
       question: "What do you use as bait to catch a school of fish?",
       answer: ['bookworm']
+  },
+  {
+      question: "What has a net but doesn't catch?",
+      answer: ['basketball hoop']
   },
   {
       question: "What do ghosts put on their bagels?",
@@ -934,8 +1014,12 @@ const riddles = [
     answer: ['pillow']
   },
   {
-    question: "What is easy to life but hard to throw?",
+    question: "What is easy to lift but hard to throw?",
     answer: ['feather', 'paper', 'leaf']
+  },
+  {
+    question: "What doesn't get put on a bed even though it is a sheet?",
+    answer: ['paper']
   },
   {
     question: "What is the one thing that everyone can agree is between heaven and earth?",
