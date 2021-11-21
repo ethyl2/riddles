@@ -384,7 +384,7 @@
                 pointsEl.textContent = newPoints
                 window.localStorage.setItem('points', newPoints)
                 playSound('correct')
-
+                newRiddleButton.focus()
             } else {
                 responseEl.classList.remove('text-black', 'pt-4')
                 responseEl.classList.add('text-red-500')
@@ -422,6 +422,7 @@
             responseEl.textContent = `ok, better luck next time...`
             setTimeout(() => {
                 responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
+                newRiddleButton.focus()
             }, 1500)
         })
 
