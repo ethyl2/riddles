@@ -33,6 +33,14 @@ const riddles = [
       answer: ['window']
   },
   {
+      question: "What is neither inside or outside a house, but you probably wouldn't see a house without these?",
+      answer: ['window', 'windows']
+  },
+  {
+      question: "What has pains but doesn't ache?",
+      answer: ['window', 'windows']
+  },
+  {
       question: "What goes up and down but doesn't move?",
       answer: ['staircase', 'stair', 'stairs']
   },
@@ -682,6 +690,10 @@ const riddles = [
       answer: ['hole']
   },
   {
+      question: "What does a house wear?",
+      answer: ['address']
+  },
+  {
       question: "What can be cracked, made, told, and played?",
       answer: ['joke']
   },
@@ -924,6 +936,14 @@ const riddles = [
   {
       question: "What room do ghosts avoid?",
       answer: ['living room']
+  },
+  {
+      question: "In a house, where is the safest place to be to avoid zombies?",
+      answer: ['living room']
+  },
+  {
+      question: "How many ants are needed to fill an apartment?",
+      answer: ['tenants', 'ten ants']
   },
   {
       question: "What type of key opens a banana?",
