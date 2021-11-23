@@ -13,6 +13,10 @@ const riddles = [
       answer: ['envelope']
   },
   {
+      question: "What 5-letter word is pronounced like only one letter?",
+      answer: ['queue']
+  },
+  {
       question: "What's tall when it's young and short when it's old?",
       answer: ['candle']
   },
@@ -99,6 +103,10 @@ const riddles = [
   {
       question: "What is seen in the middle of March and April that can’t be seen at the beginning or end of either month?",
       answer: ['r']
+  },
+  {
+      question: "What would you be sure to find in the middle of Toronto?",
+      answer: ['o']
   },
   {
       question: "What English word has three consecutive double letters? ",
@@ -226,6 +234,10 @@ const riddles = [
       answer: ['headband', 'rubber band', 'hair band']
   },
   {
+      question: "What can be cut and usually grows back, but may disappear forever when you least expect it?",
+      answer: ['hair']
+  },
+  {
       question: "What can fill up a room but takes up no space?",
       answer: ['light', 'sound', 'noise']
   },
@@ -240,6 +252,10 @@ const riddles = [
   {
       question: "What thing ceases to exist when you share it?",
       answer: ['secret']
+  },
+  {
+      question: "What can fill a room or just one heart, but can't be shared?",
+      answer: ['loneliness']
   },
   {
       question: "What kind of coat is always wet when you put it on?",
@@ -360,6 +376,14 @@ const riddles = [
   {
       question: "What spends a lot of time on the ground but never gets dirty?",
       answer: ['shadow']
+  },
+  {
+    question: "What has no content, yet you can see it?",
+    answer: ['shadow', 'hole']
+  },
+  {
+    question: "What has is bigger when new and grows smaller with use?",
+    answer: ['pencil', 'eraser', 'sucker', 'lollipop', 'soap', 'popsicle', 'ice cube']
   },
   {
       question: "How many months in a year have twenty-eight days?",
@@ -640,6 +664,14 @@ const riddles = [
   {
       question: "What will always come, but never arrives today?",
       answer: ['tomorrow']
+  },
+  {
+      question: "What breaks but never falls?",
+      answer: ['day']
+  },
+  {
+      question: "What falls but never breaks?",
+      answer: ['night', 'rain', 'snow']
   },
   {
       question: "What has 88 teeth but never brushes them?",
@@ -1067,6 +1099,10 @@ const riddles = [
   },
   {
     question: "What is full during the day but empty at night?",
+    answer: ['shoes']
+  },
+  {
+    question: "What are stepped on all day but they don't complain?",
     answer: ['shoes']
   },
   {
