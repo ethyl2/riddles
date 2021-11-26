@@ -871,7 +871,7 @@ const riddles = [
   },
   {
       question: "Covered in stone and sometimes in sun, it's home to many but also to none. What is it?",
-      answer: ['cemetary', 'graveyard']
+      answer: ['cemetery', 'graveyard']
   },
   {
       question: "What is a body with a leg, an arm, and a head, but looks naked and bare?",
