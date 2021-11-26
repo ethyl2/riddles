@@ -170,6 +170,10 @@ const riddles = [
       answer: ['sponge']
   },
   {
+      question: "What can you put in a wooden barrel to make it lighter?",
+      answer: ['holes', 'hole']
+  },
+  {
       question: "What gets filled with water but is not a bathtub or a shower?",
       answer: ['vase', 'bucket']
   },
@@ -183,6 +187,10 @@ const riddles = [
   },
   {
       question: "What doesn't bark or bite but still won't let you in a house?",
+      answer: ['lock']
+  },
+  {
+      question: "There are several different kinds, but the one you pick doesn't do its job. What is it?",
       answer: ['lock']
   },
   {
@@ -216,6 +224,10 @@ const riddles = [
   {
       question: "What can be broken, even if it is never picked up or touched?",
       answer: ['promise']
+  },
+  {
+      question: "What you keep after giving it to someone?",
+      answer: ['your word', 'word', 'promise']
   },
   {
       question: "What can run all around a backyard yet never moves?",
@@ -320,6 +332,10 @@ const riddles = [
   {
       question: "What five-letter word stays the same if you take away the first, third, and last letter?",
       answer: ['empty']
+  },
+  {
+      question: "What is the word that even in plain sight remains hidden?",
+      answer: ['hidden']
   },
   {
       question: "What starts off dry and light but comes out wet and heavy?",
@@ -513,6 +529,10 @@ const riddles = [
       question: "What can have one head, one foot, and four legs?",
       answer: ['bed']
   },
+  {
+      question: "What has a bottom at the top?",
+      answer: ['legs']
+  },
     {
       question: "What do you call a bear without an ear?",
       answer: ['b', 'bee']
@@ -592,6 +612,10 @@ const riddles = [
   {
       question: "What piece of wood is like a king?",
       answer: ['ruler']
+  },
+  {
+      question: "What is higher than a king?",
+      answer: ['crown']
   },
   {
       question: "What has a foot on each side and one in the middle?",
@@ -762,6 +786,10 @@ const riddles = [
       answer: ['s']
   },
   {
+      question: "What's at the head of an elephant and at the tail of a squirrel?",
+      answer: ['el']
+  },
+  {
       question: "What gets rid of its neighbor's mistakes?",
       answer: ['eraser']
   },
@@ -840,6 +868,10 @@ const riddles = [
   {
       question: "On what type of road does a ghost linger?",
       answer: ['dead end']
+  },
+  {
+      question: "Covered in stone and sometimes in sun, it's home to many but also to none. What is it?",
+      answer: ['cemetary', 'graveyard']
   },
   {
       question: "What is a body with a leg, an arm, and a head, but looks naked and bare?",
@@ -998,6 +1030,18 @@ const riddles = [
     answer: ['frostbite']
   },
   {
+    question: "What is a vampire's favorite thing to draw in art class?",
+    answer: ['blood']
+  },
+  {
+    question: "What does an artist draw before bed?",
+    answer: ['curtains']
+  },
+  {
+    question: "What do you call a mom that can't draw?",
+    answer: ['tracy']
+  },
+  {
     question: "When a band plays in a thunderstorm, who's most likely to get hit by lightning?",
     answer: ['conductor']
   },
@@ -1071,6 +1115,10 @@ const riddles = [
   },
   {
     question: "What doesn't get put on a bed even though it is a sheet?",
+    answer: ['paper']
+  },
+  {
+    question: "What is a sheet but has no bed, and can cut you but not bite?",
     answer: ['paper']
   },
   {
