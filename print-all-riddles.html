@@ -4,13 +4,14 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Riddles in the Dark</title>
     <meta name="description" content="Can you find and solve the riddles?">
     <meta property="og:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png" />
-    <meta property="og:url" content="https://ethyl2.github.io/riddles/" />
+    <meta property="og:url" content="https://ethyl2.github.io/riddles/print-all-riddles.html" />
     <meta property="og:title" content="Riddles in the Dark" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Can you find and solve the riddles?" />
@@ -29,89 +30,57 @@
     <link rel="stylesheet" href="styles.css">
   </head>
 
-  <body class="min-h-screen mb-0 overflow-x-auto select-none" style="background:#2e2a20;">
+  <body class="min-h-screen mb-0 overflow-x-auto text-black">
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <header>
-      <h1 class="pt-4 pb-2 text-2xl text-center text-black neon-text md:text-3xl"
+      <h1 class="pt-4 pb-2 text-2xl text-center md:text-3xl"
         style="font-family: 'Knewave', cursive;">
         riddles in the dark
       </h1>
     </header>
     <main>
-      <h2
-        class="text-center text-lg neon-text"
-        style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
-      >
+      <h2 class="text-center text-lg"
+        style="font-family: 'Knewave', cursive;">
         all of them
       </h2>
-      <div class="flex items-center justify-center mt-8">
-        <button id="print-button" type="button">
-          <a
-            href="/riddles/print-all-riddles.html"
-            class="rounded px-2 py-1 bg-black text-yellow-600 hover:bg-gray-800"
-            style="font-family: 'Knewave', cursive;"
-          >
-          print</a>
-        </button>
-      </div>
-      <div
-        id="all-riddles"
-        class="flex flex-wrap text-white text-lg w-full px-4 pt-8 font-thin items-stretch justify-center"
-        style="font-family: 'Caveat', cursive;"
-      >
-      </div>
+      <ol id="all-riddles"
+        class="grid grid-cols-3 text-sm w-full px-4 pt-6 font-thin"
+        style="font-family: 'Caveat', cursive;">
+      </ol>
     </main>
     <script src="riddles.js" async defer></script>
     <script type="text/javascript">
       const riddlesSection = document.getElementById('all-riddles')
-      const printButton = document.getElementById('print-button')
-      const colorOptions = ['#FF4D00', '#FF0000', '#C400C6', '#FFD700', '#4ECCA3', '#66ff00']
 
       function shuffle(a) { for (var j, i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } }
 
-      function toggleOpacity(event) {
-        const answerSection = event.target.nextElementSibling
-        if (answerSection.classList.contains('opacity-0')) {
-          answerSection.classList.remove('opacity-0')
-          answerSection.classList.add('opacity-100')
-        } else {
-          answerSection.classList.remove('opacity-100')
-          answerSection.classList.add('opacity-0')
-        }
-      }
-
       window.addEventListener('load', () => {
         shuffle(riddles)
-        riddles.forEach(riddle => {
-          const riddleBox = document.createElement('div')
+        riddles.forEach((riddle, i) => {
+          const riddleBox = document.createElement('li')
           const questionEl = document.createElement('p')
-          questionEl.textContent = riddle.question
-          questionEl.classList.add('hover:text-yellow-500')
-          questionEl.tabIndex = "0"
+          questionEl.textContent = i + 1 + '. ' + riddle.question
           riddleBox.append(questionEl)
           const answerSection = document.createElement('div')
-          answerSection.classList.add('flex', 'flex-wrap', 'items-center', 'justify-center', 'opacity-0', 'transition', 'duration-500', 'ease-in-out')
+          answerSection.classList.add('flex', 'flex-wrap', 'items-center', 'justify-start', 'pl-2')
           riddle.answer.forEach(option => {
             const answerPill = document.createElement('p')
             answerPill.textContent = option
-            answerPill.classList.add('rounded-full', 'px-3', 'py-1', 'm-1', 'bg-black')
-            answerPill.style.color = colorOptions[Math.floor(Math.random() * colorOptions.length)]
+            answerPill.classList.add('rounded-full', 'px-3', 'm-1', 'border', 'border-gray-300')
+
             answerSection.append(answerPill)
           })
           riddleBox.append(answerSection)
-          riddleBox.classList.add('w-full', 'sm:w-1/2', 'md:w-1/3', 'lg:w-1/4', 'p-2', 'border', 'border-yellow-400', 'rounded', 'm-2', 'flex', 'flex-col', 'items-center', 'justify-start')
-          questionEl.addEventListener('click', toggleOpacity)
-          questionEl.addEventListener('keydown', (event) => {
-            if (event.keyCode === 13) {
-              toggleOpacity(event)
-            }
-          })
+          riddleBox.classList.add('flex', 'flex-col', 'justify-start', 'items-start')
+
           riddlesSection.append(riddleBox)
         })
+        window.print()
       })
     </script>
 
   </body>
+
 </html>
