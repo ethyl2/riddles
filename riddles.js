@@ -531,7 +531,7 @@ const riddles = [
   },
   {
       question: "What has a bottom at the top?",
-      answer: ['legs']
+      answer: ['legs', 'pants', 'trousers', 'tights']
   },
     {
       question: "What do you call a bear without an ear?",
