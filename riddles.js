@@ -491,7 +491,7 @@ const riddles = [
   },
   {
       question: "What has no life, yet can die?",
-      answer: ['battery']
+      answer: ['battery', 'fire']
   },
   {
       question: 'What comes once in a minute, twice in a moment, but never in a thousand years?',
