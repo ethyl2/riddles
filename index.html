@@ -271,7 +271,7 @@
         const answerInput = document.getElementById('riddle-answer')
         const responseEl = document.getElementById('response')
 
-        // Get a random room image
+        // GET THE ROOM
         const roomImages = [
             'images/room.png',
             'images/room2.png',
@@ -304,8 +304,18 @@
             'images/christmas-room.png',
             'images/closet.png',
         ]
-        const currentRoomIndex = Math.floor(Math.random() * roomImages.length)
-        scene.style.backgroundImage = `url('${roomImages[currentRoomIndex]}')`
+        // Read the randomized room index array from localStorage.
+        let randomizedRoomIndexes = JSON.parse(window.localStorage.getItem("rooms_in_the_dark")) || []
+        if (randomizedRoomIndexes.length === 0) {
+          // This is either the first time we visit this page or we are out of rooms, so we must create a new randomized storage
+          randomizedRoomIndexes = getRandomRoomIndexList()
+        }
+        // Set the current room from the first index in the randomized array
+        scene.style.backgroundImage = `url('${roomImages[randomizedRoomIndexes[0]]}')`
+        // Remove the current room index
+        randomizedRoomIndexes.splice(0, 1)
+        // Save new array to localStorage for next time
+        window.localStorage.setItem("rooms_in_the_dark", JSON.stringify(randomizedRoomIndexes))
 
         // Get user's mode preferences
         const modeCheckboxEl = document.getElementById('wipe-mode')
@@ -506,6 +516,24 @@
             }
             return result
         }
+
+        // Function for creating a list of randomized indexes of rooms
+          function getRandomRoomIndexList() {
+            let indexArray = [...Array(roomImages.length).keys()]
+            fisherYatesShuffle(indexArray)
+            return indexArray
+          }
+
+        // Fisher-Yates shuffle
+        function fisherYatesShuffle(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+            // swap elements array[i] and array[j]
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+          return array
+        }
+
         // Function to play sound
         function playSound(name, type='mp3') {
             if (audioCheckboxEl.checked) {
