@@ -203,9 +203,10 @@
         <div id="fb-root"></div>
     </footer>
 
-    <script src="/riddles/js/riddles.js" async defer></script>
-    <script src="/riddles/js/rooms.js" async defer></script>
-    <script src="/riddles/js/timer.js" async defer></script>
+    <script src="./js/riddles.js" async defer></script>
+    <script src="./js/rooms.js" async defer></script>
+    <script src="./js/timer.js" async defer></script>
+    <script src="./js/sounds.js" async defer></script>
     <script type='text/javascript'>
         window.addEventListener('load', () => {
             // Read the randomized riddle index array from localStorage.
@@ -250,13 +251,13 @@
 
         let timer = null
         const timerEl = document.getElementById('time')
-        const beginningSounds = [
-            { name: 'whispers', type: 'wav' },
-            { name: 'laugh', type: 'wav' },
-            { name: 'organ', type: 'wav' },
-            { name: 'timer', type: 'wav' },
-            { name: 'creep', type: 'wav' }
-        ]
+        // const beginningSounds = [
+        //     { name: 'whispers', type: 'wav' },
+        //     { name: 'laugh', type: 'wav' },
+        //     { name: 'organ', type: 'wav' },
+        //     { name: 'timer', type: 'wav' },
+        //     { name: 'creep', type: 'wav' }
+        // ]
 
         let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
 
