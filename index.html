@@ -251,13 +251,6 @@
 
         let timer = null
         const timerEl = document.getElementById('time')
-        // const beginningSounds = [
-        //     { name: 'whispers', type: 'wav' },
-        //     { name: 'laugh', type: 'wav' },
-        //     { name: 'organ', type: 'wav' },
-        //     { name: 'timer', type: 'wav' },
-        //     { name: 'creep', type: 'wav' }
-        // ]
 
         let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
 
@@ -288,28 +281,6 @@
           } else {
             window.localStorage.setItem('wipe_mode_on', false)
           }
-        })
-
-        // Get user's latest audio preferences
-        let audio
-        const audioCheckboxEl = document.getElementById('allow-audio')
-        const allowAudio = JSON.parse(window.localStorage.getItem('audio_permission'))
-        if (allowAudio) {
-            audioCheckboxEl.checked = true
-        } else {
-            audioCheckboxEl.checked = false
-        }
-
-        audioCheckboxEl.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                window.localStorage.setItem('audio_permission', true)
-                if (audio) {
-                    audio.play()
-                }
-            } else {
-                window.localStorage.setItem('audio_permission', false)
-                audio.pause()
-            }
         })
 
         var room = document.getElementById('room'),
