@@ -27,3 +27,14 @@ audioCheckboxEl.addEventListener('change', (e) => {
       audio.pause()
   }
 })
+
+// Function to play sound
+function playSound(name, type='mp3') {
+  if (audioCheckboxEl.checked) {
+    if (audio) {
+        audio.pause()
+    }
+    audio = new Audio("sounds/" + name + "." + type)
+    audio.play()
+  }
+}
