@@ -62,37 +62,58 @@
 
     <!-- FORM SECTION -->
     <div class="flex items-center justify-center">
-        <form id="answer-form" class="p-8">
-            <label for="riddle-answer" class="pr-2 text-black select-none" style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;">what's the answer?</label>
-            <input type="text" class="p-1 mr-2 border" name="riddle-answer" id="riddle-answer" />
-            <button id="submit"
-                    type="submit"
-                    class="px-2 py-1 font-medium text-yellow-300 bg-gray-500 rounded cursor-not-allowed"
-                    disabled>
-                submit
-            </button>
-        </form>
+      <form
+        id="answer-form"
+        class="p-4 flex flex-col items-center justify-center space-y-2 sm:p-8 sm:space-y-0 sm:flex-row sm:space-x-3"
+      >
+        <label
+          for="riddle-answer"
+          class="text-black select-none md:pr-2"
+          style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
+        >
+          what's the answer?
+        </label>
+        <input
+          id="riddle-answer"
+          type="text"
+          class="p-1 border rounded md:mr-2"
+          name="riddle-answer"
+        />
+        <button
+          id="submit"
+          type="submit"
+          class="px-2 py-1 font-medium text-yellow-300 bg-gray-500 rounded cursor-not-allowed"
+          disabled
+        >
+          submit
+        </button>
+      </form>
     </div>
 
     <!-- RESPONSE SECTION -->
     <p
-        id="response"
-        class="font-medium text-center select-none"
-        style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;">
+      id="response"
+      class="font-medium text-center select-none"
+      style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
+    >
     </p>
 
     <!-- BUTTONS SECTION -->
-    <div class="flex items-center justify-center mt-4">
-        <button id="new-riddle"
-                type="button"
-                class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600">
-            get another riddle
-        </button>
-        <button id="give-up"
-                type="button"
-                class="px-2 py-1 ml-2 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600">
-            give up?
-        </button>
+    <div class="flex items-center justify-center mt-2 sm:mt-4">
+      <button
+        id="new-riddle"
+        type="button"
+        class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+      >
+        get another riddle
+      </button>
+      <button
+        id="give-up"
+        type="button"
+        class="px-2 py-1 ml-2 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+      >
+        give up?
+      </button>
     </div>
 
     <!-- SCORE -->
@@ -114,7 +135,7 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="px-4 py-16 mt-32 mb-0 text-center bg-yellow-200">
+    <footer class="px-4 py-16 mt-12 mb-0 text-center bg-yellow-200 sm:mt-32">
         <div class="flex items-center justify-between">
             <label class="relative block text-base cursor-pointer select-none pl-9 checkbox-container"
                 style="font-family: 'Knewave', cursive;">Wipe mode!
