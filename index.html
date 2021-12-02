@@ -134,6 +134,15 @@
         </div>
     </div>
 
+    <!-- RESET SCORE -->
+    <div class="flex items-center justify-center mt-2 sm:mt-4">
+      <button id="reset-score" type="button"
+        class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+      >
+        reset
+      </button>
+    </div>
+
     <!-- FOOTER -->
     <footer class="px-4 py-16 mt-12 mb-0 text-center bg-yellow-200 sm:mt-32">
         <div class="flex items-center justify-between">
@@ -333,6 +342,7 @@
       const submitButton = document.getElementById('submit')
       const newRiddleButton = document.getElementById('new-riddle')
       const giveUpButton = document.getElementById('give-up')
+      const resetScoreButton = document.getElementById('reset-score')
       let answerIndex = -1
 
       riddleAnswerForm.addEventListener('submit', (e) => {
@@ -405,6 +415,16 @@
             responseEl.textContent = `the answer you seek is a${vowels.includes(currentRiddle.answer[0][0].toLowerCase()) ? 'n' : ''} ${currentRiddle.answer[0]}.`
             newRiddleButton.focus()
         }, 1500)
+      })
+
+      resetScoreButton.addEventListener('click', () => {
+        window.localStorage.setItem('potential_points', 0)
+        window.localStorage.setItem('points', 0)
+        potentialPointsEl.textContent = 0
+        pointsEl.textContent = 0
+        setTimeout(() => {
+          window.location.reload()
+        }, 300)
       })
 
       room.addEventListener("mousemove", function (e) {
