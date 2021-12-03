@@ -1176,5 +1176,17 @@ const riddles = [
   {
     question: "What name has six letters, but if you take a letter away, it becomes seven?",
     answer: ['steven']
-  }
+  },
+  {
+    question: "What has 18 legs and catches flies?",
+    answer: ['baseball team']
+  },
+  {
+    question: "What color can you eat?",
+    answer: ['orange', 'plum', 'peach', 'apricot', 'almond', 'asparagus', 'pink sherbert', 'oatmeal', 'chestnut', 'cool mint', 'eggplant', 'lavender', 'cotton candy', 'macaroni and cheese', 'melon', 'salmon', 'maize', 'granny smith apple', 'mulberry', 'wild strawberry']
+  },
+  {
+    question: "I touch the earth and I touch the sky, but if I touch you, you’ll might die. What am I?",
+    answer: ['lightning']
+  },
 ]

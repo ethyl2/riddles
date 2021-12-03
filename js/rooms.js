@@ -33,7 +33,8 @@ const roomImages = [
     'images/dance-studio.png',
     'images/clock-room.png',
     'images/royal-room.png',
-    'images/monster-bedroom.png'
+    'images/monster-bedroom.png',
+    'images/garage.png'
 ]
 
 // GET THE ROOM
