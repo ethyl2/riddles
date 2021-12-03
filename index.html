@@ -143,6 +143,8 @@
       </button>
     </div>
 
+    <div id="map" class="mt-6 flex flex-col w-full items-center justify-center space-y-px"></div>
+
     <!-- FOOTER -->
     <footer class="px-4 py-16 mt-12 mb-0 text-center bg-yellow-200 sm:mt-32">
         <div class="flex items-center justify-between">
@@ -240,6 +242,48 @@
     <script src="./js/facebookShare.js" async defer></script>
     <script type='text/javascript'>
       window.addEventListener('load', () => {
+        console.log(riddles.length)
+        const squareRoot = Math.ceil(Math.sqrt(riddles.length))
+        console.log(squareRoot)
+        console.log(squareRoot * squareRoot)
+        const beginningRoom = Math.floor(squareRoot/2)
+        console.log(beginningRoom)
+        const mapEl = document.getElementById('map')
+        let mapIndex = 0
+        for (let i=0; i < squareRoot; i++) {
+          const rowEl = document.createElement('div')
+          rowEl.classList.add('flex', 'items-center', 'justify-center', 'w-full', 'space-x-px')
+          for (let j=0; j < squareRoot; j++) {
+            const cell = document.createElement('div')
+            cell.classList.add('w-6', 'h-6', 'rounded', 'bg-black', 'text-white', 'text-xs', 'flex', 'items-center', 'justify-center', 'text-center')
+            cell.id = `cell-${mapIndex}`
+            cell.textContent = mapIndex
+            mapIndex++
+            rowEl.append(cell)
+          }
+        mapEl.append(rowEl)
+        }
+        const visitedRooms = [beginningRoom, 27, 45]
+        const endingRoom = visitedRooms[visitedRooms.length - 1]
+        console.log(endingRoom)
+        // Todo: Restrict movementChoices to rooms not already visited
+        const movementChoices = ['left', 'right', 'forward', 'backward']
+        const movementChoice = movementChoices[Math.floor(Math.random() * movementChoices.length)]
+        console.log(movementChoice)
+        if (movementChoice === 'right') {
+          visitedRooms.push(endingRoom + 1)
+        } else if (movementChoice === 'left') {
+          visitedRooms.push(endingRoom - 1)
+        } else if (movementChoice === 'forward') {
+          visitedRooms.push(endingRoom + squareRoot)
+        }
+        visitedRooms.forEach(room => {
+          const roomEl = document.getElementById(`cell-${room}`)
+          roomEl.classList.remove('bg-black')
+          roomEl.classList.add('bg-yellow-300', 'bg-opacity-50')
+          roomEl.style.boxShadow = '1px 1px 4px 4px yellow'
+        })
+
         // Read the randomized riddle index array from localStorage.
         let randomizedRiddles = JSON.parse(window.localStorage.getItem("riddles_in_the_dark")) || []
         if (randomizedRiddles.length === 0) {
