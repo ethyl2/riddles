@@ -262,6 +262,10 @@ const riddles = [
       answer: ['stone', 'toner', 'loner', 'alone']
   },
   {
+      question: "I am a solitary word, 5 letters long. Behead me once, I am the same. Behead me again, I am still the same. What am I?",
+      answer: ['alone']
+  },
+  {
       question: "What thing ceases to exist when you share it?",
       answer: ['secret']
   },
@@ -478,6 +482,14 @@ const riddles = [
       answer: ['toilet', 'potty']
   },
   {
+    question: "I am a word of letters three, add two and fewer there will be. What am I?",
+    answer: ['few']
+  },
+  {
+    question: "What seven letter word becomes longer when the third letter is removed?",
+    answer: ['lounger']
+  },
+  {
       question: "What can you hold in your left hand but not your right?",
       answer: ['right elbow']
   },
@@ -504,6 +516,10 @@ const riddles = [
   {
       question: "What’s the most curious letter?",
       answer: ['y']
+  },
+  {
+    question: "What starts off temporary but ends permanent?",
+    answer: ['t']
   },
   {
       question: "What kind of cheese is made backwards?",
