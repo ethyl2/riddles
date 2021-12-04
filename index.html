@@ -242,6 +242,8 @@
     <script src="./js/facebookShare.js" async defer></script>
     <script type='text/javascript'>
       window.addEventListener('load', () => {
+
+        // Update map
         console.log(riddles.length)
         const squareRoot = Math.ceil(Math.sqrt(riddles.length))
         console.log(squareRoot)
@@ -263,20 +265,38 @@
           }
         mapEl.append(rowEl)
         }
-        const visitedRooms = [beginningRoom, 27, 45]
-        const endingRoom = visitedRooms[visitedRooms.length - 1]
-        console.log(endingRoom)
-        // Todo: Restrict movementChoices to rooms not already visited
-        const movementChoices = ['left', 'right', 'forward', 'backward']
-        const movementChoice = movementChoices[Math.floor(Math.random() * movementChoices.length)]
-        console.log(movementChoice)
-        if (movementChoice === 'right') {
-          visitedRooms.push(endingRoom + 1)
-        } else if (movementChoice === 'left') {
-          visitedRooms.push(endingRoom - 1)
-        } else if (movementChoice === 'forward') {
-          visitedRooms.push(endingRoom + squareRoot)
+        // const visitedRooms = [beginningRoom, 27, 45]
+        let visitedRooms = JSON.parse(window.localStorage.getItem("visited_rooms")) || []
+        if (visitedRooms.length === 0) {
+          visitedRooms.push(beginningRoom)
+        } else {
+          const endingRoom = visitedRooms[visitedRooms.length - 1]
+          console.log(endingRoom)
+
+          // Todo: Restrict movementChoices to rooms not already visited
+          const movementChoices = ['forward']
+          if (!visitedRooms.includes(endingRoom + 1)) {
+            movementChoices.push('right')
+          }
+          if (!visitedRooms.includes(endingRoom - 1)) {
+            movementChoices.push('left')
+          }
+          if (endingRoom >= squareRoot) {
+            movementChoices.push('backward')
+          }
+          const movementChoice = movementChoices[Math.floor(Math.random() * movementChoices.length)]
+          console.log(movementChoice)
+          if (movementChoice === 'right') {
+            visitedRooms.push(endingRoom + 1)
+          } else if (movementChoice === 'left') {
+            visitedRooms.push(endingRoom - 1)
+          } else if (movementChoice === 'forward') {
+            visitedRooms.push(endingRoom + squareRoot)
+          }
         }
+
+        window.localStorage.setItem("visited_rooms", JSON.stringify(visitedRooms))
+
         visitedRooms.forEach(room => {
           const roomEl = document.getElementById(`cell-${room}`)
           roomEl.classList.remove('bg-black')
