@@ -1198,6 +1198,42 @@ const riddles = [
     answer: ['baseball team']
   },
   {
+    question: "What position would a feline play in baseball?",
+    answer: ['catcher']
+  },
+  {
+    question: "What is a cat's favorite button on a DVD player?",
+    answer: ['paws', 'pause']
+  },
+  {
+    question: "What is a tiger running a xerox machine called?",
+    answer: ['copycat']
+  },
+  {
+    question: "What place do kittens go to on field trips?",
+    answer: ['mewseum', 'museum']
+  },
+  {
+    question: "How do you spell cat backwards?",
+    answer: ['cat backwards', 'catbackwards']
+  },
+  {
+    question: "What do kittens wear?",
+    answer: ['diapurrs', 'diapers']
+  },
+  {
+    question: "What animal is bad to play games with?",
+    answer: ['cheetah']
+  },
+  {
+    question: "What might you step in when it rains cats & dogs?",
+    answer: ['poodle', 'puddle']
+  },
+  {
+    question: "What is a cat's favorite color?",
+    answer: ['purrple', 'purr-ple', 'purple']
+  },
+  {
     question: "What color can you eat?",
     answer: ['orange', 'plum', 'peach', 'apricot', 'almond', 'asparagus', 'pink sherbert', 'oatmeal', 'chestnut', 'cool mint', 'eggplant', 'lavender', 'cotton candy', 'macaroni and cheese', 'melon', 'salmon', 'maize', 'granny smith apple', 'mulberry', 'wild strawberry']
   },
