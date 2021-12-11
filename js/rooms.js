@@ -40,6 +40,7 @@ const roomImages = [
     'images/hippie-bedroom.png',
     'images/shed.png',
     'images/art-gallery.png',
+    'images/cleaning-closet.png',
 ]
 
 // GET THE ROOM
