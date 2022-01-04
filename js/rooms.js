@@ -46,6 +46,7 @@ const roomImages = [
     'images/puzzle-room.png',
     'images/bar.png',
     'images/patio.png',
+    'images/wig-room.png'
 ]
 
 // GET THE ROOM
