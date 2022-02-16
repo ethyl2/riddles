@@ -3,7 +3,17 @@ const beginningSounds = [
   { name: 'laugh', type: 'wav' },
   { name: 'organ', type: 'wav' },
   { name: 'timer', type: 'wav' },
-  { name: 'creep', type: 'wav' }
+  { name: 'creep', type: 'wav' },
+  { name: 'toy-piano', type: 'wav'},
+  { name: 'breathing', type: 'wav'},
+  { name: 'beating', type: 'wav'},
+  { name: 'ambience', type: 'wav'},
+  { name: 'mystery', type: 'wav'},
+  { name: 'hunting1', type: 'wav'},
+  { name: 'hunting2', type: 'wav'},
+  { name: 'hunting3', type: 'wav'},
+  { name: 'hunting4', type: 'wav'},
+  { name: 'music', type: 'mp3'},
 ]
 
 // Get user's latest audio preferences
