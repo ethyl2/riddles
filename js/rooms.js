@@ -51,7 +51,8 @@ const roomImages = [
     'images/diner-room.png',
     'images/indoor-playground.png',
     'images/broken-room.png',
-    'images/patricks-room.png'
+    'images/patricks-room.png',
+    'images/classroom.png'
 ]
 
 // GET THE ROOM
