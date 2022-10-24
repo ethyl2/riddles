@@ -735,7 +735,7 @@ const riddles = [
   },
   {
       question: "What has a ring but no finger?",
-      answer: ['telephone', 'phone', 'doorbell']
+      answer: ['telephone', 'phone', 'doorbell', 'Saturn', 'bell', 'circus', 'key ring', 'ring tone', 'tree']
   },
   {
       question: "What is the center of gravity?",
