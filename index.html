@@ -40,108 +40,111 @@
     </header>
 
     <!-- SCENE SECTION -->
-    <div id="placeholder" style="width: 650px; height: 435px;" class="flex items-center justify-center mx-auto mt-4 bg-yellow-200">
-        <div class="mx-auto bg-black" style="width: 640px; height: 425px;"></div>
-    </div>
-    <div id="scene-frame" style="width: 650px; height: 435px;" class="flex items-center justify-center hidden mx-auto mt-4 bg-yellow-200">
-        <div id="scene"
-             class="relative mx-auto overflow-x-auto"
-             style="width: 640px; height: 425px; background-size: cover">
-            <p id="current-question"
-               class="absolute w-full pb-1 pl-2 text-xs text-white select-none">
-                What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it?
-            </p>
+    <section class="overflow-x-auto">
+      <div id="placeholder" style="width: 650px; height: 435px;" class="flex items-center justify-center mx-auto mt-4 bg-yellow-200">
+          <div class="mx-auto bg-black" style="width: 640px; height: 425px;"></div>
+      </div>
+      <div id="scene-frame" style="width: 650px; height: 435px;" class="flex items-center justify-center hidden mx-auto mt-4 bg-yellow-200">
+          <div id="scene"
+              class="relative mx-auto overflow-x-auto"
+              style="width: 640px; height: 425px; background-size: cover">
+              <p id="current-question"
+                class="absolute w-full pb-1 pl-2 text-xs text-white select-none">
+                  What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it?
+              </p>
 
-            <canvas id="room"
-                    class="absolute top-0 left-0 mx-auto overflow-x-auto"
-                    width="640"
-                    height="425"
-                    style="max-width: 640px; cursor:  crosshair; cursor: url('images/flashlight3.png') 53 53, crosshair;"></canvas>
-        </div>
-    </div>
-
-    <!-- FORM SECTION -->
-    <div class="flex items-center justify-center">
-      <form
-        id="answer-form"
-        class="p-4 flex flex-col items-center justify-center space-y-2 sm:p-8 sm:space-y-0 sm:flex-row sm:space-x-3"
-      >
-        <label
-          for="riddle-answer"
-          class="text-black select-none md:pr-2"
-          style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
+              <canvas id="room"
+                      class="absolute top-0 left-0 mx-auto overflow-x-auto"
+                      width="640"
+                      height="425"
+                      style="max-width: 640px; cursor:  crosshair; cursor: url('images/flashlight3.png') 53 53, crosshair;"></canvas>
+          </div>
+      </div>
+    </section>
+    <section class="pb-56">
+      <!-- FORM SECTION -->
+      <div class="flex items-center justify-center">
+        <form
+          id="answer-form"
+          class="p-4 flex flex-col items-center justify-center space-y-2 sm:p-8 sm:space-y-0 sm:flex-row sm:space-x-3"
         >
-          what's the answer?
-        </label>
-        <input
-          id="riddle-answer"
-          type="text"
-          class="p-1 border rounded md:mr-2"
-          name="riddle-answer"
-        />
+          <label
+            for="riddle-answer"
+            class="text-black select-none md:pr-2"
+            style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
+          >
+            what's the answer?
+          </label>
+          <input
+            id="riddle-answer"
+            type="text"
+            class="p-1 border rounded md:mr-2"
+            name="riddle-answer"
+          />
+          <button
+            id="submit"
+            type="submit"
+            class="px-2 py-1 font-medium text-yellow-300 bg-gray-500 rounded cursor-not-allowed"
+            disabled
+          >
+            submit
+          </button>
+        </form>
+      </div>
+
+      <!-- RESPONSE SECTION -->
+      <p
+        id="response"
+        class="font-medium text-center select-none"
+        style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
+      >
+      </p>
+
+      <!-- BUTTONS SECTION -->
+      <div class="flex items-center justify-center mt-2 sm:mt-4">
         <button
-          id="submit"
-          type="submit"
-          class="px-2 py-1 font-medium text-yellow-300 bg-gray-500 rounded cursor-not-allowed"
-          disabled
+          id="new-riddle"
+          type="button"
+          class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
         >
-          submit
+          get another riddle
         </button>
-      </form>
-    </div>
-
-    <!-- RESPONSE SECTION -->
-    <p
-      id="response"
-      class="font-medium text-center select-none"
-      style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;"
-    >
-    </p>
-
-    <!-- BUTTONS SECTION -->
-    <div class="flex items-center justify-center mt-2 sm:mt-4">
-      <button
-        id="new-riddle"
-        type="button"
-        class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
-      >
-        get another riddle
-      </button>
-      <button
-        id="give-up"
-        type="button"
-        class="px-2 py-1 ml-2 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
-      >
-        give up?
-      </button>
-    </div>
-
-    <!-- SCORE -->
-    <p class="mt-4 font-medium text-center" style="text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff">
-        <span class="font-medium" style="font-family: 'Knewave', cursive;">score:</span>
-        <span id="points" class="font-bold">0</span>
-        <span class="font-medium" style="font-family: 'Knewave', cursive;">/</span>
-        <span id="potential-points" class="font-bold">1</span>
-    </p>
-
-    <!-- TIMER -->
-    <div class="flex items-center justify-center w-full pt-4">
-        <div
-            class="flex items-center justify-center w-16 h-16 text-center bg-center bg-no-repeat bg-contain rounded"
-            style="background: url('images/hourglass.png'); background-size: contain;"
+        <button
+          id="give-up"
+          type="button"
+          class="px-2 py-1 ml-2 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
         >
-            <p id="time" class="pt-8 text-xs font-bold text-center"></p>
-        </div>
-    </div>
+          give up?
+        </button>
+      </div>
 
-    <!-- RESET SCORE -->
-    <div class="flex items-center justify-center mt-2 sm:mt-4">
-      <button id="reset-score" type="button"
-        class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
-      >
-        reset
-      </button>
-    </div>
+      <!-- SCORE -->
+      <p class="mt-4 font-medium text-center" style="text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff">
+          <span class="font-medium" style="font-family: 'Knewave', cursive;">score:</span>
+          <span id="points" class="font-bold">0</span>
+          <span class="font-medium" style="font-family: 'Knewave', cursive;">/</span>
+          <span id="potential-points" class="font-bold">1</span>
+      </p>
+
+      <!-- TIMER -->
+      <div class="flex items-center justify-center w-full pt-4">
+          <div
+              class="flex items-center justify-center w-16 h-16 text-center bg-center bg-no-repeat bg-contain rounded"
+              style="background: url('images/hourglass.png'); background-size: contain;"
+          >
+              <p id="time" class="pt-8 text-xs font-bold text-center"></p>
+          </div>
+      </div>
+
+      <!-- RESET SCORE -->
+      <div class="flex items-center justify-center mt-2 sm:mt-4">
+        <button id="reset-score" type="button"
+          class="px-2 py-1 font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+        >
+          reset
+        </button>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="px-4 py-16 mt-12 mb-0 text-center bg-yellow-200 sm:mt-32">
@@ -152,49 +155,43 @@
                 <span class="absolute top-0 left-0 w-6 h-6 bg-white rounded checkmark"></span>
             </label>
 
-            <a
-                href="https://github.com/ethyl2/riddles"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hidden p-1 rounded hover:bg-white md:inline"
-                title="github repo"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                focusable="false" width="1.73em" height="1.5em" style="
-                                    -ms-transform: rotate(360deg);
-                                    -webkit-transform: rotate(360deg);
-                                    transform: rotate(360deg);
-                                " preserveAspectRatio="xMidYMid meet" viewBox="0 0 1227.825 1000">
-                <path
-                    d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
-                    fill="black" />
-                </svg>
-                <span class="sr-only">GitHub Repo</span>
-            </a>
+            <nav class="flex items-center justify-center pl-4">
+              <a
+                  href="https://github.com/ethyl2/riddles"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hidden p-1 rounded hover:bg-white md:inline"
+                  title="github repo"
+              >
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                  focusable="false" width="1.73em" height="1.5em" style="
+                                      -ms-transform: rotate(360deg);
+                                      -webkit-transform: rotate(360deg);
+                                      transform: rotate(360deg);
+                                  " preserveAspectRatio="xMidYMid meet" viewBox="0 0 1227.825 1000">
+                  <path
+                      d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
+                      fill="black" />
+                  </svg>
+                  <span class="sr-only">GitHub Repo</span>
+              </a>
 
-            <a
-                class="hidden p-1 mr-4 font-semibold text-black rounded hover:bg-white md:inline"
-                href="/riddles/add-riddle.html"
-                title="send us a riddle"
-            >
-                <img src="images/letter.png" alt="send riddle" />
-            </a>
+              <a
+                  class="hidden p-1 font-semibold text-black rounded hover:bg-white md:inline"
+                  href="/riddles/add-riddle.html"
+                  title="send us a riddle"
+              >
+                  <img src="images/letter.png" alt="send riddle" />
+              </a>
 
-            <a
-              class="hidden p-1 mr-4 font-semibold text-black rounded hover:bg-white md:inline"
-              href="/riddles/all-riddles.html"
-              title="see all riddles"
-            >
-              <img src="images/eye.png" alt="see all riddles" />
-            </a>
-
-            <div
-                class="fb-share-button"
-                data-href="https://ethyl2.github.io/riddles/"
-                data-layout="button"
-                data-lazy="true"
-            >
-            </div>
+              <a
+                class="hidden p-1 font-semibold text-black rounded hover:bg-white md:inline"
+                href="/riddles/all-riddles.html"
+                title="see all riddles"
+              >
+                <img src="images/eye.png" alt="see all riddles" />
+              </a>
+            </nav>
 
             <label class="relative block text-base cursor-pointer select-none pl-9 checkbox-container"
                 style="font-family: 'Knewave', cursive;">Noise, please!
@@ -202,6 +199,8 @@
                 <span class="absolute top-0 left-0 w-6 h-6 bg-white rounded checkmark"></span>
             </label>
         </div>
+
+        <section class="flex flex-col items-center justify-center">
         <div class="flex items-center justify-center mt-2 text-center md:hidden">
             <a href="https://github.com/ethyl2/riddles" target="_blank" rel="noopener noreferrer"
                 class="p-1 rounded hover:bg-white">
@@ -231,6 +230,14 @@
             </a>
         </div>
         <div id="fb-root"></div>
+        <div
+          class="fb-share-button"
+          data-href="https://ethyl2.github.io/riddles/"
+          data-layout="button"
+          data-lazy="true"
+        ></div>
+        <p class="text-sm font-semibold pt-4">Copyright <span id="current-year">2022</span> Heather Nuffer et al.</p>
+      </section>
     </footer>
 
     <script src="./js/riddles.js" async defer></script>
@@ -238,8 +245,15 @@
     <script src="./js/timer.js" async defer></script>
     <script src="./js/sounds.js" async defer></script>
     <script src="./js/facebookShare.js" async defer></script>
-    <script type='text/javascript'>
+    <script>
+      function getCurrentYear() {
+        const currentYear = new Date().getFullYear();
+        document.getElementById('current-year').textContent = currentYear;
+      }
+
       window.addEventListener('load', () => {
+        getCurrentYear() 
+
         // Read the randomized riddle index array from localStorage.
         let randomizedRiddles = JSON.parse(window.localStorage.getItem("riddles_in_the_dark")) || []
         if (randomizedRiddles.length === 0) {
