@@ -178,7 +178,7 @@
 
               <a
                   class="hidden p-1 font-semibold text-black rounded hover:bg-white md:inline"
-                  href="/riddles/add-riddle.html"
+                  href="./add-riddle.html"
                   title="send us a riddle"
               >
                   <img src="images/letter.png" alt="send riddle" />
@@ -186,7 +186,7 @@
 
               <a
                 class="hidden p-1 font-semibold text-black rounded hover:bg-white md:inline"
-                href="/riddles/all-riddles.html"
+                href="./all-riddles.html"
                 title="see all riddles"
               >
                 <img src="images/eye.png" alt="see all riddles" />
@@ -218,12 +218,12 @@
             </a>
             <a
                 class="p-1 font-semibold text-black rounded hover:bg-white"
-                href="/riddles/add-riddle.html"
+                href="./add-riddle.html"
             >
                 <img src="images/letter.png" alt="send riddle" />
             </a>
             <a
-              href="/riddles/all-riddles.html"
+              href="./all-riddles.html"
               title="see all riddles"
             >
               <img src="images/eye.png" alt="see all riddles" />
@@ -252,7 +252,7 @@
       }
 
       window.addEventListener('load', () => {
-        getCurrentYear() 
+        getCurrentYear()
 
         // Read the randomized riddle index array from localStorage.
         let randomizedRiddles = JSON.parse(window.localStorage.getItem("riddles_in_the_dark")) || []
