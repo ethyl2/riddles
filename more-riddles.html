@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Riddles in the Dark</title>
+    <meta name="description" content="Can you solve the riddles?">
+    <meta property="og:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png" />
+    <meta property="og:url" content="https://ethyl2.github.io/riddles/more-riddles.html" />
+    <meta property="og:title" content="Riddles in the Dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Can you solve the riddles?" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@ethyl22">
+    <meta name="twitter:title" content="Riddles in the Dark">
+    <meta name="twitter:description" content="Can you solve the riddles?">
+    <meta name="twitter:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Knewave&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'darkest-gray': '#2e2a20',
+            },
+            fontFamily: {
+              'writing': ['Knewave', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body class="min-h-screen mb-0 overflow-x-auto select-none bg-darkest-gray font-writing">
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header>
+      <h1 class="pt-4 pb-2 text-2xl text-center neon-text md:text-3xl md:pt-16">
+        more riddles in the dark
+      </h1>
+      <h2 class="text-center text-lg neon-text">
+        written by christian jones
+      </h2>
+    </header>
+    <main class="relative py-24 flex flex-col items-center justify-center space-y-12">
+      <section class="flex flex-col items-center justify-center">
+        <div
+          class="flex flex-wrap text-white text-2xl w-full p-8 items-center justify-center bg-zinc-900 mx-auto rounded max-w-lg leading-loose border-8 border-zinc-800 md:text-3xl md:max-w-xl md:leading-loose"
+          style="font-family: 'Caveat', cursive;"
+        >
+          <p class="whitespace-pre-line">I've got two eyes but they do not see
+            Hold me close, but not while you flee
+            My mouth will chew, but I never ingest
+            Keep your little one at bay or I'll surely be a pest
+            A stone in your hand doesn't make me any nicer
+            Freddy Kruger isn't the only ambidextrous slicer
+          </p>
+        </div>
+        <div class="relative w-full max-w-xl h-8 bg-zinc-800 mx-auto rounded border-t border-zinc-700 md:max-w-2xl">
+          <div class="absolute -top-2 left-16 rounded-sm w-8 h-2 bg-white"></div>
+          <div class="absolute -top-7 right-16 rounded w-14 h-7 rounded bg-black"></div>
+        </div>
+        <button
+          id="reveal-answer"
+          type="button"
+          class="mt-8 font-sans px-2 py-1 text-5xl font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+          onclick="revealAnswer(1)"
+        >
+          ?
+        </button>
+        <p id="answer1" class="text-white text-center text-xl font-thin pt-8 invisible">scissors ✂️</p>
+      </section>
+      <section class="flex flex-col items-center justify-center">
+        <div
+          class="text-yellow-200 flex flex-col text-white text-2xl w-full p-8 items-center justify-center bg-zinc-900 mx-auto rounded max-w-lg leading-loose border-8 border-zinc-800 md:text-3xl md:max-w-3xl md:leading-loose"
+          style="font-family: 'Caveat', cursive;">
+          <p class="whitespace-pre-line">This riddle is easy, though it may seem insurmountable.
+          Some might say that I am both countable and accountable.
+          Some people believe in me. Others think I am a trinket.
+          I am like a Martini, but the way that James Bond likes to drink it.
+          My word is final, though I am not a dictator.
+          But if you don't like it, you can always ask again later.
+          </p>
+        </div>
+        <div class="relative w-full max-w-xl h-8 bg-zinc-800 mx-auto rounded border-t border-zinc-700 md:max-w-3xl">
+          <div class="absolute -top-2 left-24 rounded-sm w-8 h-2 bg-yellow-200"></div>
+          <div class="absolute -top-7 right-16 rounded w-14 h-7 rounded bg-black"></div>
+        </div>
+        <button id="reveal-answer" type="button"
+          class="mt-8 font-sans px-2 py-1 text-5xl font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+          onclick="revealAnswer(2)">
+          ?
+        </button>
+        <p id="answer2" class="text-white text-center text-xl pt-8 invisible font-thin">magic 8 ball 🎱</p>
+      </section>
+
+      <section class="flex flex-col items-center justify-center">
+        <div
+          class="flex flex-col text-white text-2xl w-full p-8 items-center justify-center bg-zinc-900 mx-auto rounded max-w-lg leading-loose border-8 border-zinc-800 md:text-3xl md:max-w-3xl md:leading-loose"
+          style="font-family: 'Caveat', cursive;">
+          <p class="whitespace-pre-line">1 of us sings duet showtunes, but always the low part
+          2 of us are married, though only one of us sings
+          3 of us are architects of varying aptitudes
+          4 of us are a family of international acclaim
+          5 of us have quite the famous matriarch
+          </p>
+          <p class="text-yellow-200">Hint:</p>
+          <p class="whitespace-pre-line">1 likes to shop, but usually just for food
+          Another likes to netflix and chill because he's an introverted dude
+          Another likes to snack but mostly just one type of meat
+          Another would like a bite, but never gets a treat
+          Another is emotional, or is he just excited?
+          Regardless his journey home is expedited
+          </p>
+        </div>
+        <div class="relative w-full max-w-xl h-8 bg-zinc-800 mx-auto rounded border-t border-zinc-700 md:max-w-3xl">
+          <div class="absolute -top-2 left-16 rounded-sm w-8 h-2 bg-white"></div>
+          <div class="absolute -top-2 left-32 rounded-sm w-8 h-2 bg-yellow-200"></div>
+          <div class="absolute -top-7 right-16 rounded w-14 h-7 rounded bg-black"></div>
+        </div>
+        <button id="reveal-answer" type="button"
+          class="mt-8 font-sans px-2 py-1 text-5xl font-medium text-yellow-300 bg-black rounded hover:bg-gray-800 focus:bg-gray-600"
+          onclick="revealAnswer(3)">
+          ?
+        </button>
+        <p id="answer3" class="text-white text-center text-xl pt-8 invisible font-thin">pig 🐖</p>
+      </section>
+      <img class="absolute bottom-0 left-2 w-12 h-12 pr-1 md:w-24 md:h-24 md:pr-4" src="images/orange-eyes.png"
+        alt="orange eyes in the dark" />
+      <img class="absolute bottom-0 right-0 w-12 h-12 pr-1 md:w-24 md:h-24 md:pr-4" src="images/owl.png"
+        alt="owl" />
+    </main>
+    <footer class="bg-gradient-to-t w-full from-orange-500 to-yellow-300 text-darkest-gray">
+      <div class="flex flex-col items-center justify-center">
+        <p class="text-base font-thin py-4">Copyright <span id="current-year">2022</span> Heather Nuffer et al.</p>
+      </div>
+    </footer>
+    <script>
+      function revealAnswer(riddleNum) {
+        const answerEl = document.getElementById(`answer${riddleNum}`)
+        answerEl.classList.toggle('invisible')
+      }
+      function getCurrentYear() {
+        const currentYear = new Date().getFullYear();
+        document.getElementById('current-year').textContent = currentYear;
+      }
+
+      window.addEventListener('load', getCurrentYear)
+    </script>
+  </body>
+</html>
