@@ -154,6 +154,12 @@
         const answerEl = document.getElementById(`answer${riddleNum}`)
         answerEl.classList.toggle('invisible')
       }
+      function getCurrentYear() {
+        const currentYear = new Date().getFullYear();
+        document.getElementById('current-year').textContent = currentYear;
+      }
+
+      window.addEventListener('load', getCurrentYear)
     </script>
   </body>
 </html>
