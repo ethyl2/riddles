@@ -147,7 +147,11 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="px-4 py-16 mt-12 mb-0 text-center bg-yellow-200 sm:mt-32">
+    <footer class="relative px-4 py-16 mt-12 mb-0 text-center bg-yellow-200 sm:mt-32">
+      <a href="./more-riddles.html" title="more riddles" class="absolute bottom-2 right-0 bg-yellow-300 p-1 rounded flex flex-col items-center justify-center hover:bg-yellow-400">
+        <img src="images/owl.png" alt="owl" class="w-8 h-8 md:w-16 md:h-16"/>
+        <span style="font-family: 'Knewave', cursive;" class="text-xs">more riddles?</span>
+      </a>
         <div class="flex items-center justify-between">
             <label class="relative block text-base cursor-pointer select-none pl-9 checkbox-container"
                 style="font-family: 'Knewave', cursive;">Wipe mode!
@@ -178,7 +182,7 @@
 
               <a
                   class="hidden p-1 font-semibold text-black rounded hover:bg-white md:inline"
-                  href="/riddles/add-riddle.html"
+                  href="./add-riddle.html"
                   title="send us a riddle"
               >
                   <img src="images/letter.png" alt="send riddle" />
@@ -186,7 +190,7 @@
 
               <a
                 class="hidden p-1 font-semibold text-black rounded hover:bg-white md:inline"
-                href="/riddles/all-riddles.html"
+                href="./all-riddles.html"
                 title="see all riddles"
               >
                 <img src="images/eye.png" alt="see all riddles" />
@@ -218,12 +222,12 @@
             </a>
             <a
                 class="p-1 font-semibold text-black rounded hover:bg-white"
-                href="/riddles/add-riddle.html"
+                href="./add-riddle.html"
             >
                 <img src="images/letter.png" alt="send riddle" />
             </a>
             <a
-              href="/riddles/all-riddles.html"
+              href="./all-riddles.html"
               title="see all riddles"
             >
               <img src="images/eye.png" alt="see all riddles" />
@@ -252,7 +256,7 @@
       }
 
       window.addEventListener('load', () => {
-        getCurrentYear() 
+        getCurrentYear()
 
         // Read the randomized riddle index array from localStorage.
         let randomizedRiddles = JSON.parse(window.localStorage.getItem("riddles_in_the_dark")) || []
