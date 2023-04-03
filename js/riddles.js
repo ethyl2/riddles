@@ -389,10 +389,14 @@ const riddles = [
       question: "What grows when it eats but dies when it drinks?",
       answer: ['fire']
   },
-    {
-      question: "What has a stem but not a flower, and has a foot but cannot hop?",
-      answer: ['wine glass', 'goblet', 'flute']
-    },
+  {
+    question: "I am always hungry; I must always be fed. The finger I touch, will soon turn red. What am I?",
+    answer: ['fire']
+  },
+  {
+    question: "What has a stem but not a flower, and has a foot but cannot hop?",
+    answer: ['wine glass', 'goblet', 'flute']
+  },
   {
       question: "What spends a lot of time on the ground but never gets dirty?",
       answer: ['shadow']
@@ -585,6 +589,10 @@ const riddles = [
         question: "What speaks without a mouth?",
         answer: ['echo']
     },
+    {
+      question: "What hears without ears?",
+      answer: ['echo']
+  },
     {
         question: "Many have heard me; no one has seen me. I won't speak back until spoken to. What am I?",
         answer: ['echo']
