@@ -2,28 +2,27 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Riddles in the Dark</title>
-    <meta name="description" content="Can you find and solve the riddles?">
+    <meta name="description" content="Can you solve the riddle and escape?">
     <meta property="og:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png" />
-    <meta property="og:url" content="https://ethyl2.github.io/riddles/" />
     <meta property="og:title" content="Riddles in the Dark" />
+    <meta property="og:url" content="https://ethyl2.github.io/riddles/" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Can you find and solve the riddles?" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@ethyl22">
     <meta name="twitter:title" content="Riddles in the Dark">
-    <meta name="twitter:description" content="Can you find and solve the riddles?">
+    <meta name="twitter:description" content="Can you solve the riddle and escape?">
     <meta name="twitter:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon">
     <link rel="icon" type="image/x-icon" href="favicon.ico?">
     <link rel="stylesheet" href="styles.css">
@@ -214,6 +213,8 @@
             Array.from(roomNameEls).forEach(roomNameEl => {
                 roomNameEl.textContent = formattedRoomName
             })
+
+            document.title = `${formattedRoomName} | riddles in the dark`
         }
 
 
