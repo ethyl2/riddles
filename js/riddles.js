@@ -226,8 +226,8 @@ const riddles = [
       answer: ['promise']
   },
   {
-      question: "What you keep after giving it to someone?",
-      answer: ['your word', 'word', 'promise']
+      question: "What do you keep after giving it to someone?",
+      answer: ['your word', 'word', 'promise', 'love']
   },
   {
       question: "What can run all around a backyard yet never moves?",
@@ -363,7 +363,7 @@ const riddles = [
   },
   {
       question: "What has many needles but can't stitch?",
-      answer: ['pine', 'conifer', 'pine tree']
+      answer: ['pine', 'conifer', 'pine tree', 'porcupine']
   },
   {
       question: "What cut in half is nothing, but turned on its side is everything?",
@@ -411,7 +411,7 @@ const riddles = [
   },
   {
       question: "How many months in a year have twenty-eight days?",
-      answer: ['twelve', '12']
+      answer: ['twelve', '12', 'all', 'all of them']
   },
   {
       question: "What part of a chicken has the most feathers?",
@@ -647,7 +647,7 @@ const riddles = [
   },
   {
     question: "What can point in every direction but can't reach a destination by itself?",
-    answer: ['finger']
+    answer: ['finger', 'compass']
   },
   {
     question: "What doesn't have flesh, feathers, scales, or bone, but have fingers & thumbs of their own?",
@@ -815,7 +815,7 @@ const riddles = [
   },
   {
       question: "What gets rid of its neighbor's mistakes?",
-      answer: ['eraser']
+      answer: ['eraser', 'pencil eraser']
   },
   {
       question: "What shrinks each time it takes a bath?",
@@ -1075,7 +1075,7 @@ const riddles = [
   },
   {
     question: "What is a mummy's favorite type of music?",
-    answer: ['wrap']
+    answer: ['wrap', 'rap']
   },
   {
     question: "What is a wrapped but is not a gift?",
@@ -1171,7 +1171,7 @@ const riddles = [
   },
   {
     question: "What is full during the day but empty at night?",
-    answer: ['shoes']
+    answer: ['shoes', 'shoe']
   },
   {
     question: "What are stepped on all day but they don't complain?",

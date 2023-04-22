@@ -35,7 +35,7 @@
     <header>
         <h1 class="pt-4 pb-2 text-2xl text-center text-black neon-text md:text-3xl"
             style="font-family: 'Knewave', cursive;">
-            riddles in the dark
+            <a href="./index.html">riddles in the dark</a>
         </h1>
         <p class="text-center text-black select-none font-lg"
             style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;""
@@ -50,62 +50,59 @@
         </p>
     </header>
 
-    <main id="grid" class="min-h-screen container bg-black mx-auto mt-32 flex flex-wrap items-center justify-center border-4 md:border-8 border-black">
-        
+    <main id="grid" class="min-h-screen container bg-black mx-auto mt-12 flex flex-wrap items-center justify-center border-4 md:border-8 border-black">
     </main>
    
-
     <!-- FOOTER -->
-    <footer class="relative px-4 py-16 mt-12 mb-0 text-center bg-gray-900 sm:mt-32 text-yellow-200">
-      <a href="./more-riddles.html" title="more riddles" class="absolute bottom-2 right-0 bg-yellow-300 p-1 rounded flex flex-col items-center justify-center hover:bg-yellow-400">
-        <img src="images/owl.png" alt="owl" class="w-8 h-8 md:w-16 md:h-16"/>
-        <span style="font-family: 'Knewave', cursive;" class="text-xs">more riddles?</span>
-      </a>
+    <footer class="relative px-4 pt-8 pb-16 mt-12 mb-0 text-center bg-zinc-700 sm:mt-32">
+      <nav class="flex items-stretch justify-center space-x-2 max-w-sm mx-auto pb-4">
+        <a href="./index.html" title="home tour" class="w-1/4 bg-gray-800 p-2 rounded flex flex-col items-center justify-center hover:bg-gray-500">
+          <img src="images/orange-eyes.png" alt="eyes" class="w-8 h-8 md:w-16 md:h-16"/>
+          <span style="font-family: 'Knewave', cursive;" class="text-xs text-yellow-500">back to the dark?</span>
+        </a>
+        <a href="./more-riddles.html" title="more riddles" class="w-1/4 bg-yellow-300 p-2 rounded flex flex-col items-center justify-center hover:bg-yellow-400">
+          <img src="images/owl.png" alt="owl" class="w-8 h-8 md:w-16 md:h-16"/>
+          <span style="font-family: 'Knewave', cursive;" class="text-xs">more riddles?</span>
+        </a>
+        <a href="./add-riddle.html" title="send riddles" class="w-1/4 bg-yellow-600 p-3 rounded flex flex-col items-center justify-between hover:bg-yellow-800 group">
+          <img src="images/send-letter.png" alt="letter" class="w-8  md:w-16 mt-2"/>
+          <span style="font-family: 'Knewave', cursive;" class="text-xs text-white">send us <br />a riddle?</span>
+        </a>
+        <a href="./all-riddles.html" title="all riddles" class="w-1/4 bg-black p-2 rounded flex flex-col items-center justify-center hover:bg-gray-900 group">
+          <img src="images/cat-eyes.gif" alt="cat eyes" class="w-8 h-8 md:w-16 md:h-16"/>
+          <span style="font-family: 'Knewave', cursive;" class="text-xs text-yellow-200 group-hover:text-white">see all riddles?</span>
+        </a>
+      </nav>
         <div class="flex items-center justify-between">
+            <label class="relative block text-base cursor-pointer select-none pl-9 checkbox-container"
+                style="font-family: 'Knewave', cursive;">Wipe mode!
+                <input type="checkbox" name="wipe-mode" id="wipe-mode" class="absolute w-0 h-0 opacity-0 cursor-pointer" />
+                <span class="absolute top-0 left-0 w-6 h-6 bg-white rounded checkmark"></span>
+            </label>
 
-            <nav class="flex items-center justify-center pl-4">
-              <a
-                  href="https://github.com/ethyl2/riddles"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hidden p-1 rounded hover:bg-white md:inline"
-                  title="github repo"
-              >
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                  focusable="false" width="1.73em" height="1.5em" style="
-                                      -ms-transform: rotate(360deg);
-                                      -webkit-transform: rotate(360deg);
-                                      transform: rotate(360deg);
-                                  " preserveAspectRatio="xMidYMid meet" viewBox="0 0 1227.825 1000">
-                  <path
-                      d="M1078.94-.985c-33.192-.491-110.295 10.777-239.027 96.936c-70.161-17.535-144.812-26.188-219.591-26.188c-82.278 0-165.425 10.448-242.965 31.719C192.534-24.605 110.955 1.234 110.955 1.234c-53.258 133.183-20.347 231.788-10.344 256.277C38.014 325.069-.2 411.338-.2 517.07c0 79.822 9.085 151.416 31.281 213.653c1.231 4.803.832 3.732 2.906 7.844c4.89 12.884 10.327 25.39 16.438 37.468c2.094 4.346 4 7.563 4 7.563c62.395 116.307 185.396 191.438 404.244 215.028l330.995.375c233.392-23.144 345.386-98.499 396.994-215.591l3.281-7.625c4.89-11.828 9.153-24.135 20.813-65.562c11.659-41.427 16.875-113.172 16.875-193.185c0-114.755-43.1-206.577-113.092-276.434c12.231-39.48 28.57-127.158-16.313-239.402c0 0-6.293-1.995-19.281-2.188zM818.1 420.133c53.893-.117 100.057 9.136 134.717 45.499v.031c43.369 45.541 68.749 100.525 68.749 159.778c0 276.658-177.932 284.183-397.4 284.183c-219.506 0-397.4-38.336-397.4-284.183c0-58.861 25.009-113.516 67.843-158.872c71.451-75.59 192.365-35.562 329.558-35.562c70.423-.011 136.564-10.75 193.935-10.875zm-408.807 81.468c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936zm443.649 0c-45.666 0-82.687 61.741-82.687 137.936c0 76.206 37.019 137.967 82.687 137.967c45.666 0 82.687-61.761 82.687-137.967c0-76.184-37.019-137.881-82.687-137.936z"
-                      fill="black" />
-                  </svg>
-                  <span class="sr-only">GitHub Repo</span>
-              </a>
-
-              <a
-                  class="hidden p-1 font-semibold text-black rounded hover:bg-white md:inline"
-                  href="./add-riddle.html"
-                  title="send us a riddle"
-              >
-                  <img src="images/letter.png" alt="send riddle" />
-              </a>
-
-              <a
-                class="hidden p-1 font-semibold text-black rounded hover:bg-white md:inline"
-                href="./all-riddles.html"
-                title="see all riddles"
-              >
-                <img src="images/eye.png" alt="see all riddles" />
-              </a>
-            </nav>
+            <label class="relative block text-base cursor-pointer select-none pl-9 checkbox-container"
+                style="font-family: 'Knewave', cursive;">Noise, please!
+                <input type="checkbox" name="allow-audio" id="allow-audio" class="absolute w-0 h-0 opacity-0 cursor-pointer" />
+                <span class="absolute top-0 left-0 w-6 h-6 bg-white rounded checkmark"></span>
+            </label>
         </div>
 
         <section class="flex flex-col items-center justify-center">
-        <div class="flex items-center justify-center mt-2 text-center md:hidden">
-            <a href="https://github.com/ethyl2/riddles" target="_blank" rel="noopener noreferrer"
-                class="p-1 rounded hover:bg-white">
+          <div id="fb-root"></div>
+          <div
+            class="fb-share-button"
+            data-href="https://ethyl2.github.io/riddles/"
+            data-layout="button"
+            data-lazy="true"
+          ></div>
+          <div class="flex items-center justify-center">
+            <a
+                href="https://github.com/ethyl2/riddles"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-1 rounded hover:bg-white"
+                title="github repo"
+            >
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                 focusable="false" width="1.73em" height="1.5em" style="
                                     -ms-transform: rotate(360deg);
@@ -118,29 +115,11 @@
                 </svg>
                 <span class="sr-only">GitHub Repo</span>
             </a>
-            <a
-                class="p-1 font-semibold text-black rounded hover:bg-white"
-                href="./add-riddle.html"
-            >
-                <img src="images/letter.png" alt="send riddle" />
-            </a>
-            <a
-              href="./all-riddles.html"
-              title="see all riddles"
-            >
-              <img src="images/eye.png" alt="see all riddles" />
-            </a>
-        </div>
-        <div id="fb-root"></div>
-        <div
-          class="fb-share-button"
-          data-href="https://ethyl2.github.io/riddles/"
-          data-layout="button"
-          data-lazy="true"
-        ></div>
-        <p class="text-sm font-semibold pt-4">Copyright <span id="current-year">2022</span> Heather Nuffer et al.</p>
+            <p class="text-sm font-semibold">Copyright <span id="current-year">2022</span> Heather Nuffer et al.</p>
+          </div>
       </section>
     </footer>
+
     <script src="./js/rooms.js" async defer></script>
     <script src="./js/facebookShare.js" async defer></script>
     <script>
@@ -163,7 +142,11 @@
       })
 
       function goToRoom(event) {
-        console.log(event.target.style)
+        const styles = window.getComputedStyle(event.target)
+        let imageUrl = styles.backgroundImage.slice(4, -1).replace(/"/g, "").split('/').pop()
+        const imageSlug = imageUrl.split(".")[0]
+        const url = `/room.html?room=${imageSlug}`
+        window.open(url, "_blank");
       }
   </script>
 </body>
