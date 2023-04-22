@@ -7,11 +7,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Riddles in the Dark</title>
+    <title>House Tour | Riddles in the Dark</title>
     <meta name="description" content="Can you find and solve the riddles?">
     <meta property="og:image" content="https://ethyl2.github.io/riddles/images/riddles_in_the_dark.png" />
     <meta property="og:url" content="https://ethyl2.github.io/riddles/" />
-    <meta property="og:title" content="Riddles in the Dark" />
+    <meta property="og:title" content="House Tour | Riddles in the Dark" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Can you find and solve the riddles?" />
     <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header>
+    <header class="relative">
         <h1 class="pt-4 pb-2 text-2xl text-center text-black neon-text md:text-3xl"
             style="font-family: 'Knewave', cursive;">
             <a href="./index.html">riddles in the dark</a>
@@ -48,13 +48,21 @@
         >
             which room would you like to visit next?
         </p>
+        <img src="./images/bats.png" class="absolute -top-4 right-0 w-24 md:w-64" alt="bats" />
+        <img src="./images/moon.png" class="absolute top-8 left-1 w-12 md:w-24" alt="moon" />
     </header>
-
-    <main id="grid" class="min-h-screen container bg-black mx-auto mt-12 flex flex-wrap items-center justify-center border-4 md:border-8 border-black">
+    <main class="container min-h-screen mx-auto mt-12">
+      <img src="./images/owl.png" class="w-8 mx-auto" alt="owl" />
+      <div id="grid" class="mx-auto flex flex-wrap items-start justify-center px-2">
+      </div>
     </main>
+    <div class="relative bg-green-900/50 w-full h-24">
+      <img src="./images/tree.png" class="absolute -left-32 md:-left-16 lg:left-0 -top-60 w-60" alt="tree" />
+      <img src="./images/tree-2.png" class="absolute -right-32 md:-right-16 lg:right-0 -top-60 w-60" alt="tree" />
+    </div>
    
     <!-- FOOTER -->
-    <footer class="relative px-4 pt-8 pb-16 mt-12 mb-0 text-center bg-zinc-700 sm:mt-32">
+    <footer class="px-4 pt-8 pb-16 text-center bg-zinc-700">
       <nav class="flex items-stretch justify-center space-x-2 max-w-sm mx-auto pb-4">
         <a href="./index.html" title="home tour" class="w-1/4 bg-gray-800 p-2 rounded flex flex-col items-center justify-center hover:bg-gray-500">
           <img src="images/orange-eyes.png" alt="eyes" class="w-8 h-8 md:w-16 md:h-16"/>
