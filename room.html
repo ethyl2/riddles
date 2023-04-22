@@ -46,12 +46,14 @@
         <p class="text-center text-black select-none font-lg mt-12"
             style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;""
         >
-            which room would you like to visit next?
+            Welcome to my room!
         </p>
     </header>
 
-    <main id="grid" class="min-h-screen container bg-black mx-auto mt-32 flex flex-wrap items-center justify-center border-4 md:border-8 border-black">
-        
+    <main class="sm:min-h-screen container bg-black mx-auto mt-12 sm:mt-32 flex flex-wrap items-start justify-center border-4 md:border-8 border-black">
+        <div class="w-full md:w-1/2">
+            <img id="current-room" src="./images/art-room.png" alt="riddle room" class="w-full"/>
+        </div>
     </main>
    
 
@@ -141,30 +143,23 @@
         <p class="text-sm font-semibold pt-4">Copyright <span id="current-year">2022</span> Heather Nuffer et al.</p>
       </section>
     </footer>
-    <script src="./js/rooms.js" async defer></script>
     <script src="./js/facebookShare.js" async defer></script>
     <script>
-        const gridEl = document.getElementById('grid')
-      function getCurrentYear() {
-        const currentYear = new Date().getFullYear();
-        document.getElementById('current-year').textContent = currentYear;
-      }
+        const currentRoomEl = document.getElementById('current-room')
 
-      window.addEventListener('load', () => {
-        getCurrentYear() 
-        const shuffledRooms = fisherYatesShuffle(roomImages)
-        shuffledRooms.forEach(roomImage => {
-            const roomEl = document.createElement('div')
-            roomEl.classList.add('w-32', 'h-24', 'md:w-64', 'md:h-48', 'bg-cover', 'bg-center', 'bg-no-repeat', 'border-4', 'md:border-8', 'border-black', 'lg:w-72', 'lg:h-56')
-            roomEl.style = `background-image: url('${roomImage}')`
-            roomEl.addEventListener('click', goToRoom)
-            gridEl.appendChild(roomEl)
+        function getCurrentYear() {
+            const currentYear = new Date().getFullYear();
+            document.getElementById('current-year').textContent = currentYear;
+        }
+
+        window.addEventListener('load', () => {
+            getCurrentYear() 
         })
-      })
 
-      function goToRoom(event) {
-        console.log(event.target.style)
-      }
+        const searchParams = new URLSearchParams(window.location.search);
+        const paramsObj = Object.fromEntries(searchParams.entries());
+        console.log(paramsObj.room)
+        currentRoomEl.src = `./images/${paramsObj.room}.png`
   </script>
 </body>
 </html>
