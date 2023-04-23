@@ -60,7 +60,9 @@ const roomImages = [
     'images/elf-room.png',
     'images/artsy-room.png',
     'images/brown-room.png',
-    'images/basketball-court.png'
+    'images/basketball-court.png',
+    'images/green-room.png',
+    'images/red-room.png',
 ]
 
 // Fisher-Yates shuffle
