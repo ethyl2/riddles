@@ -28,11 +28,11 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen mb-0 overflow-x-auto select-none" style="background:#2e2a20;">
+<body class="min-h-screen mb-0 overflow-x-auto select-none relative" style="background:#2e2a20;">
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header class="relative">
+    <header class="relative sticky top-0 pb-4" style="background:#2e2a20;">
         <h1 class="pt-4 pb-2 text-2xl text-center text-black neon-text md:text-3xl"
             style="font-family: 'Knewave', cursive;">
             <a href="./index.html">riddles in the dark</a>
@@ -43,15 +43,16 @@
             welcome to our humble home
         </p>
 
-        <p class="text-center text-black select-none font-lg mt-12"
+        <p class="text-center text-black select-none font-lg mt-2 md:mt-6"
             style="font-family: 'Knewave', cursive; text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;""
         >
             which room would you like to visit next?
         </p>
+        <p class="text-yellow-200 text-center pt-2 text-lg tracking-widest" style="font-family: 'Knewave', cursive;"><span id="room-name"></span>?</p>
         <img src="./images/bats.png" class="absolute -top-4 right-0 w-24 md:w-64" alt="bats" />
         <img src="./images/moon.png" class="absolute top-8 left-1 w-12 md:w-24" alt="moon" />
     </header>
-    <main class="container min-h-screen mx-auto mt-12">
+    <main class="container min-h-screen mx-auto md:mt-12">
       <img src="./images/owl.png" class="w-8 mx-auto" alt="owl" />
       <div id="grid" class="mx-auto flex flex-wrap items-start justify-center px-2">
       </div>
@@ -132,6 +133,7 @@
     <script src="./js/facebookShare.js" async defer></script>
     <script>
         const gridEl = document.getElementById('grid')
+        const roomNameEl = document.getElementById('room-name')
       function getCurrentYear() {
         const currentYear = new Date().getFullYear();
         document.getElementById('current-year').textContent = currentYear;
@@ -145,6 +147,21 @@
             roomEl.classList.add('w-32', 'h-24', 'md:w-64', 'md:h-48', 'bg-cover', 'bg-center', 'bg-no-repeat', 'border-4', 'md:border-8', 'border-black', 'lg:w-72', 'lg:h-56')
             roomEl.style = `background-image: url('${roomImage}')`
             roomEl.addEventListener('click', goToRoom)
+            roomEl.addEventListener('mouseenter', () => {
+              roomEl.classList.remove('border-black')
+              roomEl.classList.add('border-green-500')
+              let imageUrl = roomImage.slice(4, -1).replace(/"/g, "").split('/').pop()
+              const imageSlug = imageUrl.split(".")[0]
+              const formattedRoomName = imageSlug
+                .split('-')
+                .join(' ')
+              console.log(formattedRoomName)
+              roomNameEl.textContent = formattedRoomName
+            })
+            roomEl.addEventListener('mouseleave', () => {
+              roomEl.classList.remove('border-green-500')
+              roomEl.classList.add('border-black')
+            })
             gridEl.appendChild(roomEl)
         })
       })
