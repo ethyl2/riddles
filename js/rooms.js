@@ -1,6 +1,6 @@
 const roomImages = [
     'images/room.png',
-    'images/room2.png',
+    'images/collections-room.png',
     'images/bedroom.png',
     'images/bathroom.png',
     'images/kitchen.png',
@@ -24,7 +24,7 @@ const roomImages = [
     'images/clown-bedroom.png',
     'images/aquarium-room.png',
     'images/attic.png',
-    'images/bathroom-2.png',
+    'images/cat-bathroom.png',
     'images/master-bedroom.png',
     'images/chapel-room.png',
     'images/christmas-room.png',
@@ -51,16 +51,19 @@ const roomImages = [
     'images/diner-room.png',
     'images/indoor-playground.png',
     'images/broken-room.png',
-    'images/broken-room2.png',
+    'images/other-broken-room.png',
     'images/patricks-room.png',
     'images/classroom.png',
     'images/laboratory.png',
     'images/arcade.png',
-    'images/stranger-things.png',
+    'images/stranger-things-room.png',
     'images/elf-room.png',
-    'images/almost-artsy-room.png',
+    'images/artsy-room.png',
     'images/brown-room.png',
-    'images/basketball-court.png'
+    'images/basketball-court.png',
+    'images/green-room.png',
+    'images/red-room.png',
+    'images/blue-room.png',
 ]
 
 // Fisher-Yates shuffle
