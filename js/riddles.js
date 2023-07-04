@@ -101,7 +101,7 @@ const riddles = [
       answer: ['umbrella']
   },
   {
-      question: "What is seen in the middle of March and April that can’t be seen at the beginning or end of either month?",
+      question: "What is seen in the middle of March and April that can't be seen at the beginning or end of either month?",
       answer: ['r']
   },
   {
@@ -109,11 +109,11 @@ const riddles = [
       answer: ['o']
   },
   {
-      question: "What English word has three consecutive double letters? ",
+      question: "What English word has three consecutive double letters?",
       answer: ['bookkeeper']
   },
   {
-      question: "What disappears as soon as you say its name? ",
+      question: "What disappears as soon as you say its name?",
       answer: ['silence']
   },
   {
@@ -574,7 +574,7 @@ const riddles = [
         answer: ['barber']
     },
     {
-      question: "What’s the first thing a gardener puts in their garden at the beginning of the year?",
+      question: "What's the first thing a gardener puts in their garden at the beginning of the year?",
       answer: ['foot']
     },
     {
@@ -627,7 +627,7 @@ const riddles = [
   },
   {
     question: "What has toes but no feet or legs?",
-    answer: ['tomatoes']
+    answer: ['tomatoes', 'potatoes']
   },
   {
       question: "What kind of nail is a pain to hammer into wood?",
@@ -686,7 +686,7 @@ const riddles = [
       answer: ['match']
   },
     {
-      question: "What is shorter than the rest, but when you’re happy, you raise it like it’s the best?",
+      question: "What is shorter than the rest, but when you're happy, you raise it like it's the best?",
       answer: ['thumb']
   },
   {
@@ -1246,7 +1246,7 @@ const riddles = [
     answer: ['orange', 'plum', 'peach', 'apricot', 'almond', 'asparagus', 'pink sherbert', 'oatmeal', 'chestnut', 'cool mint', 'eggplant', 'lavender', 'cotton candy', 'macaroni and cheese', 'melon', 'salmon', 'maize', 'granny smith apple', 'mulberry', 'wild strawberry']
   },
   {
-    question: "I touch the earth and I touch the sky, but if I touch you, you’ll might die. What am I?",
+    question: "I touch the earth and I touch the sky, but if I touch you, you might die. What am I?",
     answer: ['lightning']
   },
 ]
