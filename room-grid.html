@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen mb-0 overflow-x-auto select-none relative" style="background:#2e2a20;">
+<body class="min-h-screen mb-0 overflow-x-hidden select-none relative" style="background:#2e2a20;">
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -59,11 +59,11 @@
     </main>
     <div class="relative bg-green-900/50 w-full h-24">
       <img src="./images/tree.png" class="absolute -left-32 md:-left-16 lg:left-0 -top-60 w-60" alt="tree" />
-      <img src="./images/tree-2.png" class="absolute -right-32 md:-right-16 lg:right-0 -top-60 w-60" alt="tree" />
+      <img src="./images/tree-2.png" class="hidden md:flex absolute -right-32 md:-right-16 lg:right-0 -top-60 w-60" alt="tree" />
     </div>
    
     <!-- FOOTER -->
-    <footer class="px-4 pt-8 pb-16 text-center bg-zinc-700">
+    <footer class="px-4 pt-8 pb-16 text-center bg-zinc-700 w-full">
       <nav class="flex items-stretch justify-center space-x-2 max-w-sm mx-auto pb-4">
         <a href="./index.html" title="home tour" class="w-1/4 bg-gray-800 p-2 rounded flex flex-col items-center justify-center hover:bg-gray-500">
           <img src="images/orange-eyes.png" alt="eyes" class="w-8 h-8 md:w-16 md:h-16"/>
