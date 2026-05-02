@@ -40,27 +40,28 @@
     </header>
 
     <!-- SCENE SECTION -->
-    <section class="overflow-x-auto">
-      <div id="placeholder" style="width: 650px; height: 435px;" class="flex items-center justify-center mx-auto mt-4 bg-yellow-200">
-          <div class="mx-auto bg-black" style="width: 640px; height: 425px;"></div>
+    <section class="overflow-hidden">
+      <div id="placeholder" style="max-width: 650px; width: 100%; aspect-ratio: 640 / 425;" class="flex items-center justify-center mx-auto mt-4 bg-yellow-200">
+          <div class="w-full h-full bg-black"></div>
       </div>
-      <div id="scene-frame" style="width: 650px; height: 435px;" class="flex items-center justify-center hidden mx-auto mt-4 bg-yellow-200">
+      <div id="scene-frame" style="max-width: 650px; width: 100%; aspect-ratio: 640 / 425;" class="flex items-center justify-center hidden mx-auto mt-4 bg-yellow-200">
           <div id="scene"
-              class="relative mx-auto overflow-x-auto"
-              style="width: 640px; height: 425px; background-size: cover">
+              class="relative w-full h-full"
+              style="background-size: cover">
               <p id="current-question"
                 class="absolute w-full pb-1 pl-2 text-xs text-white select-none">
                   What word starts with <span class="italic">'e'</span> and ends with <span class="italic">'e'</span>, but usually has only one letter in it?
               </p>
 
               <canvas id="room"
-                      class="absolute top-0 left-0 mx-auto overflow-x-auto"
+                      class="absolute top-0 left-0"
                       width="640"
                       height="425"
-                      style="max-width: 640px; cursor:  crosshair; cursor: url('images/flashlight3.png') 53 53, crosshair;"></canvas>
+                      style="width: 100%; height: 100%; cursor: crosshair; cursor: url('images/flashlight3.png') 53 53, crosshair;"></canvas>
           </div>
       </div>
     </section>
+
     <section class="pb-56">
       <!-- FORM SECTION -->
       <div class="flex items-center justify-center">
