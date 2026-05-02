@@ -1,5 +1,9 @@
 // Add more riddles here
 const riddles = [
+    {
+        question: "What begins with T, ends with T, and has T in it?",
+        answer: ["teapot"]
+    },
   {
       question: "What number other than 2 equals 4 when squared?",
       answer: ["-2", "negative two"]
@@ -239,7 +243,7 @@ const riddles = [
     },
   {
       question: "What kind of cup can't hold water?",
-      answer: ['hiccup']
+      answer: ['hiccup', 'jock strap', 'cupcake']
   },
   {
       question: "What kind of band doesn't play music?",
@@ -314,6 +318,10 @@ const riddles = [
       answer: ['car']
   },
   {
+      question: "What can travel around the world while staying in a corner?",
+      answer: ["stamp"]
+ },
+  {
       question: `What has a heart that doesn't beat?`,
       answer: ['artichoke']
   },
@@ -364,6 +372,10 @@ const riddles = [
   {
       question: "What has many needles but can't stitch?",
       answer: ['pine', 'conifer', 'pine tree', 'porcupine']
+  },
+  {
+      question: "What has four wheels and flies?",
+      answer: ["garbage truck", "trash truck"]
   },
   {
       question: "What cut in half is nothing, but turned on its side is everything?",
@@ -560,6 +572,10 @@ const riddles = [
     {
       question: "What has hundreds of ears but can't hear a thing?",
       answer: ['cornfield']
+    },
+    {
+      question: "What has ears but cannot hear?",
+      answer: ["corn"]
     },
     {
         question: "What do you call a bear without teeth?",
@@ -1094,9 +1110,13 @@ const riddles = [
     answer: ['piccolo']
   },
   {
+    question: "What can you catch but not throw?",
+    answer: ['cold', 'head cold', 'flu', 'sickness']
+  },
+  {
       question: "Where do ghosts, mummies, & zombies like to swim?",
       answer: ['dead sea', 'the dead sea', 'erie', 'lake erie']
-    },
+ },
   {
       question: "Who works when they play, and play when they work?",
       answer: ['musician', 'musicians', 'athletes', 'athlete', 'baseball player', 'baseball players', 'soccer player', 'soccer players', 'player', 'players']
