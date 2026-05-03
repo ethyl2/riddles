@@ -247,7 +247,8 @@
         window.localStorage.setItem('potential_points', potentialPointsEl.textContent)
 
         questionEl.textContent = currentRiddle.question
-        questionEl.classList.add(verticalPositions[theRandomVerticalIndex], horizontalPositions[theRandomHorizontalIndex])
+        questionEl.style.top = verticalPositions[theRandomVerticalIndex]
+        questionEl.classList.add(horizontalPositions[theRandomHorizontalIndex])
 
         placeholderEl.classList.add('hidden')
         sceneFrame.classList.remove('hidden')
@@ -275,7 +276,7 @@
       let currentRiddle = null // Declaration of current riddle. Will be overridden in the load function above
 
       const verticalPositions = [
-        'top-1', 'bottom-4', 'bottom-1', 'bottom-60', 'bottom-44', 'top-16', 'top-24', 'bottom-16', 'bottom-48'
+        '2%', '75%', '78%', '44%', '59%', '15%', '23%', '65%', '55%'
       ]
       const horizontalPositions = ['text-center', 'text-left', 'text-right']
       const scene = document.getElementById('scene')
