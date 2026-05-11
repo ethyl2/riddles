@@ -887,7 +887,7 @@ const riddles = [
   },
   {
       question: "What item is called a pair when you only have one?",
-      answer: ['scissors', 'pear']
+      answer: ['scissors', 'pear', 'pants', 'trousers', 'tights']
   },
     {
         question: "Poke your fingers in my eyes and I will open wide my jaws. What am I?",
