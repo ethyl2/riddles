@@ -46,7 +46,7 @@
       >
         all of them
       </h2>
-      <div class="flex items-center justify-center mt-8">
+      <div class="flex items-center justify-center mt-8 space-x-4">
         <button id="print-button" type="button">
           <a
             href="./print-all-riddles.html"
@@ -55,6 +55,9 @@
           >
           print</a>
         </button>
+
+        <button id="text-size-decrease" type="button" class="rounded px-2 py-1 bg-black text-yellow-600 hover:bg-gray-800" style="font-family: 'Knewave', cursive;" title="decrease text size">A-</button>
+        <button id="text-size-increase" type="button" class="rounded px-2 py-1 bg-black text-yellow-600 hover:bg-gray-800" style="font-family: 'Knewave', cursive;" title="increase text size">A+</button>
       </div>
       <div
         id="all-riddles"
@@ -115,12 +118,41 @@
             </div>
         </section>
     </footer>
-    </main>
+  </main>
     <script src="./js/riddles.js" async defer></script>
     <script type="text/javascript">
       const riddlesSection = document.getElementById('all-riddles')
       const printButton = document.getElementById('print-button')
       const colorOptions = ['#FF4D00', '#FF0000', '#C400C6', '#FFD700', '#4ECCA3', '#66ff00']
+
+      const textSizes = ['text-xs', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl']
+      let currentSizeIndex = 2 // starts at text-lg
+      const decreaseBtn = document.getElementById('text-size-decrease')
+      const increaseBtn = document.getElementById('text-size-increase')
+
+      function updateButtonStates() {
+        const atMin = currentSizeIndex === 0
+        const atMax = currentSizeIndex === textSizes.length - 1
+        decreaseBtn.disabled = atMin
+        decreaseBtn.classList.toggle('opacity-50', atMin)
+        decreaseBtn.classList.toggle('cursor-not-allowed', atMin)
+        increaseBtn.disabled = atMax
+        increaseBtn.classList.toggle('opacity-50', atMax)
+        increaseBtn.classList.toggle('cursor-not-allowed', atMax)
+      }
+
+      function updateTextSize(delta) {
+        const newIndex = currentSizeIndex + delta
+        if (newIndex < 0 || newIndex >= textSizes.length) return
+        riddlesSection.classList.remove(textSizes[currentSizeIndex])
+        currentSizeIndex = newIndex
+        riddlesSection.classList.add(textSizes[currentSizeIndex])
+        updateButtonStates()
+      }
+
+      decreaseBtn.addEventListener('click', () => updateTextSize(-1))
+      increaseBtn.addEventListener('click', () => updateTextSize(1))
+      updateButtonStates()
 
       function shuffle(a) { for (var j, i = a.length - 1; i > 0; i--) { j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]] } }
 
