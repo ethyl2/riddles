@@ -255,7 +255,7 @@ const riddles = [
   },
   {
       question: "What can fill up a room but takes up no space?",
-      answer: ['light', 'sound', 'noise']
+      answer: ['light', 'sound', 'noise', 'air', 'smoke', 'dust', 'fog', 'steam']
   },
   {
       question: "What runs but doesn't walk, has a mouth but doesn't talk, has a head but never weeps, and has a bed but never sleeps?",
