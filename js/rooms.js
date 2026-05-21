@@ -74,6 +74,7 @@ const roomImages = [
     'images/rainbow-room.png',
     'images/parlor.png',
     'images/cat-rec-room.png',
+    'images/cat-room.png',
 ]
 
 // Fisher-Yates shuffle
