@@ -190,6 +190,10 @@ const riddles = [
       answer: ['piano', 'keyboard']
   },
   {
+      question: "What has an end but no beginning, a home but no family, and a space without a room?",
+      answer: ['keyboard']
+  },
+  {
       question: "What doesn't bark or bite but still won't let you in a house?",
       answer: ['lock']
   },
@@ -256,6 +260,10 @@ const riddles = [
   {
       question: "What can fill up a room but takes up no space?",
       answer: ['light', 'sound', 'noise', 'air', 'smoke', 'dust', 'fog', 'steam']
+  },
+  {
+      question: "What can you hear but not see or touch?",
+      answer: ['sound', 'music', 'voice', 'noise']
   },
   {
       question: "What runs but doesn't walk, has a mouth but doesn't talk, has a head but never weeps, and has a bed but never sleeps?",
@@ -602,6 +610,10 @@ const riddles = [
         answer: ['echo']
     },
     {
+        question: "What goes up but never comes down?",
+        answer: ['age']
+    },
+    {
         question: "What speaks without a mouth?",
         answer: ['echo']
     },
@@ -615,6 +627,10 @@ const riddles = [
     },
     {
       question: "What falls down from great heights but is never hurt?",
+      answer: ['rain']
+    },
+     {
+      question: "What falls but doesn't come up?",
       answer: ['rain']
     },
   {
@@ -635,6 +651,10 @@ const riddles = [
   },
   {
       question: "What is put on a table, cut, but never eaten?",
+      answer: ['deck of cards', 'deck', 'pack of cards', 'cards']
+  },
+  {
+      question: "What has 13 hearts but no other organs?",
       answer: ['deck of cards', 'deck', 'pack of cards', 'cards']
   },
   {
@@ -886,6 +906,10 @@ const riddles = [
       answer: ['scissors']
   },
   {
+      question: "What is easy to get into but hard to get out of?",
+      answer: ['trouble', 'quicksand', 'trap']
+  },
+  {
       question: "What item is called a pair when you only have one?",
       answer: ['scissors', 'pear', 'pants', 'trousers', 'tights']
   },
@@ -988,6 +1012,14 @@ const riddles = [
   {
       question: "With what does the sky pay its bills?",
       answer: ['raincheck']
+  },
+  {
+      question: "What is spelled incorrectly in every dictionary?",
+      answer: ['incorrectly']
+  },
+  {
+      question: "What question can you never say yes to?",
+      answer: ['are you asleep?', 'are you dead?', 'are you awake?']
   },
   {
     question: "What has no feet, hands, or wings, yet climbs to the sky?",
@@ -1111,7 +1143,7 @@ const riddles = [
   },
   {
     question: "What can you catch but not throw?",
-    answer: ['cold', 'head cold', 'flu', 'sickness']
+    answer: ['cold', 'head cold', 'flu', 'sickness', 'a cold']
   },
   {
       question: "Where do ghosts, mummies, & zombies like to swim?",
@@ -1208,6 +1240,10 @@ const riddles = [
   {
     question: "What is the oldest tree named?",
     answer: ['elder']
+  },
+  {
+    question: "What belongs to you but is used more by others?",
+    answer: ['name']
   },
   {
     question: "What does a stone become when you put it in water?",
