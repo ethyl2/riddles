@@ -21,10 +21,6 @@ const riddles = [
       answer: ['queue']
   },
   {
-      question: "What's tall when it's young and short when it's old?",
-      answer: ['candle']
-  },
-  {
       question: "What gets wet when drying?",
       answer: ['towel']
   },
@@ -99,6 +95,10 @@ const riddles = [
   {
     question: "What word in the dictionary is always pronounced wrong?",
     answer: ['wrong']
+  },
+  {
+    question: "What travels from person to person but usuallygets bigger instead of smaller?",
+    answer: ['rumor', 'gossip']
   },
   {
       question: "What can go up a chimney down, but can't go down a chimney up?",
@@ -300,6 +300,10 @@ const riddles = [
   {
       question: "What kind of dress can't be worn?",
       answer: ['address']
+  },
+  {
+      question: "I live in your head, travel through your heart, and might come true if you chase me. What am I?",
+      answer: ['dream']
   },
   {
       question: 'What gets more rings as it gets older?',
@@ -538,7 +542,7 @@ const riddles = [
       answer: ['charcoal', 'coal']
   },
   {
-      question: "What’s the most curious letter?",
+      question: "What's the most curious letter?",
       answer: ['y']
   },
   {
@@ -608,10 +612,6 @@ const riddles = [
     {
         question: "What can answer in any language?",
         answer: ['echo']
-    },
-    {
-        question: "What goes up but never comes down?",
-        answer: ['age']
     },
     {
         question: "What speaks without a mouth?",
@@ -1118,10 +1118,6 @@ const riddles = [
     answer: ['conductor']
   },
   {
-    question: "What is a balloon's least favorite type of music?",
-    answer: ['pop']
-  },
-  {
     question: "What is a mummy's favorite type of music?",
     answer: ['wrap', 'rap']
   },
@@ -1204,6 +1200,14 @@ const riddles = [
   {
       question: "What never stays full for long, has a dark side, and is rarely visited?",
       answer: ['moon']
+  },
+  {
+      question: "What can be full without eating, have a quarter without money, and be new without being born?",
+      answer: ['moon']
+  },
+  {
+      question: "I am born when light and shadow meet, and I can turn day into night. What am I?",
+      answer: ['eclipse', 'solar eclipse', 'lunar eclipse']
   },
   {
     question: "If you drop a yellow hat in the Red Sea, what does it become?",
@@ -1304,5 +1308,89 @@ const riddles = [
   {
     question: "I touch the earth and I touch the sky, but if I touch you, you might die. What am I?",
     answer: ['lightning']
+  },
+  {
+    question: "I can be given but never held, shared but never divided, and made without using your hands. What am I?",
+        answer: ['wish'],
+        article: 'a',
+    categories: ['birthday']
+  },
+  {
+    question: "I have layers but I'm not clothing. I have frosting but I'm not cold. I may have candles but I'm not a lantern. What am I?",
+    answer: ['birthday cake', 'cake'],
+        article: 'a',
+    categories: ['birthday']
+  },
+  {
+    question: "I get bigger every year, but I weigh nothing and take up no space. What am I?",
+    answer: ['your age', 'age'],
+    categories: ['birthday']
+  },
+  {
+    question: "I shower without rain, and make a mess without being dirty. What am I?",
+    answer: ['confetti'],
+    categories: ['birthday']
+  },
+  {
+    question: "What is a balloon's least favorite type of music?",
+    answer: ['pop'],
+    categories: ['birthday']
+  },
+  {
+    question: "You can count me, celebrate me, and sometimes hide me, but you can never get me back once I've passed. What am I?",
+    answer: ['time', 'your time'],
+    categories: ['birthday']
+  },
+  {
+      question: "What's tall when it's young and short when it's old?",
+      answer: ['candle'],
+      article: 'a',
+      categories: ['birthday']
+  },
+  {
+      question: "What can you break at a party without touching it?",
+      answer: ['the ice', 'ice'],
+      categories: ['birthday']
+  },
+  {
+      question: "What has a bow but no arrow?",
+      answer: ['present', 'gift'],
+      article: 'a',
+      categories: ['birthday']
+  },
+  {
+      question: "What goes up but never comes down?",
+      answer: ['age', 'your age'],
+      categories: ['birthday']
+  },
+  {
+      question: "What gets older but only celebrates the birthdays of others?",
+      answer: ['calendar'],
+      article: 'a',
+      categories: ['birthday']
+  },
+  {
+      question: "You cut me at a party, but nobody calls the police. What am I?",
+      answer: ['cake', 'birthday cake'],
+      article: 'a',
+      categories: ['birthday']
+  },
+  {
+      question: "I start as a batter, rise to the occasion, and end up in pieces. What am I?",
+      answer: ['cake', 'birthday cake'],
+      article: 'a',
+      categories: ['birthday']
+  },
+  {
+      question: "What can you break and not get in trouble?",
+      answer: ['piñata', 'pinata'],
+      article: 'a',
+      categories: ['birthday']
+  },
+  {
+      question: "I have a point but I'm not a pencil, I sit on your head but I'm not a crown, and at a party, I can make you look like a clown. What am I?",
+      answer: ['party hat', 'hat'],
+      article: 'a',
+      categories: ['birthday']
   },
 ]
